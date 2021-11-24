@@ -121,4 +121,4 @@ String / Array
 7. Length of the largest subarray with contiguous elements
 8. Find the smallest positive integer value that cannot be represented as sum of any subset of a given array
 9. Smallest subarray with sum greater than a given value
-10. Stock Buy Sell to Maximize Profit
+10. [Stock Buy Sell to Maximize Profit](sorting_and_searching.ipynb)
