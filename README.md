@@ -15,8 +15,8 @@ Topics:
 
 Graph
 
-1. [Breadth First Search (BFS)](dfs_bfs.ipynb)
-2. [Depth First Search (DFS)](dfs_bfs.ipynb)
+1. [Breadth First Search (BFS)](graph.ipynb)
+2. [Depth First Search (DFS)](graph.ipynb)
 3. Shortest Path from source to all vertices **Dijkstra**
 4. Shortest Path from every vertex to every other vertex **Floyd Warshall**
 5. To detect cycle in a Graph **Union Find**
@@ -43,7 +43,7 @@ Linked List
 
 Dynamic Programming
 
-1. Longest Common Subsequence
+1. [Longest Common Subsequence](dynamic_programming.ipynb)
 2. Longest Increasing Subsequence
 3. Edit Distance
 4. Minimum Partition
@@ -55,8 +55,6 @@ Dynamic Programming
 10. Boolean Parenthesization Problem
 
 Sorting And Searching
-
-
 
 1. [Binary Search](sorting_and_searching.ipynb)
 2. Search an element in a sorted and rotated array
@@ -81,6 +79,7 @@ Tree / Binary Search Tree
 8. Lowest Common Ancestor in a Binary Search Tree
 9. Check if a binary tree is subtree of another binary tree
 10. Reverse alternate levels of a perfect binary tree
+11. [Find and Remove Leaves of Binary Tree](tree.ipynb)
 
 Number Theory
 
