@@ -51,7 +51,7 @@ Dynamic Programming
 6. Longest Path In Matrix
 7. Subset Sum Problem
 8. Optimal Strategy for a Game
-9. 0-1 Knapsack Problem
+9. [0-1 Knapsack Problem](dynamic_programming.ipynb)
 10. Boolean Parenthesization Problem
 
 Sorting And Searching
