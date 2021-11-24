@@ -58,11 +58,11 @@ Sorting And Searching
 
 
 
-1. Binary Search
+1. [Binary Search](sorting_and_searching.ipynb)
 2. Search an element in a sorted and rotated array
 3. Bubble Sort
 4. Insertion Sort
-5. Merge Sort
+5. [Merge Sort](sorting_and_searching.ipynb)
 6. Heap Sort (Binary Heap)
 7. Quick Sort
 8. Interpolation Search
