@@ -54,6 +54,7 @@ Dynamic Programming
 8. Optimal Strategy for a Game
 9. [0-1 Knapsack Problem](dynamic_programming.ipynb)
 10. Boolean Parenthesization Problem
+11. [Get nth number in the Fibonacci Sequence](dynamic_programming.ipynb)
 
 Sorting And Searching
 
