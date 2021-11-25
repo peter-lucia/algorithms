@@ -70,7 +70,7 @@ Sorting And Searching
 
 Tree / Binary Search Tree
 
-1. Find Minimum Depth of a Binary Tree
+1. [Find Minimum Depth of a Binary Tree](tree.ipynb)
 2. Maximum Path Sum in a Binary Tree
 3. Check if a given array can represent Preorder Traversal of Binary Search Tree
 4. Check whether a binary tree is a full binary tree or not
