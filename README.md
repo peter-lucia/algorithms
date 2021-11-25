@@ -80,6 +80,7 @@ Tree / Binary Search Tree
 9. Check if a binary tree is subtree of another binary tree
 10. Reverse alternate levels of a perfect binary tree
 11. [Find and Remove Leaves of Binary Tree](tree.ipynb)
+12. [Find and Remove Leaves of Binary Tree (DFS)](graph.ipynb)
 
 Number Theory
 
