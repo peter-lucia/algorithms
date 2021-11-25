@@ -40,6 +40,7 @@ Linked List
 8. Detect And Remove Loop In A Linked List
 9. Merge Sort For Linked Lists
 10. Select A Random Node from A Singly Linked List
+11. [Reverse a linked list](linked_list.ipynb)
 
 Dynamic Programming
 
