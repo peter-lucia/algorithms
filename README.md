@@ -45,7 +45,7 @@ Linked List
 Dynamic Programming
 
 1. [Longest Common Subsequence](dynamic_programming.ipynb)
-2. Longest Increasing Subsequence
+2. [Longest Increasing Subsequence](dynamic_programming.ipynb)
 3. Edit Distance
 4. Minimum Partition
 5. Ways to Cover a Distance
