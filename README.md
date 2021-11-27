@@ -125,3 +125,8 @@ String / Array
 9. Smallest subarray with sum greater than a given value
 10. [Stock Buy Sell to Maximize Profit](sorting_and_searching.ipynb)
 11. [Asteroid Collision](string_array.ipynb)
+
+
+Misc
+
+1. [HashTable implementation using only arrays](misc.ipynb)
