@@ -127,6 +127,11 @@ String / Array
 11. [Asteroid Collision](string_array.ipynb)
 
 
-Misc
+HashTable
 
-1. [HashTable implementation using only arrays](misc.ipynb)
+1. [HashTable implementation using only arrays](hashmap.ipynb)
+
+Python
+
+1. [Defaultdict](python.ipynb)
+2. [Bisect](python.ipynb)
