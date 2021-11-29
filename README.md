@@ -124,7 +124,8 @@ String / Array
 8. Find the smallest positive integer value that cannot be represented as sum of any subset of a given array
 9. Smallest subarray with sum greater than a given value
 10. [Stock Buy Sell to Maximize Profit](sorting_and_searching.ipynb)
-11. [Asteroid Collision](string_array.ipynb)
+11. [735. Asteroid Collision](string_array.ipynb)
+12. [20. Valid Parentheses](string_array.ipynb)
 
 Python
 
