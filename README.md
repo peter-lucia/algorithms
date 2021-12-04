@@ -88,14 +88,16 @@ Number Theory
 
 1. Modular Exponentiation
 2. Modular multiplicative inverse
-3. Primality Test | Set 2 (Fermat Method)
+3. [Primality Test | Set 2 (Fermat Method)](number_theory.ipynb)
 4. Euler’s Totient Function
-5. Sieve of Eratosthenes
+5. [Sieve of Eratosthenes](number_theory.ipynb)
 6. Convex Hull
 7. Basic and Extended Euclidean algorithms
 8. Segmented Sieve
 9. Chinese remainder theorem
 10. Lucas Theorem
+11. [Check if a number is prime or not](number_theory.ipynb)
+12. [Number of primes less than n](number_theory.ipynb)
 
 BIT Manipulation
 
@@ -141,4 +143,4 @@ Technical Prep
 4. [Trees](tree.ipynb): Know about trees, basic tree construction, traversal and manipulation algorithms. Familiarize yourself with [binary trees](tree.ipynb), [n-ary trees](tree.ipynb), and [trie-trees](tree.ipynb). Be familiar with at least one type of balanced binary tree, whether it's a red/black tree, a splay tree or an AVL tree, and know how it's implemented. Understand tree traversal algorithms: [BFS Adj list](graph.ipynb), [BFS Binary Tree](tree.ipynb) and [DFS Adj list](graph.ipynb), and know the difference between [inorder, postorder and preorder](tree.ipynb).
 5. [Graphs](graph.ipynb): Graphs are really important at Google. There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list). Familiarize yourself with each representation and its pros + cons. You should know the basic graph traversal algorithms: breadth-first search and depth-first search. Know their computational complexity, their tradeoffs, and how to implement them in real code. If you get a chance, try to study up on fancier algorithms such as Dijkstra and A*.
 6. Other data structures: You should study up on as many other data structures and algorithms as possible. You should especially know about the most famous classes of NP-complete problems, such as traveling salesman and the knapsack problem, and be able to recognize them when an interviewer asks you them in disguise. Find out what NP-complete means.
-7. Mathematics: Some interviewers ask basic discrete math questions. This is more prevalent at Google than at other companies because we are surrounded by counting problems, [probability problems](probability.ipynb), and other Discrete Math 101 situations. Spend some time before the interview refreshing your memory on (or teaching yourself) the essentials of combinatorics and probability. You should be familiar with n-choose-k problems and their ilk - the more the better.
+7. Mathematics: Some interviewers ask basic discrete math questions. This is more prevalent at Google than at other companies because we are surrounded by counting problems, [probability problems](probability.ipynb), and other Discrete Math 101 situations. Spend some time before the interview refreshing your memory on (or teaching yourself) the essentials of [combinatorics](number_theory.ipynb) and probability. You should be familiar with [n-choose-k problems](number_theory.ipynb) and their ilk - the more the better.
