@@ -66,12 +66,12 @@ Source: [Geeks for Geeks](https://www.geeksforgeeks.org/top-10-algorithms-in-int
 3. Bubble Sort
 4. Insertion Sort
 5. [Merge Sort](sorting_and_searching.ipynb)
-6. Heap Sort (Binary Heap)
-7. Quick Sort
+6. [Heap Sort (Binary Heap)](sorting_and_searching.ipynb)
+7. [Quick Sort](sorting_and_searching.ipynb)
 8. Interpolation Search
 9. Find Kth Smallest/Largest Element In Unsorted Array
 10. Given a sorted array and a number x, find the pair in array whose sum is closest to x
-
+11. [Counting Sort Pseudocode](https://en.wikipedia.org/wiki/Counting_sort) Worst Time: O(n+k), Worst Space: O(k), k = max(nums) 
 ##### Tree / Binary Search Tree
 
 1. [Find Minimum Depth of a Binary Tree](tree.ipynb)
