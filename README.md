@@ -2,18 +2,21 @@
 
 Source: [Geeks for Geeks](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
 
-Topics:
+####Topics:
 
-1. Graph
-2. Linked List
-3. Dynamic Programming
-4. Sorting And Searching
-5. Tree / Binary Search Tree
-6. Number Theory
-7. BIT Manipulation
-8. String / Array / Stack
+1. [Graph](#graph)
+2. [Linked List](#linked-list)
+3. [Dynamic Programming](#dynamic-programming)
+4. [Sorting And Searching](#sorting-and-searching)
+5. [Tree / Binary Search Tree](#tree--binary-search-tree)
+6. [Number Theory](#number-theory)
+7. [BIT Manipulation](#bit-manipulation)
+8. [String / Array / Stack](#string--array)
+9. [Python](#python)
+10.[Technical Prep](#technical-prep)
+11.[NP-Complete](#np-complete)
 
-Graph
+##### Graph
 
 1. [Breadth First Search (BFS)](graph.ipynb)
 2. [Depth First Search (DFS)](graph.ipynb)
@@ -28,7 +31,7 @@ Graph
 
 
 
-Linked List
+##### Linked List
 
 1. Insertion of a node in Linked List (On the basis of some constraints)
 2. Delete a given node in Linked List (under given constraints)
@@ -42,7 +45,7 @@ Linked List
 10. Select A Random Node from A Singly Linked List
 11. [Reverse a linked list](linked_list.ipynb) 
 
-Dynamic Programming
+##### Dynamic Programming
 
 1. [Longest Common Subsequence](dynamic_programming.ipynb)
 2. [Longest Increasing Subsequence](dynamic_programming.ipynb)
@@ -56,7 +59,7 @@ Dynamic Programming
 10. Boolean Parenthesization Problem
 11. [Get nth number in the Fibonacci Sequence](dynamic_programming.ipynb)
 
-Sorting And Searching
+##### Sorting And Searching
 
 1. [Binary Search](sorting_and_searching.ipynb)
 2. Search an element in a sorted and rotated array
@@ -69,7 +72,7 @@ Sorting And Searching
 9. Find Kth Smallest/Largest Element In Unsorted Array
 10. Given a sorted array and a number x, find the pair in array whose sum is closest to x
 
-Tree / Binary Search Tree
+##### Tree / Binary Search Tree
 
 1. [Find Minimum Depth of a Binary Tree](tree.ipynb)
 2. Maximum Path Sum in a Binary Tree
@@ -84,7 +87,7 @@ Tree / Binary Search Tree
 11. [Find and Remove Leaves of Binary Tree](tree.ipynb)
 12. [Find and Remove Leaves of Binary Tree (DFS)](graph.ipynb)
 
-Number Theory
+##### Number Theory
 
 1. Modular Exponentiation
 2. Modular multiplicative inverse
@@ -99,7 +102,7 @@ Number Theory
 11. [Check if a number is prime or not](number_theory.ipynb)
 12. [Number of primes less than n](number_theory.ipynb)
 
-BIT Manipulation
+##### BIT Manipulation
 
 1. [Maximum Subarray XOR](bit_manipulation.ipynb)
 2. Magic Number
@@ -114,7 +117,7 @@ BIT Manipulation
 
 
 
-String / Array
+##### String / Array
 
 1. Reverse an array without affecting special characters
 2. All Possible Palindromic Partitions
@@ -130,18 +133,32 @@ String / Array
 12. [20. Valid Parentheses](string_array.ipynb)
 13. [189. Rotate Array](string_array.ipynb)
 
-Python
+##### Python
 
 1. [Defaultdict](python.ipynb)
 2. [Bisect](python.ipynb)
 
 
-Technical Prep
+##### Technical Prep
 
 1. Algorithm Complexity: You need to know Big-O. If you struggle with basic big-O complexity analysis, you will struggle in interviews. Run some practice problems, and review the [Big-O Cheat Sheet](https://www.bigocheatsheet.com)!
 2. [Sorting](sorting_and_searching.ipynb): Know how to sort. Don't do bubble-sort. You should know the details of at least one n*log(n) sorting algorithm, preferably two (say, [quicksort](sorting_and_searching.ipynb) and [merge sort](sorting_and_searching.ipynb)). Merge sort can be [highly useful in situations where quicksort is impractical](https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/), so take a look at it.
 3. [Hashtables](hashmap.ipynb): Arguably the single most important data structure known to mankind. You should know how they work. [Be able to implement one using only arrays in your favorite language](hashmap.ipynb), in about the space of one interview.
 4. [Trees](tree.ipynb): Know about trees, basic tree construction, traversal and manipulation algorithms. Familiarize yourself with [binary trees](tree.ipynb), [n-ary trees](tree.ipynb), and [trie-trees](tree.ipynb). Be familiar with at least one type of balanced binary tree, whether it's a red/black tree, a splay tree or an AVL tree, and know how it's implemented. Understand tree traversal algorithms: [BFS Adj list](graph.ipynb), [BFS Binary Tree](tree.ipynb) and [DFS Adj list](graph.ipynb), and know the difference between [inorder, postorder and preorder](tree.ipynb).
 5. [Graphs](graph.ipynb): Graphs are really important at Google. There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list). Familiarize yourself with each representation and its pros + cons. You should know the basic graph traversal algorithms: breadth-first search and depth-first search. Know their computational complexity, their tradeoffs, and how to implement them in real code. If you get a chance, try to study up on fancier algorithms such as Dijkstra and A*.
-6. Other data structures: You should study up on as many other data structures and algorithms as possible. You should especially know about the most famous classes of NP-complete problems, such as traveling salesman and the knapsack problem, and be able to recognize them when an interviewer asks you them in disguise. Find out what NP-complete means.
+6. Other data structures: You should study up on as many other data structures and algorithms as possible. You should especially know about the most famous classes of NP-complete problems, such as traveling salesman and the knapsack problem, and be able to recognize them when an interviewer asks you them in disguise. [Find out what NP-complete means.](#np-complete)
+  
 7. Mathematics: Some interviewers ask basic discrete math questions. This is more prevalent at Google than at other companies because we are surrounded by counting problems, [probability problems](probability.ipynb), and other Discrete Math 101 situations. Spend some time before the interview refreshing your memory on (or teaching yourself) the essentials of [combinatorics](number_theory.ipynb) and probability. You should be familiar with [n-choose-k problems](number_theory.ipynb) and their ilk - the more the better.
+
+#### NP-Complete
+
+NP-Complete means a problem is both NP-Hard and a solution is verifiable in polynomial time.
+
+Structure of NP-Complete proofs
+
+1. Demonstrate that we can validate a solution for B in polynomial time **(B is in NP)**
+2. Show the reduction from a known problem, $A \leq_p B$ (A is no harder than B and B is at least as hard as A). **(B is NP_Hard)**
+   1. Instance of A converted to instance of B in polynomial time
+   2. Solution of B converted to solution of A in polynomial time
+   3. If you have a solution for B you have a solution for A
+   4. If no solution for B no solution for A (or contra-positive – if you have a solution for A then you have a solution for B)
