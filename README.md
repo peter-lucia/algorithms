@@ -33,7 +33,7 @@ Source: [Geeks for Geeks](https://www.geeksforgeeks.org/top-10-algorithms-in-int
 
 ##### Linked List
 
-1. Insertion of a node in Linked List (On the basis of some constraints)
+1. [Insertion of a node in Linked List (On the basis of some constraints)](linked_list.ipynb)
 2. Delete a given node in Linked List (under given constraints)
 3. Compare two strings represented as linked lists
 4. Add Two Numbers Represented By Linked Lists
