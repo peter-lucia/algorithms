@@ -34,8 +34,8 @@ Source: [Geeks for Geeks](https://www.geeksforgeeks.org/top-10-algorithms-in-int
 ##### Linked List
 
 1. [Insertion of a node in Linked List (On the basis of some constraints)](linked_list.ipynb)
-2. Delete a given node in Linked List (under given constraints)
-3. Compare two strings represented as linked lists
+2. [Delete a given node in Linked List (under given constraints)](linked_list.ipynb)
+3. [Compare two strings represented as linked lists](linked_list.ipynb)
 4. Add Two Numbers Represented By Linked Lists
 5. Merge A Linked List Into Another Linked List At Alternate Positions
 6. Reverse A List In Groups Of Given Size
