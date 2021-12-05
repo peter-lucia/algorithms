@@ -13,8 +13,8 @@ Source: [Geeks for Geeks](https://www.geeksforgeeks.org/top-10-algorithms-in-int
 7. [BIT Manipulation](#bit-manipulation)
 8. [String / Array / Stack](#string--array)
 9. [Python](#python)
-10.[Technical Prep](#technical-prep)
-11.[NP-Complete](#np-complete)
+10. [Technical Prep](#technical-prep)
+11. [NP-Complete](#np-complete)
 
 ##### Graph
 
