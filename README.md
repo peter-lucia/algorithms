@@ -1,6 +1,6 @@
 # Algorithms
 
-Source: https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/
+Source: [Geeks for Geeks](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
 
 Topics:
 
@@ -101,7 +101,7 @@ Number Theory
 
 BIT Manipulation
 
-1. Maximum Subarray XOR
+1. [Maximum Subarray XOR](bit_manipulation.ipynb)
 2. Magic Number
 3. Sum of bit differences among all pairs
 4. Swap All Odds And Even Bits
