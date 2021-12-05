@@ -128,6 +128,7 @@ String / Array
 10. [Stock Buy Sell to Maximize Profit](sorting_and_searching.ipynb)
 11. [735. Asteroid Collision](string_array.ipynb)
 12. [20. Valid Parentheses](string_array.ipynb)
+13. [189. Rotate Array](string_array.ipynb)
 
 Python
 
