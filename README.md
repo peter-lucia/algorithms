@@ -101,6 +101,8 @@ Source: [Geeks for Geeks](https://www.geeksforgeeks.org/top-10-algorithms-in-int
 10. Lucas Theorem
 11. [Check if a number is prime or not](number_theory.ipynb)
 12. [Number of primes less than n](number_theory.ipynb)
+13. **TODO** Probability problems
+14. **TODO** N choose k problems
 
 ##### BIT Manipulation
 
@@ -158,8 +160,7 @@ Source: [Geeks for Geeks](https://www.geeksforgeeks.org/top-10-algorithms-in-int
     a splay tree or an AVL tree, and know how it's implemented. 
     Understand tree traversal algorithms: [BFS Adj list](graph.ipynb), [BFS Binary Tree](tree.ipynb) 
     and [DFS Adj list](graph.ipynb), and know the difference between [inorder, postorder and preorder](tree.ipynb).
-5. [Graphs](graph.ipynb): Graphs are really important at Google. 
-    There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list). 
+5. [Graphs](graph.ipynb): There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list). 
     [Familiarize yourself with each representation and its pros + cons. ](graph.ipynb)
     You should know the basic graph traversal algorithms: breadth-first search and depth-first search. 
     Know their computational complexity, their tradeoffs, and how to implement them in real code. 
@@ -170,8 +171,7 @@ Source: [Geeks for Geeks](https://www.geeksforgeeks.org/top-10-algorithms-in-int
     when an interviewer asks you them in disguise. [Find out what NP-complete means.](#np-complete)
   
 7. Mathematics: Some interviewers ask basic discrete math questions. 
-    This is more prevalent at Google than at other companies because we are surrounded by counting problems,
-    [probability problems](probability.ipynb), and other Discrete Math 101 situations. 
+    Be sure to cover [probability problems](probability.ipynb), and other Discrete Math 101 situations. 
     Spend some time before the interview refreshing your memory on (or teaching yourself) 
     the essentials of [combinatorics](number_theory.ipynb) and probability. 
     You should be familiar with [n-choose-k problems](number_theory.ipynb) and their ilk - the more the better.
