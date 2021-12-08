@@ -1,6 +1,4 @@
-# Algorithms
-
-Source: [Geeks for Geeks](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
+# Algorithms Review Guide
 
 #### Topics:
 
@@ -13,14 +11,14 @@ Source: [Geeks for Geeks](https://www.geeksforgeeks.org/top-10-algorithms-in-int
 7. [BIT Manipulation](#bit-manipulation)
 8. [String / Array / Stack](#string--array)
 9. [Python](#python)
-10. [Technical Prep](#technical-prep)
+10. [Preparation Guide](#preparation-guide)
 11. [NP-Complete](#np-complete)
 
 ##### Graph
 
 1. [Breadth First Search (BFS)](graph.ipynb)
 2. [Depth First Search (DFS)](graph.ipynb)
-3. Shortest Path from source to all vertices **Dijkstra**
+3. [Shortest Path from source to all vertices **Dijkstra**](graph.ipynb)
 4. Shortest Path from every vertex to every other vertex **Floyd Warshall**
 5. To detect cycle in a Graph **Union Find**
 6. Minimum Spanning tree **Prim**
@@ -72,6 +70,7 @@ Source: [Geeks for Geeks](https://www.geeksforgeeks.org/top-10-algorithms-in-int
 9. Find Kth Smallest/Largest Element In Unsorted Array
 10. Given a sorted array and a number x, find the pair in array whose sum is closest to x
 11. [Counting Sort Pseudocode](https://en.wikipedia.org/wiki/Counting_sort) Worst Time: O(n+k), Worst Space: O(k), k = max(nums) 
+
 ##### Tree / Binary Search Tree
 
 1. [Find Minimum Depth of a Binary Tree](tree.ipynb)
@@ -141,40 +140,31 @@ Source: [Geeks for Geeks](https://www.geeksforgeeks.org/top-10-algorithms-in-int
 2. [Bisect](python.ipynb)
 
 
-##### Technical Prep
+##### Notes
 
-1. Algorithm Complexity: You need to know Big-O. If you struggle with basic big-O complexity analysis, 
-    you will struggle in interviews. Run some practice problems, and review the [Big-O Cheat Sheet](https://www.bigocheatsheet.com)!
-2. [Sorting](sorting_and_searching.ipynb): Know how to sort. Don't do bubble-sort. 
-    You should know the details of at least one n*log(n) sorting algorithm, 
-    preferably two (say, [quicksort](sorting_and_searching.ipynb) and [merge sort](sorting_and_searching.ipynb)). 
+1. Algorithm Complexity: Review the [Big-O Cheat Sheet](https://www.bigocheatsheet.com)
+2. [Sorting](sorting_and_searching.ipynb): Know the details of two sorting algorithms such as [quicksort](sorting_and_searching.ipynb) and [merge sort](sorting_and_searching.ipynb)). 
     Merge sort can be
-    [highly useful in situations where quicksort is impractical](https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/), 
-    so take a look at it.
-3. [Hashtables](hashmap.ipynb): Arguably the single most important data structure known to mankind. 
-    You should know how they work. [Be able to implement one using only arrays in your favorite language](hashmap.ipynb), 
-    in about the space of one interview.
+    [highly useful in situations where quicksort is impractical](https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/)
+3. [Hashtables](hashmap.ipynb): [How to implement one using only arrays](hashmap.ipynb). 
 4. [Trees](tree.ipynb): Know about trees, basic tree construction, traversal and manipulation algorithms. 
     Familiarize yourself with [binary trees](tree.ipynb), [n-ary trees](tree.ipynb), and [trie-trees](tree.ipynb). 
     Be familiar with at least one type of balanced binary tree, whether it's a red/black tree, 
     a splay tree or an AVL tree, and know how it's implemented. 
-    Understand tree traversal algorithms: [BFS Adj list](graph.ipynb), [BFS Binary Tree](tree.ipynb) 
-    and [DFS Adj list](graph.ipynb), and know the difference between [inorder, postorder and preorder](tree.ipynb).
+    Tree traversal algorithms: [BFS Adj list](graph.ipynb), [BFS Binary Tree](tree.ipynb) 
+    and [DFS Adj list](graph.ipynb), and the difference between [inorder, postorder and preorder](tree.ipynb).
 5. [Graphs](graph.ipynb): There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list). 
-    [Familiarize yourself with each representation and its pros + cons. ](graph.ipynb)
-    You should know the basic graph traversal algorithms: breadth-first search and depth-first search. 
+    [Each representation and its pros + cons. ](graph.ipynb)
+    Know the basic graph traversal algorithms: breadth-first search and depth-first search. 
     Know their computational complexity, their tradeoffs, and how to implement them in real code. 
-    If you get a chance, try to study up on fancier algorithms such as Dijkstra and A*.
-6. Other data structures: You should study up on as many other data structures and algorithms as possible. 
-    You should especially know about the most famous classes of NP-complete problems, 
-    such as traveling salesman and the knapsack problem, and be able to recognize them 
-    when an interviewer asks you them in disguise. [Find out what NP-complete means.](#np-complete)
+    Be sure to review Dijkstra's algorithm and the A* algorithm.
+6. Other data structures: It is important to review as many other data structures and algorithms as possible. 
+    Review the most famous classes of NP-complete problems, 
+    such as traveling salesman and the knapsack problem, and be able to recognize them. [Know what NP-complete means.](#np-complete)
   
-7. Mathematics: Some interviewers ask basic discrete math questions. 
-    Be sure to cover [probability problems](probability.ipynb), and other Discrete Math 101 situations. 
-    Spend some time before the interview refreshing your memory on (or teaching yourself) 
-    the essentials of [combinatorics](number_theory.ipynb) and probability. 
-    You should be familiar with [n-choose-k problems](number_theory.ipynb) and their ilk - the more the better.
+7. Mathematics: Review [probability problems](probability.ipynb), and other Discrete Math 101 situations. 
+    Spend some time refreshing the essentials of [combinatorics](number_theory.ipynb) and probability. 
+    Be familiar with [n-choose-k problems](number_theory.ipynb) and their ilk - the more the better.
 
 #### NP-Complete
 
@@ -188,4 +178,18 @@ Structure of NP-Complete proofs
    2. Solution of B converted to solution of A in polynomial time
    3. If you have a solution for B you have a solution for A
    4. If no solution for B no solution for A (or contra-positive – if you have a solution for A then you have a solution for B)
-   
+
+##### References
+
+* [Big-O Cheatsheet](https://www.bigocheatsheet.com)
+* [Primes](http://mathandmultimedia.com/2012/06/02/determining-primes-through-square-root/)
+* [Primes](https://stackoverflow.com/questions/29595849/explain-a-code-to-check-primality-based-on-fermats-little-theorem)
+* [Baillie-PSW Primality Test](https://en.wikipedia.org/wiki/Baillie–PSW_primality_test)
+* [Fermat Pseudoprime](https://en.wikipedia.org/wiki/Fermat_pseudoprime)
+* [Primality Test](https://www.geeksforgeeks.org/primality-test-set-2-fermet-method/)
+* [Youtube: Khan Academy Combination formula](https://www.youtube.com/watch?v=p8vIcmr_Pqo)
+* [Dijkstra's Algorithm](https://www.analyticssteps.com/blogs/dijkstras-algorithm-shortest-path-algorithm)
+* [Graph data structure](https://www.section.io/engineering-education/graph-data-structure-python/)
+* [Adjacency List vs. Adjacency Matrix](https://www.geeksforgeeks.org/comparison-between-adjacency-list-and-adjacency-matrix-representation-of-graph/)
+* [Common algorithms](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
+* [Python heapq](https://docs.python.org/3/library/heapq.html)
