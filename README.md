@@ -56,6 +56,7 @@
 9. [0-1 Knapsack Problem](dynamic_programming.ipynb)
 10. Boolean Parenthesization Problem
 11. [Get nth number in the Fibonacci Sequence](dynamic_programming.ipynb)
+12. [Longest string chain](dynamic_programming.ipynb)
 
 ##### Sorting And Searching
 
@@ -118,7 +119,6 @@
 10. Find Next Sparse Number
 
 
-
 ##### String / Array
 
 1. Reverse an array without affecting special characters
@@ -134,6 +134,7 @@
 11. [735. Asteroid Collision](string_array.ipynb)
 12. [20. Valid Parentheses](string_array.ipynb)
 13. [189. Rotate Array](string_array.ipynb)
+14. [68. Text Justification](string_array.ipynb)
 
 ##### Python
 
