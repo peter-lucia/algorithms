@@ -85,6 +85,7 @@
 10. Reverse alternate levels of a perfect binary tree
 11. [Find and Remove Leaves of Binary Tree](tree.ipynb)
 12. [Find and Remove Leaves of Binary Tree (DFS)](graph.ipynb)
+13. [Find mode in binary search tree (BFS)](tree.ipynb)
 
 ##### Number Theory
 
