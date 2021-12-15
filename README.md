@@ -71,6 +71,7 @@
 9. Find Kth Smallest/Largest Element In Unsorted Array
 10. Given a sorted array and a number x, find the pair in array whose sum is closest to x
 11. [Counting Sort Pseudocode](https://en.wikipedia.org/wiki/Counting_sort) Worst Time: O(n+k), Worst Space: O(k), k = max(nums) 
+12. [Stock Buy Sell to Maximize Profit](sorting_and_searching.ipynb)
 
 ##### Tree / Binary Search Tree
 
@@ -121,8 +122,8 @@
 
 ##### String / Array
 
-1. Reverse an array without affecting special characters
-2. All Possible Palindromic Partitions
+1. [Reverse an array without affecting special characters](string_array.ipynb)
+2. [All Possible Palindromic Partitions](string_array.ipynb)
 3. Count triplets with sum smaller than a given value
 4. Convert array into Zig-Zag fashion
 5. Generate all possible sorted arrays from alternate elements of two given sorted arrays
@@ -130,7 +131,6 @@
 7. Length of the largest subarray with contiguous elements
 8. Find the smallest positive integer value that cannot be represented as sum of any subset of a given array
 9. Smallest subarray with sum greater than a given value
-10. [Stock Buy Sell to Maximize Profit](sorting_and_searching.ipynb)
 11. [735. Asteroid Collision](string_array.ipynb)
 12. [20. Valid Parentheses](string_array.ipynb)
 13. [189. Rotate Array](string_array.ipynb)
