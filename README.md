@@ -131,10 +131,11 @@
 7. Length of the largest subarray with contiguous elements
 8. Find the smallest positive integer value that cannot be represented as sum of any subset of a given array
 9. Smallest subarray with sum greater than a given value
-11. [735. Asteroid Collision](string_array.ipynb)
-12. [20. Valid Parentheses](string_array.ipynb)
-13. [189. Rotate Array](string_array.ipynb)
-14. [68. Text Justification](string_array.ipynb)
+10. [735. Asteroid Collision](string_array.ipynb)
+11. [20. Valid Parentheses](string_array.ipynb)
+12. [189. Rotate Array](string_array.ipynb)
+13. [68. Text Justification](string_array.ipynb)
+14. [2007. Find Original Array from doubled array](string_array.ipynb)
 
 ##### Python
 
