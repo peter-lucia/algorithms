@@ -15,7 +15,6 @@
 11. [NP-Complete](#np-complete)
 
 ##### Graph
-
 1. [Breadth First Search (BFS)](graph.ipynb)
 2. [Depth First Search (DFS)](graph.ipynb)
 3. [Shortest Path from source to all vertices **Dijkstra**](graph.ipynb)
@@ -26,7 +25,36 @@
 8. Topological Sort
 9. Boggle (Find all possible words in a board of characters)
 10. Bridges in a Graph
+11. There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list). 
+    [Each representation and its pros + cons. ](graph.ipynb)
 
+##### Trees / Binary Search Tree
+
+1. [Basic tree construction, traversal and manipulation algorithms](tree.ipynb)
+2. [Binary Trees](tree.ipynb)
+3. [N-ary trees](tree.ipynb)
+4. [Trie-trees](tree.ipynb)
+5. [BFS Binary Tree](tree.ipynb)
+6. Tree traversal algorithms: [BFS Adj list](graph.ipynb) and [DFS Adj list](graph.ipynb)
+7. The difference between [inorder, postorder and preorder](tree.ipynb).
+8. [Find Minimum Depth of a Binary Tree](tree.ipynb)
+9. Maximum Path Sum in a Binary Tree
+10. Check if a given array can represent Preorder Traversal of Binary Search Tree
+11. Check whether a binary tree is a full binary tree or not
+12. [Bottom View Binary Tree](tree.ipynb)
+13. [Print Nodes in Top View of Binary Tree](tree.ipynb)
+14. Remove nodes on root to leaf paths of length < K
+15. Lowest Common Ancestor in a Binary Search Tree
+16. Check if a binary tree is subtree of another binary tree
+17. Reverse alternate levels of a perfect binary tree
+18. [Find and Remove Leaves of Binary Tree](tree.ipynb)
+19. [Find and Remove Leaves of Binary Tree (DFS)](graph.ipynb)
+20. [Find mode in binary search tree (BFS)](tree.ipynb)
+
+##### HashTables
+1. [How to implement one using only arrays](hashmap.ipynb).
+2. [432. Reconstruct original digits from english](hashmap.ipynb)
+3. [811. Subdomain Visit count](hashmap.ipynb)
 
 
 ##### Linked List
@@ -64,7 +92,7 @@
 2. Search an element in a sorted and rotated array
 3. Bubble Sort
 4. Insertion Sort
-5. [Merge Sort](sorting_and_searching.ipynb)
+5. [Merge Sort](sorting_and_searching.ipynb) can be [highly useful in situations where quicksort is impractical](https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/)
 6. [Heap Sort (Binary Heap)](sorting_and_searching.ipynb)
 7. [Quick Sort](sorting_and_searching.ipynb)
 8. Interpolation Search
@@ -73,21 +101,6 @@
 11. [Counting Sort Pseudocode](https://en.wikipedia.org/wiki/Counting_sort) Worst Time: O(n+k), Worst Space: O(k), k = max(nums) 
 12. [Stock Buy Sell to Maximize Profit](sorting_and_searching.ipynb)
 
-##### Tree / Binary Search Tree
-
-1. [Find Minimum Depth of a Binary Tree](tree.ipynb)
-2. Maximum Path Sum in a Binary Tree
-3. Check if a given array can represent Preorder Traversal of Binary Search Tree
-4. Check whether a binary tree is a full binary tree or not
-5. [Bottom View Binary Tree](tree.ipynb)
-6. [Print Nodes in Top View of Binary Tree](tree.ipynb)
-7. Remove nodes on root to leaf paths of length < K
-8. Lowest Common Ancestor in a Binary Search Tree
-9. Check if a binary tree is subtree of another binary tree
-10. Reverse alternate levels of a perfect binary tree
-11. [Find and Remove Leaves of Binary Tree](tree.ipynb)
-12. [Find and Remove Leaves of Binary Tree (DFS)](graph.ipynb)
-13. [Find mode in binary search tree (BFS)](tree.ipynb)
 
 ##### Number Theory
 
@@ -103,8 +116,11 @@
 10. Lucas Theorem
 11. [Check if a number is prime or not](number_theory.ipynb)
 12. [Number of primes less than n](number_theory.ipynb)
-13. **TODO** Probability problems
-14. **TODO** N choose k problems
+
+##### Math: Combinatorics and Probability
+15. [Probability problems](probability.ipynb), and other Discrete Math 101 situations. 
+16. The essentials of [combinatorics](number_theory.ipynb) and probability. 
+17. [N-choose-K problems](number_theory.ipynb)
 
 ##### BIT Manipulation
 
@@ -137,37 +153,10 @@
 13. [68. Text Justification](string_array.ipynb)
 14. [2007. Find Original Array from doubled array](string_array.ipynb)
 
-##### Python
+##### Python Language
 
 1. [Defaultdict](python.ipynb)
 2. [Bisect](python.ipynb)
-
-
-##### Notes
-
-1. Algorithm Complexity: Review the [Big-O Cheat Sheet](https://www.bigocheatsheet.com)
-2. [Sorting](sorting_and_searching.ipynb): Know the details of two sorting algorithms such as [quicksort](sorting_and_searching.ipynb) and [merge sort](sorting_and_searching.ipynb)). 
-    Merge sort can be
-    [highly useful in situations where quicksort is impractical](https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/)
-3. [Hashtables](hashmap.ipynb): [How to implement one using only arrays](hashmap.ipynb). 
-4. [Trees](tree.ipynb): Know about trees, basic tree construction, traversal and manipulation algorithms. 
-    Familiarize yourself with [binary trees](tree.ipynb), [n-ary trees](tree.ipynb), and [trie-trees](tree.ipynb). 
-    Be familiar with at least one type of balanced binary tree, whether it's a red/black tree, 
-    a splay tree or an AVL tree, and know how it's implemented. 
-    Tree traversal algorithms: [BFS Adj list](graph.ipynb), [BFS Binary Tree](tree.ipynb) 
-    and [DFS Adj list](graph.ipynb), and the difference between [inorder, postorder and preorder](tree.ipynb).
-5. [Graphs](graph.ipynb): There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list). 
-    [Each representation and its pros + cons. ](graph.ipynb)
-    Know the basic graph traversal algorithms: breadth-first search and depth-first search. 
-    Know their computational complexity, their tradeoffs, and how to implement them in real code. 
-    Be sure to review Dijkstra's algorithm and the A* algorithm.
-6. Other data structures: It is important to review as many other data structures and algorithms as possible. 
-    Review the most famous classes of NP-complete problems, 
-    such as traveling salesman and the knapsack problem, and be able to recognize them. [Know what NP-complete means.](#np-complete)
-  
-7. Mathematics: Review [probability problems](probability.ipynb), and other Discrete Math 101 situations. 
-    Spend some time refreshing the essentials of [combinatorics](number_theory.ipynb) and probability. 
-    Be familiar with [n-choose-k problems](number_theory.ipynb) and their ilk - the more the better.
 
 #### NP-Complete
 
@@ -182,13 +171,20 @@ Structure of NP-Complete proofs
    3. If you have a solution for B you have a solution for A
    4. If no solution for B no solution for A (or contra-positive – if you have a solution for A then you have a solution for B)
 
+##### TODO
+- [ ] Implement balanced binary trees: red/black tree, a splay tree, and AVL trees 
+- [ ] Dijkstra's algorithm and the A* algorithm.
+- [ ] BFS vs DFS tradeoffs
+- [ ] The traveling salesman and the knapsack problem
+
+
 ##### References
 
 * [Big-O Cheatsheet](https://www.bigocheatsheet.com)
-* [Primes](http://mathandmultimedia.com/2012/06/02/determining-primes-through-square-root/)
-* [Primes](https://stackoverflow.com/questions/29595849/explain-a-code-to-check-primality-based-on-fermats-little-theorem)
+* [Determine Primes via Square Root](http://mathandmultimedia.com/2012/06/02/determining-primes-through-square-root/)
+* [Primes Stackoverflow](https://stackoverflow.com/questions/29595849/explain-a-code-to-check-primality-based-on-fermats-little-theorem)
 * [Baillie-PSW Primality Test](https://en.wikipedia.org/wiki/Baillie–PSW_primality_test)
-* [Fermat Pseudoprime](https://en.wikipedia.org/wiki/Fermat_pseudoprime)
+* [Wiki - Fermat Pseudoprime](https://en.wikipedia.org/wiki/Fermat_pseudoprime)
 * [Primality Test](https://www.geeksforgeeks.org/primality-test-set-2-fermet-method/)
 * [Youtube: Khan Academy Combination formula](https://www.youtube.com/watch?v=p8vIcmr_Pqo)
 * [Dijkstra's Algorithm](https://www.analyticssteps.com/blogs/dijkstras-algorithm-shortest-path-algorithm)
