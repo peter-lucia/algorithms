@@ -27,6 +27,7 @@
 10. Bridges in a Graph
 11. There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list). 
     [Each representation and its pros + cons. ](graph.ipynb)
+12. [1293. Shortest Path in a Grid with Obstacles Elimination](graph.ipynb)
 
 ##### Trees / Binary Search Tree
 
@@ -85,6 +86,7 @@
 10. Boolean Parenthesization Problem
 11. [Get nth number in the Fibonacci Sequence](dynamic_programming.ipynb)
 12. [Longest string chain](dynamic_programming.ipynb)
+13. [792. Number of matching subsequences](dynamic_programming.ipynb)
 
 ##### Sorting And Searching
 
