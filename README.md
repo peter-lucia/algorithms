@@ -136,6 +136,7 @@
 8. Rotate bits of a number
 9. Count number of bits to be flipped to convert A to B
 10. Find Next Sparse Number
+11. [476. Number Complement](bit_manipulation.ipynb)
 
 
 ##### String / Array
