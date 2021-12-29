@@ -158,6 +158,7 @@
 13. [68. Text Justification](string_array.ipynb)
 14. [2007. Find Original Array from doubled array](string_array.ipynb)
 15. [822. Find And Replace String](string_array.ipynb)
+16. [384. Shuffle an Array](string_array.ipynb)
 
 ##### Python Language
 
