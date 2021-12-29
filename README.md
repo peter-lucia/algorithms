@@ -51,6 +51,7 @@
 18. [Find and Remove Leaves of Binary Tree](tree.ipynb)
 19. [Find and Remove Leaves of Binary Tree (DFS)](graph.ipynb)
 20. [Find mode in binary search tree (BFS)](tree.ipynb)
+21. [ 116. Populating Next Right Pointers in Each Node in a Perfect Binary Tree](tree.ipynb)
 
 ##### HashTables
 1. [How to implement one using only arrays](hashmap.ipynb).
