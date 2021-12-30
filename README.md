@@ -120,6 +120,7 @@
 10. Lucas Theorem
 11. [Check if a number is prime or not](number_theory.ipynb)
 12. [Number of primes less than n](number_theory.ipynb)
+13. [1015. Smallest Integer Divisible by K](number_theory.ipynb)
 
 ##### Math: Combinatorics and Probability
 15. [Probability problems](probability.ipynb), and other Discrete Math 101 situations. 
