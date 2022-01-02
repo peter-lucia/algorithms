@@ -23,7 +23,7 @@
 6. [To detect cycle in a Graph **Union Find**](graph.ipynb)
 7. [Minimum Spanning tree **Prim**](graph.ipynb)
 8. [Minimum Spanning tree **Kruskal**](graph.ipynb)
-9. Topological Sort
+9. [Topological Sort](graph.ipynb)
 10. Boggle (Find all possible words in a board of characters)
 11. Bridges in a Graph
 12. There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list). 
