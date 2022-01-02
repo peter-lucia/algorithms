@@ -18,7 +18,7 @@
 1. [Breadth First Search (BFS)](graph.ipynb)
 2. [Depth First Search (DFS)](graph.ipynb)
 3. [Shortest Path from source to all vertices **Dijkstra**](graph.ipynb)
-4. Shortest Path from every vertex to every other vertex **Floyd Warshall**
+4. [Shortest Path from every vertex to every other vertex **Floyd Warshall**](graph.ipynb)
 5. [To detect cycle in a Graph **DFS**](graph.ipynb)
 6. [To detect cycle in a Graph **Union Find**](graph.ipynb)
 7. [Minimum Spanning tree **Prim**](graph.ipynb)
