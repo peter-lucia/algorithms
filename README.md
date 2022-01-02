@@ -19,15 +19,16 @@
 2. [Depth First Search (DFS)](graph.ipynb)
 3. [Shortest Path from source to all vertices **Dijkstra**](graph.ipynb)
 4. Shortest Path from every vertex to every other vertex **Floyd Warshall**
-5. To detect cycle in a Graph **Union Find**
-6. [Minimum Spanning tree **Prim**](graph.ipynb)
-7. [Minimum Spanning tree **Kruskal**](graph.ipynb)
-8. Topological Sort
-9. Boggle (Find all possible words in a board of characters)
-10. Bridges in a Graph
-11. There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list). 
+5. [To detect cycle in a Graph **DFS**](graph.ipynb)
+6. [To detect cycle in a Graph **Union Find**](graph.ipynb)
+7. [Minimum Spanning tree **Prim**](graph.ipynb)
+8. [Minimum Spanning tree **Kruskal**](graph.ipynb)
+9. Topological Sort
+10. Boggle (Find all possible words in a board of characters)
+11. Bridges in a Graph
+12. There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list). 
     [Each representation and its pros + cons. ](graph.ipynb)
-12. [1293. Shortest Path in a Grid with Obstacles Elimination](graph.ipynb)
+13. [1293. Shortest Path in a Grid with Obstacles Elimination](graph.ipynb)
 
 ##### Trees / Binary Search Tree
 
