@@ -24,7 +24,7 @@
 7. [Minimum Spanning tree **Prim**](graph.ipynb)
 8. [Minimum Spanning tree **Kruskal**](graph.ipynb)
 9. [Topological Sort](graph.ipynb)
-10. Boggle (Find all possible words in a board of characters)
+10. [Boggle (Find all possible words in a board of characters)](graph.ipynb)
 11. [Bridges in a Graph](graph.ipynb)
 12. There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list). 
     [Each representation and its pros + cons. ](graph.ipynb)
