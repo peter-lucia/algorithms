@@ -40,7 +40,7 @@
 6. Tree traversal algorithms: [BFS Adj list](graph.ipynb) and [DFS Adj list](graph.ipynb)
 7. The difference between [inorder, postorder and preorder](tree.ipynb).
 8. [Find Minimum Depth of a Binary Tree](tree.ipynb)
-9. Maximum Path Sum in a Binary Tree
+9. [Maximum Path Sum in a Binary Tree](tree.ipynb)
 10. Check if a given array can represent Preorder Traversal of Binary Search Tree
 11. Check whether a binary tree is a full binary tree or not
 12. [Bottom View Binary Tree](tree.ipynb)
@@ -167,6 +167,8 @@
 
 1. [Defaultdict](python.ipynb)
 2. [Bisect](python.ipynb)
+3. [Class variables vs. instance variables](python.ipynb)
+4. [Static variables in functions](python.ipynb)
 
 #### NP-Complete
 
