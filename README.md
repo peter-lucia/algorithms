@@ -41,7 +41,7 @@
 7. The difference between [inorder, postorder and preorder](tree.ipynb).
 8. [Find Minimum Depth of a Binary Tree](tree.ipynb)
 9. [Maximum Path Sum in a Binary Tree](tree.ipynb)
-10. Check if a given array can represent Preorder Traversal of Binary Search Tree
+10. [Check if a given array can represent Preorder Traversal of Binary Search Tree](tree.ipynb)
 11. Check whether a binary tree is a full binary tree or not
 12. [Bottom View Binary Tree](tree.ipynb)
 13. [Print Nodes in Top View of Binary Tree](tree.ipynb)
@@ -162,6 +162,7 @@
 14. [2007. Find Original Array from doubled array](string_array.ipynb)
 15. [822. Find And Replace String](string_array.ipynb)
 16. [384. Shuffle an Array](string_array.ipynb)
+17. [53. Maximum subarray](string_array.ipynb)
 
 ##### Python Language
 
