@@ -72,7 +72,7 @@
 7. Union And Intersection Of 2 Linked Lists
 8. Detect And Remove Loop In A Linked List
 9. Merge Sort For Linked Lists
-10. Select A Random Node from A Singly Linked List
+10. [Select A Random Node from A Singly Linked List](linked_list.ipynb)
 11. [Reverse a linked list](linked_list.ipynb) 
 12. [2095. Delete the Middle Node of a Linked List](linked_list.ipynb)
 
@@ -128,6 +128,9 @@
 15. [Probability problems](probability.ipynb), and other Discrete Math 101 situations. 
 16. The essentials of [combinatorics](number_theory.ipynb) and probability. 
 17. [N-choose-K problems](number_theory.ipynb)
+
+#### Geometry
+1. [Is Square Valid](geometry.ipynb)
 
 ##### BIT Manipulation
 
