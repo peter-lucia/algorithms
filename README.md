@@ -42,7 +42,7 @@
 8. [Find Minimum Depth of a Binary Tree](tree.ipynb)
 9. [Maximum Path Sum in a Binary Tree](tree.ipynb)
 10. [Check if a given array can represent Preorder Traversal of Binary Search Tree](tree.ipynb)
-11. Check whether a binary tree is a full binary tree or not
+11. [Check whether a binary tree is a full binary tree or not](tree.ipynb)
 12. [Bottom View Binary Tree](tree.ipynb)
 13. [Print Nodes in Top View of Binary Tree](tree.ipynb)
 14. Remove nodes on root to leaf paths of length < K
