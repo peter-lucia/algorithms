@@ -67,7 +67,7 @@
 2. [Delete a given node in Linked List (under given constraints)](linked_list.ipynb)
 3. [Compare two strings represented as linked lists](linked_list.ipynb)
 4. [Add Two Numbers Represented By Linked Lists](linked_list.ipynb)
-5. Merge A Linked List Into Another Linked List At Alternate Positions
+5. [Merge A Linked List Into Another Linked List At Alternate Positions](linked_list.ipynb)
 6. Reverse A List In Groups Of Given Size
 7. Union And Intersection Of 2 Linked Lists
 8. Detect And Remove Loop In A Linked List
@@ -75,6 +75,7 @@
 10. [Select A Random Node from A Singly Linked List](linked_list.ipynb)
 11. [Reverse a linked list](linked_list.ipynb) 
 12. [2095. Delete the Middle Node of a Linked List](linked_list.ipynb)
+13. [21. Merge Two Sorted Lists](linked_list.ipynb)
 
 ##### Dynamic Programming
 
