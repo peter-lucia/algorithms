@@ -47,7 +47,7 @@
 13. [Print Nodes in Top View of Binary Tree](tree.ipynb)
 14. Remove nodes on root to leaf paths of length < K
 15. Lowest Common Ancestor in a Binary Search Tree
-16. Check if a binary tree is subtree of another binary tree
+16. [Check if a binary tree is subtree of another binary tree](tree.ipynb)
 17. Reverse alternate levels of a perfect binary tree
 18. [Find and Remove Leaves of Binary Tree](tree.ipynb)
 19. [Find and Remove Leaves of Binary Tree (DFS)](graph.ipynb)
@@ -166,6 +166,7 @@
 15. [822. Find And Replace String](string_array.ipynb)
 16. [384. Shuffle an Array](string_array.ipynb)
 17. [53. Maximum subarray](string_array.ipynb)
+18. [28. Implmeent strStr() / Rabin-Karp find needle in haystack](string_array.ipynb)
 
 ##### Python Language
 
