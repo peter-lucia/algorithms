@@ -45,7 +45,7 @@
 11. [Check whether a binary tree is a full binary tree or not](tree.ipynb)
 12. [Bottom View Binary Tree](tree.ipynb)
 13. [Print Nodes in Top View of Binary Tree](tree.ipynb)
-14. Remove nodes on root to leaf paths of length < K
+14. [Remove nodes on root to leaf paths of length < K](tree.ipynb)
 15. Lowest Common Ancestor in a Binary Search Tree
 16. [Check if a binary tree is subtree of another binary tree](tree.ipynb)
 17. Reverse alternate levels of a perfect binary tree
