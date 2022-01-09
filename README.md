@@ -46,7 +46,7 @@
 12. [Bottom View Binary Tree](tree.ipynb)
 13. [Print Nodes in Top View of Binary Tree](tree.ipynb)
 14. [Remove nodes on root to leaf paths of length < K](tree.ipynb)
-15. Lowest Common Ancestor in a Binary Search Tree
+15. [Lowest Common Ancestor in a Binary Search Tree](tree.ipynb)
 16. [Check if a binary tree is subtree of another binary tree](tree.ipynb)
 17. Reverse alternate levels of a perfect binary tree
 18. [Find and Remove Leaves of Binary Tree](tree.ipynb)
@@ -60,22 +60,20 @@
 2. [432. Reconstruct original digits from english](hashmap.ipynb)
 3. [811. Subdomain Visit count](hashmap.ipynb)
 
+##### Sorting And Searching
 
-##### Linked List
-
-1. [Insertion of a node in Linked List (On the basis of some constraints)](linked_list.ipynb)
-2. [Delete a given node in Linked List (under given constraints)](linked_list.ipynb)
-3. [Compare two strings represented as linked lists](linked_list.ipynb)
-4. [Add Two Numbers Represented By Linked Lists](linked_list.ipynb)
-5. [Merge A Linked List Into Another Linked List At Alternate Positions](linked_list.ipynb)
-6. Reverse A List In Groups Of Given Size
-7. Union And Intersection Of 2 Linked Lists
-8. Detect And Remove Loop In A Linked List
-9. Merge Sort For Linked Lists
-10. [Select A Random Node from A Singly Linked List](linked_list.ipynb)
-11. [Reverse a linked list](linked_list.ipynb) 
-12. [2095. Delete the Middle Node of a Linked List](linked_list.ipynb)
-13. [21. Merge Two Sorted Lists](linked_list.ipynb)
+1. [Binary Search](sorting_and_searching.ipynb)
+2. Search an element in a sorted and rotated array
+3. Bubble Sort
+4. Insertion Sort
+5. [Merge Sort](sorting_and_searching.ipynb) can be [highly useful in situations where quicksort is impractical](https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/)
+6. [Heap Sort (Binary Heap)](sorting_and_searching.ipynb)
+7. [Quick Sort](sorting_and_searching.ipynb)
+8. Interpolation Search
+9. Find Kth Smallest/Largest Element In Unsorted Array
+10. Given a sorted array and a number x, find the pair in array whose sum is closest to x
+11. [Counting Sort Pseudocode](https://en.wikipedia.org/wiki/Counting_sort) Worst Time: O(n+k), Worst Space: O(k), k = max(nums)
+12. [Stock Buy Sell to Maximize Profit](sorting_and_searching.ipynb)
 
 ##### Dynamic Programming
 
@@ -92,21 +90,6 @@
 11. [Get nth number in the Fibonacci Sequence](dynamic_programming.ipynb)
 12. [Longest string chain](dynamic_programming.ipynb)
 13. [792. Number of matching subsequences](dynamic_programming.ipynb)
-
-##### Sorting And Searching
-
-1. [Binary Search](sorting_and_searching.ipynb)
-2. Search an element in a sorted and rotated array
-3. Bubble Sort
-4. Insertion Sort
-5. [Merge Sort](sorting_and_searching.ipynb) can be [highly useful in situations where quicksort is impractical](https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/)
-6. [Heap Sort (Binary Heap)](sorting_and_searching.ipynb)
-7. [Quick Sort](sorting_and_searching.ipynb)
-8. Interpolation Search
-9. Find Kth Smallest/Largest Element In Unsorted Array
-10. Given a sorted array and a number x, find the pair in array whose sum is closest to x
-11. [Counting Sort Pseudocode](https://en.wikipedia.org/wiki/Counting_sort) Worst Time: O(n+k), Worst Space: O(k), k = max(nums) 
-12. [Stock Buy Sell to Maximize Profit](sorting_and_searching.ipynb)
 
 
 ##### Number Theory
@@ -130,23 +113,6 @@
 16. The essentials of [combinatorics](number_theory.ipynb) and probability. 
 17. [N-choose-K problems](number_theory.ipynb)
 
-#### Geometry
-1. [Is Square Valid](geometry.ipynb)
-
-##### BIT Manipulation
-
-1. [Maximum Subarray XOR](bit_manipulation.ipynb)
-2. Magic Number
-3. Sum of bit differences among all pairs
-4. Swap All Odds And Even Bits
-5. Find the element that appears once
-6. [Binary representation of a given number](bit_manipulation.ipynb)
-7. Count total set bits in all numbers from 1 to n
-8. Rotate bits of a number
-9. Count number of bits to be flipped to convert A to B
-10. Find Next Sparse Number
-11. [476. Number Complement](bit_manipulation.ipynb)
-
 
 ##### String / Array
 
@@ -169,12 +135,45 @@
 17. [53. Maximum subarray](string_array.ipynb)
 18. [28. Implmeent strStr() / Rabin-Karp find needle in haystack](string_array.ipynb)
 
+##### Linked List
+
+1. [Insertion of a node in Linked List (On the basis of some constraints)](linked_list.ipynb)
+2. [Delete a given node in Linked List (under given constraints)](linked_list.ipynb)
+3. [Compare two strings represented as linked lists](linked_list.ipynb)
+4. [Add Two Numbers Represented By Linked Lists](linked_list.ipynb)
+5. [Merge A Linked List Into Another Linked List At Alternate Positions](linked_list.ipynb)
+6. Reverse A List In Groups Of Given Size
+7. Union And Intersection Of 2 Linked Lists
+8. Detect And Remove Loop In A Linked List
+9. Merge Sort For Linked Lists
+10. [Select A Random Node from A Singly Linked List](linked_list.ipynb)
+11. [Reverse a linked list](linked_list.ipynb)
+12. [2095. Delete the Middle Node of a Linked List](linked_list.ipynb)
+13. [21. Merge Two Sorted Lists](linked_list.ipynb)
+
+##### BIT Manipulation
+
+1. [Maximum Subarray XOR](bit_manipulation.ipynb)
+2. Magic Number
+3. Sum of bit differences among all pairs
+4. Swap All Odds And Even Bits
+5. Find the element that appears once
+6. [Binary representation of a given number](bit_manipulation.ipynb)
+7. Count total set bits in all numbers from 1 to n
+8. Rotate bits of a number
+9. Count number of bits to be flipped to convert A to B
+10. Find Next Sparse Number
+11. [476. Number Complement](bit_manipulation.ipynb)
+
 ##### Python Language
 
 1. [Defaultdict](python.ipynb)
 2. [Bisect](python.ipynb)
 3. [Class variables vs. instance variables](python.ipynb)
 4. [Static variables in functions](python.ipynb)
+
+#### Geometry
+1. [Is Square Valid](geometry.ipynb)
 
 #### NP-Complete
 
