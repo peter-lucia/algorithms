@@ -59,6 +59,8 @@
 1. [How to implement one using only arrays](hashmap.ipynb).
 2. [432. Reconstruct original digits from english](hashmap.ipynb)
 3. [811. Subdomain Visit count](hashmap.ipynb)
+4. [49. Group Anagrams](hashmap.ipynb)
+5. [249. Group Shifted Strings](hashmap.ipynb)
 
 ##### Sorting And Searching
 
