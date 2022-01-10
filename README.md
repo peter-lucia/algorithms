@@ -1,18 +1,21 @@
 # Algorithms Review Guide
 
-#### Topics:
+#### Table of Contents:
 
 1. [Graph](#graph)
-2. [Linked List](#linked-list)
-3. [Dynamic Programming](#dynamic-programming)
+2. [Tree / Binary Search Tree](#trees--binary-search-tree)
+3. [HashTables](#hashtables)
 4. [Sorting And Searching](#sorting-and-searching)
-5. [Tree / Binary Search Tree](#tree--binary-search-tree)
+5. [Dynamic Programming](#dynamic-programming)
 6. [Number Theory](#number-theory)
-7. [BIT Manipulation](#bit-manipulation)
+7. [Math: Combinatorics / Probability)](#math-combinatorics-and-probability)
 8. [String / Array / Stack](#string--array)
-9. [Python](#python)
-10. [Preparation Guide](#preparation-guide)
-11. [NP-Complete](#np-complete)
+9. [Linked List](#linked-list)
+10. [BIT Manipulation](#bit-manipulation)
+11. [Python](#python-language)
+12. [NP-Complete](#np-complete)
+13. [TODO](#todo)
+14. [References](#references)
 
 ##### Graph
 1. [Breadth First Search (BFS)](graph.ipynb)
