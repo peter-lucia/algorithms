@@ -51,7 +51,7 @@
 14. [Remove nodes on root to leaf paths of length < K](tree.ipynb)
 15. [Lowest Common Ancestor in a Binary Search Tree](tree.ipynb)
 16. [Check if a binary tree is subtree of another binary tree](tree.ipynb)
-17. Reverse alternate levels of a perfect binary tree
+17. [Reverse alternate levels of a perfect binary tree](tree.ipynb)
 18. [Find and Remove Leaves of Binary Tree](tree.ipynb)
 19. [Find and Remove Leaves of Binary Tree (DFS)](graph.ipynb)
 20. [Find mode in binary search tree (BFS)](tree.ipynb)
