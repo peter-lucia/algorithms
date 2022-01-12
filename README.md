@@ -14,8 +14,7 @@
 10. [BIT Manipulation](#bit-manipulation)
 11. [Python](#python-language)
 12. [NP-Complete](#np-complete)
-13. [TODO](#todo)
-14. [References](#references)
+13. [References](#references)
 
 ##### Graph
 1. [Breadth First Search (BFS)](graph.ipynb)
@@ -40,23 +39,24 @@
 3. [N-ary trees](tree.ipynb)
 4. [Trie-trees](tree.ipynb)
 5. [BFS Binary Tree](tree.ipynb)
-6. Tree traversal algorithms: [BFS Adj list](graph.ipynb) and [DFS Adj list](graph.ipynb)
-7. The difference between [inorder, postorder and preorder](tree.ipynb).
-8. [Find Minimum Depth of a Binary Tree](tree.ipynb)
-9. [Maximum Path Sum in a Binary Tree](tree.ipynb)
-10. [Check if a given array can represent Preorder Traversal of Binary Search Tree](tree.ipynb)
-11. [Check whether a binary tree is a full binary tree or not](tree.ipynb)
-12. [Bottom View Binary Tree](tree.ipynb)
-13. [Print Nodes in Top View of Binary Tree](tree.ipynb)
-14. [Remove nodes on root to leaf paths of length < K](tree.ipynb)
-15. [Lowest Common Ancestor in a Binary Search Tree](tree.ipynb)
-16. [Check if a binary tree is subtree of another binary tree](tree.ipynb)
-17. [Reverse alternate levels of a perfect binary tree](tree.ipynb)
-18. [Find and Remove Leaves of Binary Tree](tree.ipynb)
-19. [Find and Remove Leaves of Binary Tree (DFS)](graph.ipynb)
-20. [Find mode in binary search tree (BFS)](tree.ipynb)
-21. [ 116. Populating Next Right Pointers in Each Node in a Perfect Binary Tree](tree.ipynb)
-22. [1026. Maximum Difference Between Node and Ancestor](tree.ipynb)
+6. [AVL Tree](tree.ipynb)
+7. Tree traversal algorithms: [BFS Adj list](graph.ipynb) and [DFS Adj list](graph.ipynb)
+8. The difference between [inorder, postorder and preorder](tree.ipynb).
+9. [Find Minimum Depth of a Binary Tree](tree.ipynb)
+10. [Maximum Path Sum in a Binary Tree](tree.ipynb)
+11. [Check if a given array can represent Preorder Traversal of Binary Search Tree](tree.ipynb)
+12. [Check whether a binary tree is a full binary tree or not](tree.ipynb)
+13. [Bottom View Binary Tree](tree.ipynb)
+14. [Print Nodes in Top View of Binary Tree](tree.ipynb)
+15. [Remove nodes on root to leaf paths of length < K](tree.ipynb)
+16. [Lowest Common Ancestor in a Binary Search Tree](tree.ipynb)
+17. [Check if a binary tree is subtree of another binary tree](tree.ipynb)
+18. [Reverse alternate levels of a perfect binary tree](tree.ipynb)
+19. [Find and Remove Leaves of Binary Tree](tree.ipynb)
+20. [Find and Remove Leaves of Binary Tree (DFS)](graph.ipynb)
+21. [Find mode in binary search tree (BFS)](tree.ipynb)
+22. [ 116. Populating Next Right Pointers in Each Node in a Perfect Binary Tree](tree.ipynb)
+23. [1026. Maximum Difference Between Node and Ancestor](tree.ipynb)
 
 ##### HashTables
 1. [How to implement one using only arrays](hashmap.ipynb).
@@ -192,13 +192,6 @@ Structure of NP-Complete proofs
    2. Solution of B converted to solution of A in polynomial time
    3. If you have a solution for B you have a solution for A
    4. If no solution for B no solution for A (or contra-positive – if you have a solution for A then you have a solution for B)
-
-##### TODO
-- [ ] Implement balanced binary trees: red/black tree, a splay tree, and AVL trees 
-- [ ] Dijkstra's algorithm and the A* algorithm.
-- [ ] BFS vs DFS tradeoffs
-- [ ] The traveling salesman and the knapsack problem
-
 
 ##### References
 
