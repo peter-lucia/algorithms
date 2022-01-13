@@ -64,6 +64,7 @@
 3. [811. Subdomain Visit count](hashmap.ipynb)
 4. [49. Group Anagrams](hashmap.ipynb)
 5. [249. Group Shifted Strings](hashmap.ipynb)
+6. [347. Top k frequent elements](hashmap.ipynb)
 
 ##### Sorting And Searching
 
