@@ -84,7 +84,7 @@
 
 1. [Longest Common Subsequence](dynamic_programming.ipynb)
 2. [Longest Increasing Subsequence](dynamic_programming.ipynb)
-3. Edit Distance
+3. [Edit Distance](dynamic_programming.ipynb)
 4. Minimum Partition
 5. Ways to Cover a Distance
 6. Longest Path In Matrix
