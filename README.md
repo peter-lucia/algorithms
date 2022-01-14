@@ -100,7 +100,7 @@
 
 ##### Number Theory
 
-1. Modular Exponentiation
+1. [Modular Exponentiation](number_theory.ipynb)
 2. Modular multiplicative inverse
 3. [Primality Test | Set 2 (Fermat Method)](number_theory.ipynb)
 4. Euler’s Totient Function
