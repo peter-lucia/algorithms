@@ -70,8 +70,8 @@
 
 1. [Binary Search](sorting_and_searching.ipynb)
 2. [Search an element in a sorted and rotated array](sorting_and_searching.ipynb)
-3. Bubble Sort
-4. Insertion Sort
+3. [Bubble Sort](sorting_and_searching.ipynb)
+4. [Insertion Sort](sorting_and_searching.ipynb)
 5. [Merge Sort](sorting_and_searching.ipynb) can be [highly useful in situations where quicksort is impractical](https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/)
 6. [Heap Sort (Binary Heap)](sorting_and_searching.ipynb)
 7. [Quick Sort](sorting_and_searching.ipynb)
