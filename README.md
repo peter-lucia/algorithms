@@ -80,6 +80,7 @@
 10. Given a sorted array and a number x, find the pair in array whose sum is closest to x
 11. [Counting Sort Pseudocode](https://en.wikipedia.org/wiki/Counting_sort) Worst Time: O(n+k), Worst Space: O(k), k = max(nums)
 12. [Stock Buy Sell to Maximize Profit](sorting_and_searching.ipynb)
+14. [843. Guess the word](string_array.ipynb)
 
 ##### Dynamic Programming
 
@@ -140,7 +141,6 @@
 16. [384. Shuffle an Array](string_array.ipynb)
 17. [53. Maximum subarray](string_array.ipynb)
 18. [28. Implmeent strStr() / Rabin-Karp find needle in haystack](string_array.ipynb)
-19. [843. Guess the word](string_array.ipynb)
 
 ##### Linked List
 
