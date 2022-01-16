@@ -140,6 +140,7 @@
 16. [384. Shuffle an Array](string_array.ipynb)
 17. [53. Maximum subarray](string_array.ipynb)
 18. [28. Implmeent strStr() / Rabin-Karp find needle in haystack](string_array.ipynb)
+19. [843. Guess the word](string_array.ipynb)
 
 ##### Linked List
 
@@ -208,3 +209,4 @@ Structure of NP-Complete proofs
 * [Adjacency List vs. Adjacency Matrix](https://www.geeksforgeeks.org/comparison-between-adjacency-list-and-adjacency-matrix-representation-of-graph/)
 * [Common algorithms](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
 * [Python heapq](https://docs.python.org/3/library/heapq.html)
+* [Heapsort](https://www.geeksforgeeks.org/heap-sort/)
