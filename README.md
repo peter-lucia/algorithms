@@ -141,6 +141,7 @@
 16. [384. Shuffle an Array](string_array.ipynb)
 17. [53. Maximum subarray](string_array.ipynb)
 18. [28. Implmeent strStr() / Rabin-Karp find needle in haystack](string_array.ipynb)
+19. [2128. Remove All Ones With Row and Column Flips](string_array.ipynb)
 
 ##### Linked List
 
