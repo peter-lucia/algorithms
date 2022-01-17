@@ -90,13 +90,14 @@
 4. [Minimum Partition](dynamic_programming.ipynb)
 5. [Ways to Cover a Distance](dynamic_programming.ipynb)
 6. Longest Path In Matrix
-7. Subset Sum Problem
+7. [Subset Sum Problem](dynamic_programming.ipynb)
 8. Optimal Strategy for a Game
 9. [0-1 Knapsack Problem](dynamic_programming.ipynb)
 10. Boolean Parenthesization Problem
 11. [Get nth number in the Fibonacci Sequence](dynamic_programming.ipynb)
 12. [Longest string chain](dynamic_programming.ipynb)
 13. [792. Number of matching subsequences](dynamic_programming.ipynb)
+14. [70. Climb Stairs](dynamic_programming.ipynb)
 
 
 ##### Number Theory
