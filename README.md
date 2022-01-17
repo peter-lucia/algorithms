@@ -98,6 +98,7 @@
 12. [Longest string chain](dynamic_programming.ipynb)
 13. [792. Number of matching subsequences](dynamic_programming.ipynb)
 14. [70. Climb Stairs](dynamic_programming.ipynb)
+15. [416. Partition Equal Subset Sum](dynamic_programming.ipynb)
 
 
 ##### Number Theory
