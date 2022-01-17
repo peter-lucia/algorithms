@@ -87,8 +87,8 @@
 1. [Longest Common Subsequence](dynamic_programming.ipynb)
 2. [Longest Increasing Subsequence](dynamic_programming.ipynb)
 3. [Edit Distance](dynamic_programming.ipynb)
-4. Minimum Partition
-5. Ways to Cover a Distance
+4. [Minimum Partition](dynamic_programming.ipynb)
+5. [Ways to Cover a Distance](dynamic_programming.ipynb)
 6. Longest Path In Matrix
 7. Subset Sum Problem
 8. Optimal Strategy for a Game
