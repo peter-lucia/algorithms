@@ -1,4 +1,2 @@
 .ipynb_checkpoints/
-*.html
-!docs/*.html
 book/_build/
