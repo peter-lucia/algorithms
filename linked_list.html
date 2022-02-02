@@ -1,0 +1,1437 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Linked List &#8212; Algorithms Review Guide</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bit Manipulation" href="bit_manipulation.html" />
+    <link rel="prev" title="String / Array" href="string_array.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algorithms Review Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   Algorithms Review Guide
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tree.html">
+   Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hashmap.html">
+   HashMap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sorting_and_searching.html">
+   Sorting and Searching
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dynamic_programming.html">
+   Dynamic Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="number_theory.html">
+   Number Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="string_array.html">
+   String / Array
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Linked List
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bit_manipulation.html">
+   Bit Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python.html">
+   Python
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/linked_list.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/peter-lucia/algorithms"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/peter-lucia/algorithms/issues/new?title=Issue%20on%20page%20%2Flinked_list.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/peter-lucia/algorithms/gh-pages?urlpath=tree/book/_build/html/linked_list.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reverse-a-linked-list">
+   Reverse a Linked List
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#insert-element-in-sorted-linked-list-while-maintaining-sorted-order">
+   Insert element in sorted linked list while maintaining sorted order
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-two-strings-represented-as-linked-lists">
+     Compare two strings represented as linked lists
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-if-linked-list-has-a-cycle-in-it-or-not">
+     Check if linked list has a cycle in it or not
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-two-numbers-represented-by-linked-lists">
+     Add two numbers represented by linked lists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delete-the-middle-node-of-a-linked-list">
+   2095. Delete the Middle Node of a Linked List
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linked-list-find-a-random-node-using-hashmap-or-array">
+   Linked List: find a random node using hashmap or array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linked-list-find-a-random-node-using-reservoir-sampling-based-approach">
+   Linked list: find a random node using reservoir sampling based approach
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#merge-two-sorted-linked-lists-into-a-single-sorted-linked-list">
+   Merge two sorted linked lists into a single sorted linked list
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#merge-a-linked-list-into-another-linked-list-at-alternate-positions">
+   Merge a linked list into another linked list at alternate positions
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Linked List</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reverse-a-linked-list">
+   Reverse a Linked List
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#insert-element-in-sorted-linked-list-while-maintaining-sorted-order">
+   Insert element in sorted linked list while maintaining sorted order
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-two-strings-represented-as-linked-lists">
+     Compare two strings represented as linked lists
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-if-linked-list-has-a-cycle-in-it-or-not">
+     Check if linked list has a cycle in it or not
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-two-numbers-represented-by-linked-lists">
+     Add two numbers represented by linked lists
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delete-the-middle-node-of-a-linked-list">
+   2095. Delete the Middle Node of a Linked List
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linked-list-find-a-random-node-using-hashmap-or-array">
+   Linked List: find a random node using hashmap or array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linked-list-find-a-random-node-using-reservoir-sampling-based-approach">
+   Linked list: find a random node using reservoir sampling based approach
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#merge-two-sorted-linked-lists-into-a-single-sorted-linked-list">
+   Merge two sorted linked lists into a single sorted linked list
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#merge-a-linked-list-into-another-linked-list-at-alternate-positions">
+   Merge a linked list into another linked list at alternate positions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="linked-list">
+<h1>Linked List<a class="headerlink" href="#linked-list" title="Permalink to this headline">¶</a></h1>
+<section id="reverse-a-linked-list">
+<h2>Reverse a Linked List<a class="headerlink" href="#reverse-a-linked-list" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="c1"># Definition for singly-linked list.</span>
+<span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span>
+
+
+<span class="k">class</span> <span class="nc">ListNode</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">printList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]):</span>
+        <span class="k">while</span> <span class="n">head</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">head</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span>
+
+    <span class="k">def</span> <span class="nf">reverseList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]:</span>
+        <span class="c1"># need three pointers: head, prev, and tmp</span>
+        <span class="n">prev</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">while</span> <span class="n">head</span><span class="p">:</span>
+            <span class="c1"># backup node after head</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span>
+
+            <span class="c1"># point head in opposite direction</span>
+            <span class="n">head</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span>
+
+            <span class="c1"># move prev forward</span>
+            <span class="n">prev</span> <span class="o">=</span> <span class="n">head</span>
+
+            <span class="c1"># restore backup</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">tmp</span>
+
+        <span class="c1"># Set head back to prev since it will be None at the end</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">prev</span>
+        <span class="k">return</span> <span class="n">head</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">b</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">c</span>
+<span class="n">c</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">d</span>
+<span class="n">d</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">e</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="n">sol</span><span class="o">.</span><span class="n">printList</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">reverseList</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Reversed:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">sol</span><span class="o">.</span><span class="n">printList</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Original:
+
+1
+2
+3
+4
+5
+
+Reversed:
+
+5
+4
+3
+2
+1
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="xref myst">Reverse Linked List Verbose Steps</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;media/reverse_linked_list_with_code.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1299</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1300</span>             <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1301</span>         <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/formatters.py</span> in <span class="ni">__call__</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">968</span> 
+<span class="g g-Whitespace">    </span><span class="mi">969</span>             <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">970</span>                 <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">971</span>             <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">972</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_repr_mimebundle_</span><span class="nt">(self, include, exclude)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1288</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1289</span>             <span class="n">mimetype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mimetype</span>
+<span class="ne">-&gt; </span><span class="mi">1290</span>             <span class="n">data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">(</span><span class="n">always_both</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1291</span>             <span class="k">if</span> <span class="n">metadata</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1292</span>                 <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="n">mimetype</span><span class="p">:</span> <span class="n">metadata</span><span class="p">}</span>
+
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1300</span>             <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1301</span>         <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1302</span>             <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1303</span>                 <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1304</span>         <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;media/reverse_linked_list_with_code.png&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1299</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1300</span>             <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1301</span>         <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/formatters.py</span> in <span class="ni">__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>             <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>             <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">345</span>                 <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span>             <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_repr_png_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1318</span>     <span class="k">def</span> <span class="nf">_repr_png_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1319</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_FMT_PNG</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1320</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1321</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1322</span>     <span class="k">def</span> <span class="nf">_repr_jpeg_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1300</span>             <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1301</span>         <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1302</span>             <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1303</span>                 <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1304</span>         <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;media/reverse_linked_list_with_code.png&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;IPython.core.display.Image object&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="insert-element-in-sorted-linked-list-while-maintaining-sorted-order">
+<h2>Insert element in sorted linked list while maintaining sorted order<a class="headerlink" href="#insert-element-in-sorted-linked-list-while-maintaining-sorted-order" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">class</span> <span class="nc">LinkedList</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">sorted_insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Time: O(n)</span>
+<span class="sd">        Space: O(1)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">:</span>
+            <span class="n">new_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="n">new_node</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">new_node</span>
+            <span class="k">return</span>
+
+        <span class="n">_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="n">_next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">next</span>
+        <span class="k">while</span> <span class="n">_head</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">data</span> <span class="o">&gt;</span> <span class="n">_head</span><span class="o">.</span><span class="n">data</span> <span class="ow">and</span> <span class="n">data</span> <span class="o">&gt;=</span> <span class="n">_next</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+                <span class="n">_head</span> <span class="o">=</span> <span class="n">_head</span><span class="o">.</span><span class="n">next</span>
+                <span class="n">_next</span> <span class="o">=</span> <span class="n">_head</span><span class="o">.</span><span class="n">next</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># insert the new node</span>
+                <span class="n">tmp</span> <span class="o">=</span> <span class="n">_head</span><span class="o">.</span><span class="n">next</span>
+                <span class="n">new_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                <span class="n">_head</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">new_node</span>
+                <span class="n">new_node</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">tmp</span>
+                <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="c1"># find where head.data = data</span>
+        <span class="c1"># point prev node to head.next</span>
+        <span class="n">_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="n">_prev</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">while</span> <span class="n">_head</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">data</span> <span class="o">==</span> <span class="n">_head</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">_prev</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">_head</span><span class="o">.</span><span class="n">next</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">_prev</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">_head</span><span class="o">.</span><span class="n">next</span>
+                <span class="k">return</span>
+
+            <span class="n">_prev</span> <span class="o">=</span> <span class="n">_head</span>
+            <span class="n">_head</span> <span class="o">=</span> <span class="n">_head</span><span class="o">.</span><span class="n">next</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Can&#39;t delete </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2"> as it doesn&#39;t exist&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inserts a new node at the beginning</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">new_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">new_node</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">new_node</span>
+
+    <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="k">while</span> <span class="n">temp</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linked_list</span> <span class="o">=</span> <span class="n">LinkedList</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="n">linked_list</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">linked_list</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1 2 3 4 5 6 7 8 9 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linked_list</span><span class="o">.</span><span class="n">sorted_insert</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">linked_list</span><span class="o">.</span><span class="n">sorted_insert</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">linked_list</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1 2 2 3 3 4 5 6 7 8 9 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ll</span> <span class="o">=</span> <span class="n">LinkedList</span><span class="p">()</span>
+<span class="n">ll</span><span class="o">.</span><span class="n">sorted_insert</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ll</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linked_list</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1 2 2 3 3 4 5 6 7 8 9 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linked_list</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">linked_list</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1 2 3 3 4 5 6 7 8 9 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linked_list</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">linked_list</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1 2 3 3 4 5 6 7 8 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linked_list</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">linked_list</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Can&#39;t delete 9 as it doesn&#39;t exist
+0 1 2 3 3 4 5 6 7 8 
+</pre></div>
+</div>
+</div>
+</div>
+<section id="compare-two-strings-represented-as-linked-lists">
+<h3>Compare two strings represented as linked lists<a class="headerlink" href="#compare-two-strings-represented-as-linked-lists" title="Permalink to this headline">¶</a></h3>
+<p>Given two strings, represented as linked lists (every character is a node in a linked list). Write a function compare() that works similar to strcmp(), i.e., it returns 0 if both strings are the same, 1 if the first linked list is lexicographically greater, and -1 if the second string is lexicographically greater.</p>
+<p>Note: lexicographically means the unicode value of each character is compared</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Examples</span><span class="p">:</span>
+
+
+<span class="n">Input</span><span class="p">:</span> <span class="n">list1</span> <span class="o">=</span> <span class="n">g</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">k</span><span class="o">-&gt;</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">a</span>
+       <span class="n">list2</span> <span class="o">=</span> <span class="n">g</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">k</span><span class="o">-&gt;</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">b</span>
+<span class="n">Output</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span> <span class="n">because</span> <span class="n">list2</span> <span class="ow">is</span> <span class="n">lexicographically</span> <span class="n">greater</span> <span class="n">than</span> <span class="n">list1</span>
+
+<span class="n">Input</span><span class="p">:</span> <span class="n">list1</span> <span class="o">=</span> <span class="n">g</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">k</span><span class="o">-&gt;</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">a</span>
+       <span class="n">list2</span> <span class="o">=</span> <span class="n">g</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">k</span><span class="o">-&gt;</span><span class="n">s</span>
+<span class="n">Output</span><span class="p">:</span> <span class="mi">1</span> <span class="n">because</span> <span class="n">list1</span> <span class="ow">is</span> <span class="n">lexicographically</span> <span class="n">greater</span> <span class="n">than</span> <span class="n">list2</span>
+
+<span class="n">Input</span><span class="p">:</span> <span class="n">list1</span> <span class="o">=</span> <span class="n">g</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">k</span><span class="o">-&gt;</span><span class="n">s</span>
+       <span class="n">list2</span> <span class="o">=</span> <span class="n">g</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">k</span><span class="o">-&gt;</span><span class="n">s</span>
+<span class="n">Output</span><span class="p">:</span> <span class="mi">0</span> <span class="n">because</span> <span class="n">list1</span> <span class="ow">and</span> <span class="n">list2</span> <span class="n">are</span> <span class="n">the</span> <span class="n">same</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="n">head1</span><span class="p">:</span> <span class="n">Node</span><span class="p">,</span> <span class="n">head2</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Assumes each node&#39;s data is a single character in both LinkedLists</span>
+<span class="sd">    returns 1 if list1 is lexicographically greater than other</span>
+<span class="sd">    returns -1 if list2 is lexicographically greater than list1</span>
+<span class="sd">    returns 0 if list1 is the same as list2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+    <span class="c1"># move forward until either list ends or the character &#39;c&#39; is different</span>
+    <span class="k">while</span> <span class="n">head1</span> <span class="ow">and</span> <span class="n">head2</span> <span class="ow">and</span> <span class="n">head1</span><span class="o">.</span><span class="n">c</span> <span class="o">==</span> <span class="n">head2</span><span class="o">.</span><span class="n">c</span><span class="p">:</span>
+        <span class="n">head1</span> <span class="o">=</span> <span class="n">head1</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">head2</span> <span class="o">=</span> <span class="n">head2</span><span class="o">.</span><span class="n">next</span>
+
+    <span class="c1"># if both lists are not empty, the characters are mismatched</span>
+    <span class="k">if</span> <span class="n">head1</span> <span class="ow">and</span> <span class="n">head2</span><span class="p">:</span>
+        <span class="c1"># we can assume head1.c != head2.c here</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">head1</span><span class="o">.</span><span class="n">c</span> <span class="o">&gt;</span> <span class="n">head2</span><span class="o">.</span><span class="n">c</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="c1"># if lengths are mismatched,</span>
+    <span class="k">if</span> <span class="n">head1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">head2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">head1</span> <span class="ow">and</span> <span class="n">head2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="c1"># both lists are empty and the characters are not mismatched.</span>
+    <span class="k">return</span> <span class="mi">0</span>
+
+<span class="n">head1</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="n">head1</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="n">head1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+
+<span class="n">head2</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="n">head2</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="n">head2</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+<span class="n">head2</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">head1</span><span class="p">,</span> <span class="n">head2</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">compare</span><span class="p">(</span><span class="n">head1</span><span class="p">,</span> <span class="n">head2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;List 1 is greater.&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">res</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;List 2 is greater.&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;List1 == List2.&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">res</span> <span class="o">==</span> <span class="n">result</span><span class="p">,</span> <span class="s2">&quot;Failure&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pass&quot;</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">head1</span><span class="p">,</span> <span class="n">head2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">head2</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">test</span><span class="p">(</span><span class="n">head1</span><span class="p">,</span> <span class="n">head2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">head1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;d&quot;</span>
+<span class="n">test</span><span class="p">(</span><span class="n">head1</span><span class="p">,</span> <span class="n">head2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>List 2 is greater. Pass
+List1 == List2. Pass
+List 1 is greater. Pass
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="check-if-linked-list-has-a-cycle-in-it-or-not">
+<h3>Check if linked list has a cycle in it or not<a class="headerlink" href="#check-if-linked-list-has-a-cycle-in-it-or-not" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://leetcode.com/problems/linked-list-cycle/">https://leetcode.com/problems/linked-list-cycle/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="c1"># Definition for singly-linked list.</span>
+<span class="k">class</span> <span class="nc">ListNode</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">hasCycle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="k">while</span> <span class="n">head</span><span class="p">:</span>
+            <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span>
+            <span class="k">if</span> <span class="n">head</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="n">neg_four</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">zero</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">two</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">three</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">three</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">two</span>
+<span class="n">two</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">zero</span>
+<span class="n">zero</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">neg_four</span>
+<span class="n">neg_four</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">two</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">hasCycle</span><span class="p">(</span><span class="n">three</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="add-two-numbers-represented-by-linked-lists">
+<h3>Add two numbers represented by linked lists<a class="headerlink" href="#add-two-numbers-represented-by-linked-lists" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://leetcode.com/problems/add-two-numbers/">https://leetcode.com/problems/add-two-numbers/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definition for singly-linked list.</span>
+<span class="k">class</span> <span class="nc">ListNode</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
+
+    <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="k">while</span> <span class="n">head</span><span class="p">:</span>
+            <span class="c1"># print(head.val, end=&quot; &quot;)</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">head</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span>
+        <span class="c1"># because of the nature of this problem,</span>
+        <span class="c1"># the numbers are listed in reverse (it is actually helpful</span>
+        <span class="c1"># from an implementation perspective in Solution().addTwoNumbers(...)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">each</span><span class="p">)</span> <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">result</span><span class="p">)))</span>
+
+
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">addTwoNumbers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">l1</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">],</span> <span class="n">l2</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]:</span>
+        <span class="c1"># Time: O(n)</span>
+        <span class="c1"># Space: O(1)</span>
+        <span class="c1"># Assumptions:</span>
+        <span class="c1"># lists may not be equal in length</span>
+        <span class="c1"># no leading zeros</span>
+
+        <span class="c1"># Algorithm:</span>
+        <span class="c1"># traverse to end node keeping track of position from the leftmost number</span>
+        <span class="c1"># can only add two nodes if their positions are the same</span>
+        <span class="c1"># keep track of carry after each division, add it to next addition</span>
+        <span class="c1"># position is different for each linked list</span>
+        <span class="c1">#</span>
+
+        <span class="c1"># Simple example:</span>
+        <span class="c1"># 2 4 3</span>
+        <span class="c1"># 5 6 4</span>
+        <span class="c1">#     ^</span>
+
+        <span class="c1">#     7 ,carry = 0,</span>
+        <span class="c1">#   0   ,carry = 1  (take ones value of addition result only), add 1 to carry, position = 1</span>
+        <span class="c1"># 8     ,carry = 0,</span>
+
+        <span class="c1"># 2 5 3 4</span>
+        <span class="c1">#   5 6 4</span>
+
+        <span class="c1">#       8,carry = 0</span>
+        <span class="c1">#     9  ,carry = 0</span>
+        <span class="c1">#   0    ,carry = 1</span>
+        <span class="c1"># 3      ,carry = 0 stop.</span>
+
+                <span class="c1"># if either l1 or l2 is empty, whatever the other list is will be the answer,</span>
+        <span class="c1"># even if it&#39;s also empty</span>
+        <span class="c1"># if either l1 or l2 is empty, whatever the other list is will be the answer,</span>
+        <span class="c1"># even if it&#39;s also empty</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">l1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">l2</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">l2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">l1</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">prev</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">carry</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">l1</span> <span class="ow">or</span> <span class="n">l2</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">l1</span> <span class="ow">and</span> <span class="n">l2</span><span class="p">:</span>
+                <span class="c1"># add val of both nodes together, add carry as well</span>
+                <span class="n">new_node</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">((</span><span class="n">carry</span> <span class="o">+</span> <span class="n">l1</span><span class="o">.</span><span class="n">val</span> <span class="o">+</span> <span class="n">l2</span><span class="o">.</span><span class="n">val</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
+                <span class="n">carry</span> <span class="o">=</span> <span class="p">(</span><span class="n">carry</span> <span class="o">+</span> <span class="n">l1</span><span class="o">.</span><span class="n">val</span> <span class="o">+</span> <span class="n">l2</span><span class="o">.</span><span class="n">val</span><span class="p">)</span> <span class="o">//</span> <span class="mi">10</span>
+                <span class="n">l1</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="n">next</span>
+                <span class="n">l2</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="n">next</span>
+            <span class="k">elif</span> <span class="n">l1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">l2</span><span class="p">:</span>
+                <span class="c1"># only take into consideration the carry and l1&#39;s value since l2 is empty</span>
+                <span class="n">new_node</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">((</span><span class="n">carry</span> <span class="o">+</span> <span class="n">l1</span><span class="o">.</span><span class="n">val</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
+                <span class="n">carry</span> <span class="o">=</span> <span class="p">(</span><span class="n">carry</span> <span class="o">+</span> <span class="n">l1</span><span class="o">.</span><span class="n">val</span><span class="p">)</span> <span class="o">//</span> <span class="mi">10</span>
+                <span class="n">l1</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="n">next</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="n">l1</span> <span class="ow">and</span> <span class="n">l2</span><span class="p">:</span>
+                <span class="c1"># only take into consideration the carry and l2&#39;s value since l1 is empty</span>
+                <span class="n">new_node</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">((</span><span class="n">carry</span> <span class="o">+</span> <span class="n">l2</span><span class="o">.</span><span class="n">val</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
+                <span class="n">carry</span> <span class="o">=</span> <span class="p">(</span><span class="n">carry</span> <span class="o">+</span> <span class="n">l2</span><span class="o">.</span><span class="n">val</span><span class="p">)</span> <span class="o">//</span> <span class="mi">10</span>
+                <span class="n">l2</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="n">next</span>
+            <span class="c1"># curr points to new node</span>
+            <span class="c1"># append curr to the result</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">new_node</span>
+            <span class="c1"># if result is empty, curr will be the head. Set the result to the head</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+                <span class="c1"># can&#39;t set result = curr because they will point to the same object</span>
+                <span class="c1"># and the curr will be updated which will also update result</span>
+                <span class="c1"># adding curr to a list then extracting it out is a workaround</span>
+                <span class="c1"># This preserves O(1) space complexity</span>
+                <span class="c1"># With O(n) space complexity, could add all elements to a list</span>
+                <span class="c1"># then pick out the first one, or any other element in the list</span>
+                <span class="c1"># kind of defeats the purpose of using linked lists though...</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">curr</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="c1"># if prev is not None, set it&#39;s next value to the current node</span>
+            <span class="k">if</span> <span class="n">prev</span><span class="p">:</span>
+                <span class="n">prev</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">curr</span>
+            <span class="c1"># move prev and curr forward one node each</span>
+            <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="n">next</span>
+
+        <span class="c1"># in case we have a carry at the end,</span>
+        <span class="c1"># create a new node with the carry&#39;s value</span>
+        <span class="c1"># carry will always be &lt; 10</span>
+        <span class="k">if</span> <span class="n">carry</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">new_node</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">carry</span><span class="p">)</span>
+            <span class="n">prev</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">new_node</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">l1</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">l1</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">l1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">l2</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">l2</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">l2</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">l2</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;321 + 321 = &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">addTwoNumbers</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4321 + 321 = &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">addTwoNumbers</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>321 + 321 =  642
+4321 + 321 =  4642
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note from <a class="reference external" href="https://stackoverflow.com/questions/40425554/python-shallow-copy-and-deep-copy-in-using-append-method">https://stackoverflow.com/questions/40425554/python-shallow-copy-and-deep-copy-in-using-append-method</a></p>
+<blockquote>
+<div><p>there’s no copy whatsoever involved in an append operation. So you’ll have to explicitly take care of this yourself, e.g. by replacing</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">basis.append(state)</span></code>
+with
+<code class="docutils literal notranslate"><span class="pre">basis.append(state[:])</span></code>
+The slicing operation with : creates a copy of state.</p>
+</section>
+</section>
+<section id="delete-the-middle-node-of-a-linked-list">
+<h2>2095. Delete the Middle Node of a Linked List<a class="headerlink" href="#delete-the-middle-node-of-a-linked-list" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/">https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/</a>
+You are given the head of a linked list. Delete the middle node, and return the head of the modified linked list.</p>
+<p>The middle node of a linked list of size n is the ⌊n / 2⌋th node from the start using 0-based indexing, where ⌊x⌋ denotes the largest integer less than or equal to x.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="c1"># Definition for singly-linked list.</span>
+<span class="k">class</span> <span class="nc">ListNode</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">deleteMiddle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]:</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">while</span> <span class="n">head</span><span class="p">:</span>
+            <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span>
+
+        <span class="n">prev_node</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">middle_node</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+            <span class="n">next_node</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">next_node</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">prev_node</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">next_node</span>
+        <span class="k">return</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="linked-list-find-a-random-node-using-hashmap-or-array">
+<h2>Linked List: find a random node using hashmap or array<a class="headerlink" href="#linked-list-find-a-random-node-using-hashmap-or-array" title="Permalink to this headline">¶</a></h2>
+<p>Time Complexity: O(n)
+Space Complexity: O(n)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="c1"># Definition for singly-linked list.</span>
+<span class="k">class</span> <span class="nc">ListNode</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]):</span>
+        <span class="c1">########### Approach 1 O(n) #######################</span>
+        <span class="c1"># Find the length of the linked list, n, here to get the upper bound</span>
+
+        <span class="c1">########### Approach 2: O(n) #######################</span>
+        <span class="c1"># Use a hashmap to traverse the linked list once, mapping indexes to each node</span>
+        <span class="c1"># e.g.</span>
+        <span class="c1"># 0 -&gt; head</span>
+        <span class="c1"># 1 -&gt; head.next</span>
+        <span class="c1"># ...</span>
+        <span class="c1"># Edge cases: empty list</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="p">[</span><span class="n">head</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">head</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">head</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">getRandom</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="c1">########### Approach 1: O(n) #######################</span>
+        <span class="c1"># How to generate a random number?</span>
+        <span class="c1"># choose a random number, called i, between 0 and n - 1 with random.randint</span>
+        <span class="c1"># and traverse the linekd list i times and return the value</span>
+
+        <span class="c1">########### Approach 2: O(1) #######################</span>
+        <span class="c1"># pick a random number and return the node mapped by the lookup</span>
+        <span class="c1"># e.g.</span>
+        <span class="c1"># return lookup.get(random.randint(0, self.n-1))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span><span class="o">.</span><span class="n">val</span>
+
+<span class="n">head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">head</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">head</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">getRandom</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+4
+5
+3
+5
+4
+3
+3
+4
+4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="linked-list-find-a-random-node-using-reservoir-sampling-based-approach">
+<h2>Linked list: find a random node using reservoir sampling based approach<a class="headerlink" href="#linked-list-find-a-random-node-using-reservoir-sampling-based-approach" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definition for singly-linked list.</span>
+<span class="c1"># class ListNode:</span>
+<span class="c1">#     def __init__(self, val=0, next=None):</span>
+<span class="c1">#         self.val = val</span>
+<span class="c1">#         self.next = next</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">head</span>
+
+    <span class="k">def</span> <span class="nf">getRandom</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="c1"># Reservoir sampling based function</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">val</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">val</span>
+
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="c1"># stop once we reach last node in linked list</span>
+        <span class="k">while</span> <span class="n">current</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="c1"># there is a 1/n chance of getting 0</span>
+            <span class="c1"># when calling a random number between 0 and n-1</span>
+            <span class="c1"># only assign result to current.val when we get 0</span>
+            <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">val</span>
+
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+<span class="n">head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">head</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">head</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">getRandom</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+3
+4
+4
+4
+3
+3
+3
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="merge-two-sorted-linked-lists-into-a-single-sorted-linked-list">
+<h2>Merge two sorted linked lists into a single sorted linked list<a class="headerlink" href="#merge-two-sorted-linked-lists-into-a-single-sorted-linked-list" title="Permalink to this headline">¶</a></h2>
+<p>Source:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="c1"># Definition for singly-linked list.</span>
+<span class="k">class</span> <span class="nc">ListNode</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
+
+    <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="k">while</span> <span class="n">head</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">head</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span>
+
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">mergeTwoLists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list1</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">],</span> <span class="n">list2</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]:</span>
+        <span class="c1"># Approach</span>
+        <span class="c1"># Move list1 head and list2 head through both linked lists</span>
+        <span class="c1"># If list11 head is less than list2&#39;s head, add list1&#39;s head to the result</span>
+        <span class="c1"># repeat until we&#39;ve traversed both lists</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">list1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">list2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">list1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">list2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">list1</span>
+        <span class="k">if</span> <span class="n">list2</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">list1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">list2</span>
+        <span class="k">if</span> <span class="n">list1</span><span class="o">.</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">list2</span><span class="o">.</span><span class="n">val</span><span class="p">:</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">list1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">list2</span>
+        <span class="n">starting_head</span> <span class="o">=</span> <span class="p">[</span><span class="n">head</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">while</span> <span class="n">list1</span> <span class="ow">or</span> <span class="n">list2</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="n">list1</span> <span class="ow">and</span> <span class="n">list2</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">list1</span><span class="o">.</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">list2</span><span class="o">.</span><span class="n">val</span><span class="p">:</span>
+                    <span class="n">new_node</span> <span class="o">=</span> <span class="n">list1</span>
+                    <span class="n">list1</span> <span class="o">=</span> <span class="n">list1</span><span class="o">.</span><span class="n">next</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">new_node</span> <span class="o">=</span> <span class="n">list2</span>
+                    <span class="n">list2</span> <span class="o">=</span> <span class="n">list2</span><span class="o">.</span><span class="n">next</span>
+            <span class="k">elif</span> <span class="n">list1</span><span class="p">:</span>
+                <span class="n">new_node</span> <span class="o">=</span> <span class="n">list1</span>
+                <span class="n">list1</span> <span class="o">=</span> <span class="n">list1</span><span class="o">.</span><span class="n">next</span>
+            <span class="k">elif</span> <span class="n">list2</span><span class="p">:</span>
+                <span class="n">new_node</span> <span class="o">=</span> <span class="n">list2</span>
+                <span class="n">list2</span> <span class="o">=</span> <span class="n">list2</span><span class="o">.</span><span class="n">next</span>
+
+            <span class="n">head</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">new_node</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span>
+
+        <span class="k">return</span> <span class="n">starting_head</span>
+<span class="n">list1</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">list1</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">list1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">list2</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">list2</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">mergeTwoLists</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+2
+3
+5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="merge-a-linked-list-into-another-linked-list-at-alternate-positions">
+<h2>Merge a linked list into another linked list at alternate positions<a class="headerlink" href="#merge-a-linked-list-into-another-linked-list-at-alternate-positions" title="Permalink to this headline">¶</a></h2>
+<p>Source: <a class="reference external" href="https://www.geeksforgeeks.org/merge-a-linked-list-into-another-linked-list-at-alternate-positions/">https://www.geeksforgeeks.org/merge-a-linked-list-into-another-linked-list-at-alternate-positions/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ListNode</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
+
+    <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="k">while</span> <span class="n">head</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">head</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span>
+
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">merge_alternates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head1</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">,</span> <span class="n">head2</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ListNode</span><span class="p">:</span>
+        <span class="c1"># Approach</span>
+        <span class="c1"># 1. Arbitrarily choose the starting node</span>
+        <span class="c1"># 2. While head1 or head2, alternately assign head1 to result.next</span>
+
+        <span class="c1"># start with head1 arbitrarily</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">head1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">head2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="c1"># if head2 does not exist, return head1</span>
+        <span class="k">if</span> <span class="n">head1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">head2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">head1</span>
+        <span class="c1"># if head1 does not exist, return head2</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">head1</span> <span class="ow">and</span> <span class="n">head2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">head2</span>
+
+        <span class="c1"># both head1 and head2 have nodes from here onward</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">head2</span>
+        <span class="n">head2</span> <span class="o">=</span> <span class="n">head2</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">result_head</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">while</span> <span class="n">head1</span> <span class="ow">or</span> <span class="n">head2</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">head1</span><span class="p">:</span>
+                <span class="c1"># result&#39;s next node is now head1</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">head1</span>
+                <span class="c1"># move head1 pointer</span>
+                <span class="n">head1</span> <span class="o">=</span> <span class="n">head1</span><span class="o">.</span><span class="n">next</span>
+                <span class="c1"># move result pointer forward here in case head2 also exists</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">next</span>
+            <span class="k">if</span> <span class="n">head2</span><span class="p">:</span>
+                <span class="c1"># result&#39;s next node is now head2</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">head2</span>
+                <span class="c1"># move head2 pointer</span>
+                <span class="n">head2</span> <span class="o">=</span> <span class="n">head2</span><span class="o">.</span><span class="n">next</span>
+                <span class="c1"># move result pointer forward here a second time in case we already moved it</span>
+                <span class="c1"># when adding the node from head1</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">next</span>
+
+        <span class="k">return</span> <span class="n">result_head</span>
+
+<span class="n">head1</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">head1</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">head1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">head2</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">head2</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">head2</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">merge_alternates</span><span class="p">(</span><span class="n">head1</span><span class="p">,</span> <span class="n">head2</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+3
+7
+4
+9
+5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">head1</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">head1</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">head1</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">head2</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">head2</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">head2</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">head2</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">head2</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">merge_alternates</span><span class="p">(</span><span class="n">head1</span><span class="p">,</span> <span class="n">head2</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+1
+5
+2
+6
+3
+7
+8
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="string_array.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">String / Array</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="bit_manipulation.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bit Manipulation</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Peter Lucia<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

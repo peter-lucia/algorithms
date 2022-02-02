@@ -1,0 +1,1512 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Dynamic Programming &#8212; Algorithms Review Guide</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Number Theory" href="number_theory.html" />
+    <link rel="prev" title="Sorting and Searching" href="sorting_and_searching.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algorithms Review Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   Algorithms Review Guide
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tree.html">
+   Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hashmap.html">
+   HashMap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sorting_and_searching.html">
+   Sorting and Searching
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Dynamic Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="number_theory.html">
+   Number Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="string_array.html">
+   String / Array
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linked_list.html">
+   Linked List
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bit_manipulation.html">
+   Bit Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python.html">
+   Python
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/dynamic_programming.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/peter-lucia/algorithms"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/peter-lucia/algorithms/issues/new?title=Issue%20on%20page%20%2Fdynamic_programming.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/peter-lucia/algorithms/gh-pages?urlpath=tree/book/_build/html/dynamic_programming.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#knapsack">
+   Knapsack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#longest-common-subsequence">
+   Longest Common Subsequence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nth-fibonacci-number">
+   Nth Fibonacci Number
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#longest-increasing-subsequence">
+   Longest Increasing Subsequence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#minimum-partition">
+   Minimum Partition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#longest-string-chain">
+   Longest string chain
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#number-of-matching-subsequences">
+   Number of matching subsequences
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edit-distance">
+   Edit Distance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ways-to-cover-a-distance">
+   Ways to Cover a Distance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#climbing-stairs">
+   70. Climbing Stairs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subset-sum-problem">
+   Subset Sum Problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partition-equal-subset-sum">
+   416. Partition Equal Subset Sum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#count-of-subsets-with-sum-equal-to-x">
+   Count of subsets with sum equal to X
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dynamic Programming</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#knapsack">
+   Knapsack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#longest-common-subsequence">
+   Longest Common Subsequence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nth-fibonacci-number">
+   Nth Fibonacci Number
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#longest-increasing-subsequence">
+   Longest Increasing Subsequence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#minimum-partition">
+   Minimum Partition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#longest-string-chain">
+   Longest string chain
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#number-of-matching-subsequences">
+   Number of matching subsequences
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edit-distance">
+   Edit Distance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ways-to-cover-a-distance">
+   Ways to Cover a Distance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#climbing-stairs">
+   70. Climbing Stairs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subset-sum-problem">
+   Subset Sum Problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partition-equal-subset-sum">
+   416. Partition Equal Subset Sum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#count-of-subsets-with-sum-equal-to-x">
+   Count of subsets with sum equal to X
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="dynamic-programming">
+<h1>Dynamic Programming<a class="headerlink" href="#dynamic-programming" title="Permalink to this headline">¶</a></h1>
+<section id="knapsack">
+<h2>Knapsack<a class="headerlink" href="#knapsack" title="Permalink to this headline">¶</a></h2>
+<p>T(n) = O(nB), where B is the capacity</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># 0 / 1 knapsack</span>
+<span class="c1"># dp[i][j] = max val possible with up to i items limited by weight j</span>
+
+<span class="c1"># initially all items have &gt; 0 weight, so we can get up to 0 value for</span>
+<span class="c1"># the first column</span>
+<span class="c1">#               wt (aka b)</span>
+<span class="c1"># val wt  0  1  2  3  4  5  6  7</span>
+<span class="c1">#  1  1   0</span>
+<span class="c1">#  4  3   0</span>
+<span class="c1">#  5  4   0</span>
+<span class="c1">#  5  7   0</span>
+
+<span class="c1">#               wt (aka b)</span>
+<span class="c1"># val wt  0  1  2  3  4  5  6  7</span>
+<span class="c1">#  1  1   0&#39; 1  1  1  1  1  1  1</span>
+<span class="c1">#  4  3   0  1  1  4&#39; 5  5  5  5</span>
+<span class="c1">#  5  4   0  1  1  4  5  6  6  9&#39;</span>
+<span class="c1">#  7  5   0  1  1  4  5  7  8  9</span>
+
+<span class="c1"># items 4 and 5 with weights 3 and 4 contribute to the largest value having weight &lt;= 7</span>
+
+<span class="k">def</span> <span class="nf">solve_knapsack</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">capacity</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">profits</span><span class="p">)</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">capacity</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">B</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+    <span class="c1"># recurrence</span>
+    <span class="c1">#                          profit[i] + row above - w[i] , row above)</span>
+    <span class="c1"># max profit T(i, b) = max(p[i] + T(i-1, b-w[i]), T(i-1, b)),</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">B</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">weights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">:</span>
+                <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">profits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">b</span><span class="o">-</span><span class="n">weights</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">b</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">b</span><span class="p">]</span>
+
+    <span class="c1"># return T[n-1][B-1] == capacity</span>
+    <span class="k">return</span> <span class="n">T</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">B</span><span class="p">]</span>
+
+<span class="n">profits</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>  <span class="c1"># aka vals</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">solve_knapsack</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">solve_knapsack</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">solve_knapsack</span><span class="p">(</span><span class="n">profits</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
+17
+22
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="longest-common-subsequence">
+<h2>Longest Common Subsequence<a class="headerlink" href="#longest-common-subsequence" title="Permalink to this headline">¶</a></h2>
+<p><span class="math notranslate nohighlight">\(T(n) = O(n\cdot m)\)</span> if the strings have unequal length</p>
+<p><span class="math notranslate nohighlight">\(T(n) = O(n^2)\)</span> if the strings are of equal length</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># https://leetcode.com/problems/longest-common-subsequence/</span>
+
+
+<span class="c1"># dp[i][j] = longest common subsequence up to and including str1[i] and str2[j]</span>
+<span class="c1">#   &#39;&#39;  a  b  c  d  e</span>
+<span class="c1"># &#39;&#39; 0  0  0  0  0  0</span>
+<span class="c1"># a  0  1  1  1  1  1</span>
+<span class="c1"># e  0  1  1  1  1  2</span>
+<span class="c1"># c  0  1  1  2  2  2</span>
+<span class="c1"># d  0  1  1  1  3  3</span>
+<span class="c1"># e  0  1  1  1  3  4</span>
+
+
+<span class="c1">#   &#39;&#39;  a  b  e  x  q</span>
+<span class="c1"># &#39;&#39; 0  0  0  0  0  0</span>
+<span class="c1"># a  0  1  1  1  1  1</span>
+<span class="c1"># e  0  1  1  2  2  2</span>
+<span class="c1"># c  0  1  1  2  2  2</span>
+<span class="c1"># d  0  1 `1` 2  2  2   # Remember when text1[i] == text2[j], let dp[ii][jj] = dp[ii-1][jj-1] + 1</span>
+<span class="c1"># e  0  1  1  2  2  2</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">longestCommonSubsequence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">text2</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">text1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">text1</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span>
+
+        <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text1</span><span class="p">)):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text2</span><span class="p">)):</span>
+                <span class="c1"># use i, j for text1 and text2</span>
+                <span class="c1"># use ii, jj for dp table</span>
+                <span class="n">ii</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+                <span class="n">jj</span> <span class="o">=</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span>
+                <span class="k">if</span> <span class="n">text1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">text2</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                    <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">jj</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">jj</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="p">][</span><span class="n">jj</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">m</span><span class="p">]</span>
+
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">longestCommonSubsequence</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">],</span>
+                                    <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="nth-fibonacci-number">
+<h2>Nth Fibonacci Number<a class="headerlink" href="#nth-fibonacci-number" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="k">def</span> <span class="nf">fib_verbose</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">tmp</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">fib_verbose</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;fib(</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">)=</span><span class="si">{</span><span class="n">fib</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fib(0)=0
+fib(1)=1
+fib(2)=1
+fib(3)=2
+fib(4)=3
+fib(5)=5
+fib(6)=8
+fib(7)=13
+fib(8)=21
+fib(9)=34
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="longest-increasing-subsequence">
+<h2>Longest Increasing Subsequence<a class="headerlink" href="#longest-increasing-subsequence" title="Permalink to this headline">¶</a></h2>
+<p><span class="math notranslate nohighlight">\(T(n) = O(n^2)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="c1">#        j  i</span>
+<span class="c1"># nums = 3, 4, -1, 0, 6, 2, 3</span>
+<span class="c1">#  dp  = 1  1  1   1  1  1  1</span>
+
+<span class="c1">#        j  i</span>
+<span class="c1"># nums = 3, 4, -1, 0, 6, 2, 3</span>
+<span class="c1">#  dp  = 1  2  1   1  1  1  1</span>
+
+<span class="c1">#        j     i</span>
+<span class="c1"># nums = 3, 4, -1, 0, 6, 2, 3</span>
+<span class="c1">#  dp  = 1  2  1   1  1  1  1</span>
+
+<span class="c1">#        j         i</span>
+<span class="c1"># nums = 3, 4, -1, 0, 6, 2, 3</span>
+<span class="c1">#  dp  = 1  2  1   2  1  1  1</span>
+
+<span class="c1">#        j            i</span>
+<span class="c1"># nums = 3, 4, -1, 0, 6, 2, 3</span>
+<span class="c1">#  dp  = 1  2  1   2  3  1  1</span>
+
+<span class="c1">#        j               i</span>
+<span class="c1"># nums = 3, 4, -1, 0, 6, 2, 3</span>
+<span class="c1">#  dp  = 1  2  1   2  3  3  1</span>
+
+<span class="c1">#        j                  i</span>
+<span class="c1"># nums = 3, 4, -1, 0, 6, 2, 3</span>
+<span class="c1">#  dp  = 1  2  1   2  3  3  4</span>
+
+<span class="c1"># https://leetcode.com/problems/longest-increasing-subsequence/submissions/</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">lengthOfLIS</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+
+        <span class="c1"># array containing the length of the LIS up to each element</span>
+        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+            <span class="c1"># _max holds the maximum LIS up to and including nums[i]</span>
+            <span class="n">_max</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+                <span class="c1"># check if nums[i] is greater than each previous element,</span>
+                <span class="c1"># starting at the first element in the array.</span>
+                <span class="c1"># keep track of length of LIS up to i with _max</span>
+                <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                    <span class="n">_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">_max</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>  <span class="c1"># notice that _max only takes values from dp table when it increases</span>
+
+            <span class="c1"># add 1 to account for nums[i]</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">_max</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>
+
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">lengthOfLIS</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="minimum-partition">
+<h2>Minimum Partition<a class="headerlink" href="#minimum-partition" title="Permalink to this headline">¶</a></h2>
+<p>Given a set of integers, the task is to divide it into two sets S1 and S2 such that the absolute difference between their sums is minimum.
+If there is a set S with n elements, then if we assume Subset1 has m elements, Subset2 must have n-m elements and <strong>the value of abs(sum(Subset1) – sum(Subset2)) should be minimum.</strong></p>
+<p>Return the minimum possible absolute difference.</p>
+<p>Sources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/">https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/</a> (the below solution from geeks for geeks does not pass the testcases here)</p></li>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum/">https://www.geeksforgeeks.org/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum/</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dp table of size (n+1, sum+1)</span>
+<span class="c1"># dp[i][j] = 1 if the sum j is achieved including or excluding the ith number, 0 otherwise</span>
+<span class="c1"># arr = [1,6,11,5]</span>
+<span class="c1"># sum(arr) = 23</span>
+
+<span class="c1"># dp: size = (n+1, sum+1) = (5, 24)</span>
+<span class="c1"># 1 2 3  ...                                   24</span>
+
+<span class="c1"># sum(0) is possible for all elements</span>
+<span class="c1"># 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="c1"># 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="c1"># 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="c1"># 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="c1"># 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+
+<span class="c1"># all sums are impossible with 0 elements</span>
+<span class="c1"># 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="c1"># 1</span>
+<span class="c1"># 1</span>
+<span class="c1"># 1</span>
+<span class="c1"># 1</span>
+
+<span class="c1"># determine the largest j where dp[n][j] is 1 where j loops from sum / 2 to 0 (left half of table)</span>
+<span class="c1"># 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="c1"># 1</span>
+<span class="c1"># 1</span>
+<span class="c1"># 1</span>
+<span class="c1"># 1</span>
+
+<span class="c1"># Note this solution may not work for negative numbers</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">minimumDifference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">nums</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">))</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">total</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+        <span class="c1"># Base case, first row is False since no sums are possible with 0 elements,</span>
+        <span class="c1"># this is already done</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">total</span><span class="p">):</span>
+                <span class="c1"># Base case, first column is True since a sum of 0 is possible with all elements</span>
+                <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="k">continue</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># set dp indices</span>
+                    <span class="n">ii</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+                    <span class="n">jj</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+                    <span class="c1"># if nums[i] is excluded, we can assume this is try first before checking whether it can be included</span>
+                    <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span>
+                    <span class="c1"># if nums[i] is included it must be less than or equal to the current sum</span>
+                    <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">jj</span><span class="p">:</span>
+                        <span class="c1"># jj - nums[i] must be possible excluding nums[i] for jj to be possible including nums[i]</span>
+                        <span class="k">if</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">jj</span> <span class="o">-</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                            <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="n">diff</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">maxsize</span>
+        <span class="c1"># find the largest jj such that dp[n+1][jj] = 1</span>
+        <span class="c1"># loop from 0 &lt;----- jj = sum / 2 which is the left half of the dp table</span>
+        <span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">total</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">diff</span> <span class="o">=</span> <span class="n">total</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">jj</span><span class="p">)</span>
+                <span class="k">break</span>
+        <span class="k">return</span> <span class="n">diff</span>
+
+
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">minimumDifference</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span>  <span class="c1"># 12 - 11</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>[1937] Maximum Number of Points with Cost</p>
+<p><a class="reference external" href="https://leetcode.com/problems/maximum-number-of-points-with-cost/">https://leetcode.com/problems/maximum-number-of-points-with-cost/</a></p>
+<p>Brute force solution</p>
+<p>base_case:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(max\_sum[i,j] = 0\)</span> where 0 &lt; i &lt; n and 0 &lt; j &lt; m</p></li>
+</ul>
+<p>recurrence:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( max\_sum[i,j] = max(max\_sum[i,j], max\_sum[i-1,k] + points[i,j] - abs(k-j))\)</span></p></li>
+</ul>
+<p>for all k where k is between 0 and m
+and 0 &lt; i &lt; n and 0 &lt; j &lt; m</p>
+<ul class="simple">
+<li><p>Time complexity: O(nm^2) since we iterate over the entire table once and over m twice</p></li>
+<li><p>Space complexity: O(nm) for the table</p></li>
+</ul>
+<p>Faster solution
+<a class="reference external" href="https://leetcode.com/problems/maximum-number-of-points-with-cost/discuss/1567183/Python3%3A-Easy-DP-method-with-thorough-explanation">https://leetcode.com/problems/maximum-number-of-points-with-cost/discuss/1567183/Python3:-Easy-DP-method-with-thorough-explanation</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Brute force solution, passes 140/157 test cases</span>
+
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">maxPoints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+        <span class="c1"># 1 5</span>
+        <span class="c1"># 2 3</span>
+        <span class="c1"># 4 2</span>
+        <span class="c1"># maximum sum: 5 + 3 + (4-1) = 11</span>
+
+        <span class="c1"># Keep track of max sum between current row and previous row</span>
+        <span class="c1"># if you select only numbers to the left of the element in the previous row</span>
+        <span class="c1"># or only select the numbers to the right of the current element in the previous row</span>
+
+        <span class="c1"># Basically use the previously computed subproblems to incrementally decide the best combination</span>
+        <span class="c1"># from the previous row</span>
+        <span class="c1"># 1 3 2 1 6</span>
+        <span class="c1"># 1 4 3 2 8</span>
+
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">points</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------&quot;</span><span class="p">)</span>
+
+        <span class="n">max_rows</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">max_rows</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                        <span class="n">max_rows</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_rows</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">max_rows</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">+</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+
+
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">max_rows</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+                        <span class="n">max_rows</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_rows</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">max_rows</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">+</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">j</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_rows</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Faster solution:</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">maxPoints</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="c1"># Time complexity: O(nm) since we iterate over the entire table once and over m twice</span>
+        <span class="c1"># Space complexity: O(nm) for the table</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">points</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">max_sum</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">max_sum</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="c1"># max sum of points directly above each other</span>
+                    <span class="n">max_sum</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_sum</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">max_sum</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+            <span class="c1"># get max sum from current row will be available to the next row</span>
+            <span class="c1"># each move left subtracts 1 from the max sum possible found so far</span>
+            <span class="c1"># move right -&gt; left</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+                <span class="n">max_sum</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_sum</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">max_sum</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="c1"># get max sum from current row will be available to the next row</span>
+            <span class="c1"># each move right subtracts 1 from the max sum possible found so far</span>
+            <span class="c1"># move left -&gt; right</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+                <span class="n">max_sum</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_sum</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">max_sum</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># the answer is the max value of the last row</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_sum</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+
+<span class="n">points</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+<span class="p">]</span>
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">maxPoints</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="longest-string-chain">
+<h2>Longest string chain<a class="headerlink" href="#longest-string-chain" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://leetcode.com/problems/longest-string-chain/">https://leetcode.com/problems/longest-string-chain/</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">longestStrChain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">words</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="c1"># approach #1</span>
+        <span class="c1"># build a Trie from the words list</span>
+        <span class="c1"># keep track of the max depth when reaching the end of a word</span>
+        <span class="c1"># return the max depth</span>
+
+        <span class="c1"># approach #2 (working)</span>
+        <span class="c1"># Source: https://leetcode.com/problems/longest-string-chain/discuss/294890/JavaC%2B%2BPython-DP-Solution</span>
+        <span class="c1"># 1. sort the words by length</span>
+        <span class="c1"># 2. Use a hashmap to map a word to the number of predecessor words</span>
+        <span class="c1"># 3. For each word, iterate over all substrings with each character removed in that word</span>
+        <span class="c1">#    If the substring is found in the table, increment the predecessors for the word by</span>
+        <span class="c1">#    the greater quantity between one plus what was found in the lookup for the substr</span>
+        <span class="c1">#    or what exist in the lookup for the current word</span>
+        <span class="c1"># 4. Return the max number of predecessors found for all words, keep track of these each</span>
+        <span class="c1">#    time the lookup for a word is adjusted</span>
+        <span class="c1"># Time complexity: O(nlogn + nL^2) where L is the average (or longest) word length</span>
+
+        <span class="c1"># Assumptions</span>
+        <span class="c1"># Can assume 1 &lt;= len(words) &lt;= 1000</span>
+        <span class="c1"># 1 &lt;= words[i].length &lt;= 16</span>
+        <span class="c1"># words[i] only consists of English letters</span>
+
+        <span class="n">words</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+        <span class="n">lookup</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+        <span class="c1"># a single word is a word chain</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+            <span class="n">lookup</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)):</span>
+                <span class="n">substr</span> <span class="o">=</span> <span class="n">word</span><span class="p">[:</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+
+                <span class="c1"># because we care about letter order for predecessors, we don&#39;t need all permutations of the substring</span>
+                <span class="k">if</span> <span class="n">substr</span> <span class="ow">in</span> <span class="n">lookup</span><span class="p">:</span>
+                    <span class="n">lookup</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">lookup</span><span class="p">[</span><span class="n">word</span><span class="p">],</span> <span class="n">lookup</span><span class="p">[</span><span class="n">substr</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                    <span class="n">result</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">lookup</span><span class="p">[</span><span class="n">word</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">longestStrChain</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;ba&quot;</span><span class="p">,</span><span class="s2">&quot;bca&quot;</span><span class="p">,</span><span class="s2">&quot;bda&quot;</span><span class="p">,</span><span class="s2">&quot;bdca&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">longestStrChain</span><span class="p">([</span><span class="s2">&quot;xbc&quot;</span><span class="p">,</span><span class="s2">&quot;pcxbcf&quot;</span><span class="p">,</span><span class="s2">&quot;xb&quot;</span><span class="p">,</span><span class="s2">&quot;cxbc&quot;</span><span class="p">,</span><span class="s2">&quot;pcxbc&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="number-of-matching-subsequences">
+<h2>Number of matching subsequences<a class="headerlink" href="#number-of-matching-subsequences" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://leetcode.com/problems/number-of-matching-subsequences/">https://leetcode.com/problems/number-of-matching-subsequences/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">is_word_in_s</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">numMatchingSubseq</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">words</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="c1"># Approach</span>
+
+        <span class="c1"># Time complexity: O(nklogk) where k is the length of the longest word, n is the number of words</span>
+        <span class="c1"># Space complexity: O(1) since we just keep a counter of the total number of matches</span>
+        <span class="c1"># 1. Iterate over each word</span>
+        <span class="c1"># 2. iterate over each character c in the word</span>
+        <span class="c1"># 3. if we find c in the word, let s = s[idx_of_c+1:]</span>
+        <span class="c1">#    otherwise, reject this word</span>
+        <span class="c1"># 4. if we find all characters of word in s, increment total counter</span>
+        <span class="c1"># 5. return the counter</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_word_in_s</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+                <span class="n">result</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">numMatchingSubseq</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;ab&quot;</span><span class="p">,</span> <span class="s2">&quot;bc&quot;</span><span class="p">,</span> <span class="s2">&quot;abc&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="edit-distance">
+<h2>Edit Distance<a class="headerlink" href="#edit-distance" title="Permalink to this headline">¶</a></h2>
+<p>Source: <a class="reference external" href="https://www.geeksforgeeks.org/edit-distance-dp-5/">https://www.geeksforgeeks.org/edit-distance-dp-5/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dp[i][j] = the minimum edit distance up to and including i from str1 and j from str 2</span>
+<span class="c1">#    &#39;&#39;  s  a  t  u  r  d  a  y</span>
+<span class="c1"># &#39;&#39; [0, 1, 2, 3, 4, 5, 6, 7, 8]</span>
+<span class="c1"># s  [1, 0, 1, 2, 3, 4, 5, 6, 7]</span>
+<span class="c1"># u  [2, 1, 1, 2, 2, 3, 4, 5, 6]</span>
+<span class="c1"># n  [3, 2, 2, 2, 3, 3, 4, 5, 6]</span>
+<span class="c1"># d  [4, 3, 3, 3, 3, 4, 3, 4, 5]</span>
+<span class="c1"># a  [5, 4, 3, 4, 4, 4, 4, 3, 4]</span>
+<span class="c1"># y  [6, 5, 4, 4, 5, 5, 5, 4, 3]</span>
+
+
+
+<span class="k">def</span> <span class="nf">edit_distance</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Time complexity: O(nm)</span>
+<span class="sd">    Space compleity: O(nm)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span>
+    <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+
+            <span class="c1"># when first string is empty, only option is to insert</span>
+            <span class="c1"># all of the characters up to j: requires j operations</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span>
+
+            <span class="c1"># if second string is empty, only option is to insert</span>
+            <span class="c1"># all of the characters up to i: requires i operations</span>
+            <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+
+            <span class="c1"># if last characters are the same in str1 and str2,</span>
+            <span class="c1"># we carry over min operations needed without</span>
+            <span class="c1"># including the last characters</span>
+            <span class="k">elif</span> <span class="n">str1</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">str2</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>  <span class="c1"># notice that i and j range from [0, n], we subtract 1 from each to get the last character here</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="c1"># last two characters are different, add an operation</span>
+            <span class="c1"># to the minimal previous number of operations possible</span>
+            <span class="c1"># prior to reaching this cell in the dp table</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>  <span class="c1"># without last char in str2</span>
+                                   <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span>  <span class="c1"># without last char in str1</span>
+                                   <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># without either chars in str1 and str2</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">dp</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">m</span><span class="p">]</span>
+
+
+<span class="c1"># Expected edit distance is 3:</span>
+<span class="c1"># s  unday</span>
+<span class="c1"># saturday</span>
+<span class="k">assert</span> <span class="n">edit_distance</span><span class="p">(</span><span class="s2">&quot;sunday&quot;</span><span class="p">,</span> <span class="s2">&quot;saturday&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8]
+[1, 0, 1, 2, 3, 4, 5, 6, 7]
+[2, 1, 1, 2, 2, 3, 4, 5, 6]
+[3, 2, 2, 2, 3, 3, 4, 5, 6]
+[4, 3, 3, 3, 3, 4, 3, 4, 5]
+[5, 4, 3, 4, 4, 4, 4, 3, 4]
+[6, 5, 4, 4, 5, 5, 5, 4, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Edit distance recursive with memoization via @functools.cache</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">minDistance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">str2</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">edit_distance</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+
+
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="c1"># @functools.cache  # &gt;= python 3.8</span>
+    <span class="k">def</span> <span class="nf">edit_distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+
+        <span class="c1"># If the first string is empty, the only option</span>
+        <span class="c1"># is to insert all the characters of the second</span>
+        <span class="c1"># string into the first string</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">m</span>
+
+        <span class="c1"># If the second string is empty, the only option</span>
+        <span class="c1"># is to insert all the characters of the first</span>
+        <span class="c1"># string into the second</span>
+        <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">n</span>
+
+        <span class="c1"># If the last characters of the two strings are</span>
+        <span class="c1"># the same, ignore them and get the count for the</span>
+        <span class="c1"># remaining inner strings</span>
+        <span class="k">if</span> <span class="n">str1</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">str2</span><span class="p">[</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">edit_distance</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># If the last characters are not the same, take the</span>
+        <span class="c1"># minimum cost of all three possible operations on the</span>
+        <span class="c1"># last character of the first string.</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edit_distance</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span>    <span class="c1"># insert last character of str1, remove last character of str2</span>
+                       <span class="bp">self</span><span class="o">.</span><span class="n">edit_distance</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">),</span>    <span class="c1"># remove last character of str1, take last character of str2</span>
+                       <span class="bp">self</span><span class="o">.</span><span class="n">edit_distance</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>    <span class="c1"># replace last character of str1 with last character of str2</span>
+                       <span class="p">)</span>
+    <span class="c1"># saturday</span>
+<span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;sunday&quot;</span>
+<span class="n">str2</span> <span class="o">=</span> <span class="s2">&quot;saturday&quot;</span>
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">edit_distance</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">str1</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">str2</span><span class="p">))</span> <span class="o">==</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ways-to-cover-a-distance">
+<h2>Ways to Cover a Distance<a class="headerlink" href="#ways-to-cover-a-distance" title="Permalink to this headline">¶</a></h2>
+<p>Given a distance ‘dist’, count total number of ways to cover the distance with 1, 2 and 3 steps.</p>
+<p>Source: <a class="reference external" href="https://www.geeksforgeeks.org/count-number-of-ways-to-cover-a-distance/">https://www.geeksforgeeks.org/count-number-of-ways-to-cover-a-distance/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_count_dp</span><span class="p">(</span><span class="n">dist</span><span class="p">):</span>
+    <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dist</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+    <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># one way to cover dist of 0 via 0 steps</span>
+    <span class="k">if</span> <span class="n">dist</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># one way to cover dist of 1 via 1 step</span>
+    <span class="k">if</span> <span class="n">dist</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">dp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># two ways to cover 2 (1 + 1 step, single 2 step)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">dist</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">dist</span><span class="p">]</span>
+
+<span class="c1"># Possible ways to cover a distance of 4 using steps of 1, 2, or 3:</span>
+<span class="c1"># 1 + 1 + 1 + 1</span>
+<span class="c1"># 1 + 1 + 2</span>
+<span class="c1"># 1 + 2 + 1</span>
+<span class="c1"># 2 + 1 + 1</span>
+<span class="c1"># 1 + 3</span>
+<span class="c1"># 3 + 1</span>
+<span class="c1"># 2 + 2</span>
+<span class="k">assert</span> <span class="n">print_count_dp</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="climbing-stairs">
+<h2>70. Climbing Stairs<a class="headerlink" href="#climbing-stairs" title="Permalink to this headline">¶</a></h2>
+<p>You are climbing a staircase. It takes n steps to reach the top.</p>
+<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
+<p>Source: <a class="reference external" href="https://leetcode.com/problems/climbing-stairs/">https://leetcode.com/problems/climbing-stairs/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">climbStairs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># one way to cover dist of 0 via 0 steps</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># one way to cover dist of 1 via 1 step</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">dp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># two ways to climb 2 steps via a 2 step or two single steps</span>
+
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">climbStairs</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># 1 + 1 + 1 + 1</span>
+<span class="c1"># 1 + 1 + 2</span>
+<span class="c1"># 2 + 1 + 1</span>
+<span class="c1"># 1 + 2 + 1</span>
+<span class="c1"># 2 + 2</span>
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">climbStairs</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="subset-sum-problem">
+<h2>Subset Sum Problem<a class="headerlink" href="#subset-sum-problem" title="Permalink to this headline">¶</a></h2>
+<p>Given a set of non-negative integers, and a value sum, determine if there is a subset of the given set with sum equal to given sum.</p>
+<p>Input: set = {3, 34, 4, 12, 5, 2}, sum = 9
+Output: True
+There is a subset (4, 5) with sum 9.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">has_subset_sum</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+
+    <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="kc">False</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">val</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+    <span class="c1"># don&#39;t need any numbers to sum up to 0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># we can never generate a sum &gt; 0 with no numbers</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">val</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># fill table in bottom up manner</span>
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">val</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">ii</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">jj</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">jj</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="c1"># can make subset sum if already could without nums[i]</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># can make subset sum if we already could without nums[i]</span>
+                <span class="c1"># or if without nums[i] we could sum to jj - nums[i]</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="ow">or</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">jj</span> <span class="o">-</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+    <span class="c1"># for i in range(n+1):</span>
+    <span class="c1">#     print(dp[i])</span>
+    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">val</span><span class="p">]</span>
+
+
+<span class="c1">#     0  1  2  3  4  5  6  7  8  9</span>
+<span class="c1"># &#39;&#39; [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]</span>
+<span class="c1"># 3  [1, 1, 0, 1, 0, 0, 0, 0, 0, 0]</span>
+<span class="c1"># 34 [1, 1, 1, 0, 1, 0, 0, 0, 0, 0]</span>
+<span class="c1"># 4  [1, 1, 1, 1, 1, 1, 1, 0, 1, 0]</span>
+<span class="c1"># 12 [1, 1, 1, 1, 1, 1, 1, 1, 0, 1]</span>
+<span class="c1"># 5  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]</span>
+<span class="c1"># 2  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]</span>
+
+<span class="n">has_subset_sum</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="partition-equal-subset-sum">
+<h2>416. Partition Equal Subset Sum<a class="headerlink" href="#partition-equal-subset-sum" title="Permalink to this headline">¶</a></h2>
+<p>(Subset Sum Variation)</p>
+<p><a class="reference external" href="https://leetcode.com/problems/partition-equal-subset-sum/">https://leetcode.com/problems/partition-equal-subset-sum/</a></p>
+<p>Given a non-empty array nums containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.</p>
+<p>Example 1:</p>
+<p>Input: nums = [1,5,11,5]
+Output: true
+Explanation: The array can be partitioned as [1, 5, 5] and [11].
+Example 2:</p>
+<p>Input: nums = [1,2,3,5]
+Output: false
+Explanation: The array cannot be partitioned into equal sum subsets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">canPartition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+        <span class="c1"># Approach #1 (Dynamic Programming)</span>
+
+        <span class="c1"># dp[i][j] = True if the sum j can be formed by array elements in subsets nums[0]...nums[i]</span>
+        <span class="c1"># otherwise, dp[i][j] = False</span>
+        <span class="c1">#    0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22</span>
+        <span class="c1"># &#39;&#39; 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0</span>
+        <span class="c1"># 1  1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0</span>
+        <span class="c1"># 5  1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0</span>
+        <span class="c1"># 11 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0</span>
+        <span class="c1"># 5  1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1</span>
+
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">total</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="kc">False</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">total</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+        <span class="c1"># if no elements and no total, we can always get desired sum of 0</span>
+        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">total</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="n">ii</span> <span class="o">-</span> <span class="mi">1</span>
+                <span class="c1"># if current total is less than current number in nums</span>
+                <span class="c1"># then we could only make jj if that was possible without using nums[i]</span>
+                <span class="k">if</span> <span class="n">jj</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                    <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span>
+                <span class="c1"># current total is &gt;= nums[i], so mark True if it was already possible without nums[i]</span>
+                <span class="c1"># or make true if jj - nums[i] was possible without using nums[i]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="ow">or</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">jj</span><span class="o">-</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">total</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">canPartition</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span> <span class="o">==</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">canPartition</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span> <span class="o">==</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="count-of-subsets-with-sum-equal-to-x">
+<h2>Count of subsets with sum equal to X<a class="headerlink" href="#count-of-subsets-with-sum-equal-to-x" title="Permalink to this headline">¶</a></h2>
+<p>Given an array of length N and integer X, the task is to find the number of subsets with a sum equal to X.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dp[i][j] stores the number of subsets of the sub-array such that their sum is equal to j.</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="c1">#      0  1  2  3  4  5</span>
+<span class="c1"># &#39;&#39;   1, 0, 0, 0, 0, 0</span>
+<span class="c1">#  1   1, 1, 0, 0, 0, 0</span>
+<span class="c1">#  2   1, 1, 1, 1, 0, 0</span>
+<span class="c1">#  3   1, 1, 1, 2, 1, 1</span>
+<span class="c1">#  4   1, 1, 1, 2, 2, 2</span>
+<span class="c1">#  5   1, 1, 1, 2, 2, 3</span>
+
+<span class="c1"># https://www.geeksforgeeks.org/count-of-subsets-with-sum-equal-to-x/</span>
+<span class="k">def</span> <span class="nf">subset_sum</span><span class="p">(</span><span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="c1"># may only work for positives nums[i]</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+    <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">value</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+    <span class="c1"># always the empty set can make a sum of 0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">ii</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">jj</span><span class="p">:</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">jj</span> <span class="o">-</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">dp</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">value</span><span class="p">]</span>
+
+<span class="c1"># subset_sum([1,2,3,4,5], 5)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">half</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">subset_sum</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">half</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 1, 0, 1, 2, 1, 0, 1, 1, 0, 0, 0, 0]
+[1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 1, 0, 0]
+[1, 1, 1, 2, 2, 2, 3, 3, 2, 3, 3, 2, 2]
+[1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">subset_sum</span><span class="p">(</span><span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+
+    <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">value</span> <span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+    <span class="c1"># all elements can always make a sum of 0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># no elements cannot make a sum greater than 0</span>
+    <span class="c1"># elements are defaulted to 0, so this isn&#39;t really needed</span>
+    <span class="c1"># for j in range(1, value+1):</span>
+    <span class="c1">#     dp[0][j] = 0</span>
+
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">ii</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">jj</span><span class="p">:</span>
+                <span class="c1"># number of subsets with a sum equal to jj</span>
+                <span class="c1"># up to and including ii is what it was without nums[i]</span>
+                <span class="c1"># plus the</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">jj</span><span class="o">-</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">jj</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">dp</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">value</span><span class="p">]</span>
+
+
+<span class="c1"># should be [5], [4,1], [2,3]</span>
+<span class="k">assert</span> <span class="n">subset_sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0, 0, 0, 0, 0]
+[1, 1, 0, 0, 0, 0]
+[1, 1, 1, 1, 0, 0]
+[1, 1, 1, 2, 1, 1]
+[1, 1, 1, 2, 2, 2]
+[1, 1, 1, 2, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Subset Sum Count (Recursive)</span>
+<span class="c1"># https://www.geeksforgeeks.org/count-of-subsets-with-sum-equal-to-x-using-recursion/</span>
+<span class="c1"># https://www.geeksforgeeks.org/tabulation-vs-memoization/</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
+
+<span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">subset_sum</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+    <span class="c1"># Returns the number of ways we can sum up to the desired total using a subset</span>
+    <span class="c1"># of the numbers in nums</span>
+    <span class="c1"># Time complexity: O(2^n)</span>
+
+    <span class="c1"># we&#39;ve traversed all of the numbers</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+        <span class="c1"># if total is 0 and we&#39;ve traversed all the numbers,</span>
+        <span class="c1"># then we&#39;ve found a subset that sums up to the desired total</span>
+        <span class="k">if</span> <span class="n">total</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">count</span>
+
+    <span class="c1"># Either the element can be counted in the subset or not</span>
+    <span class="c1"># First it is counted, so the remaining sum to be check discludes it</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">subset_sum</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">total</span> <span class="o">-</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">count</span><span class="p">)</span>
+    <span class="c1"># Second the element is not counted, so we check the total sum</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">subset_sum</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">count</span>
+
+
+<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+
+<span class="c1">#   | |</span>
+<span class="c1"># 1,2,3,4,5</span>
+<span class="c1"># |     |</span>
+<span class="c1"># 1,2,3,4,5</span>
+<span class="c1">#         |</span>
+<span class="c1"># 1,2,3,4,5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">subset_sum</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">nums</span><span class="p">),</span> <span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="sorting_and_searching.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Sorting and Searching</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="number_theory.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Number Theory</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Peter Lucia<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

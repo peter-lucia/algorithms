@@ -1,0 +1,1445 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>String / Array &#8212; Algorithms Review Guide</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Linked List" href="linked_list.html" />
+    <link rel="prev" title="Probability" href="probability.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algorithms Review Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   Algorithms Review Guide
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tree.html">
+   Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hashmap.html">
+   HashMap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sorting_and_searching.html">
+   Sorting and Searching
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dynamic_programming.html">
+   Dynamic Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="number_theory.html">
+   Number Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   String / Array
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linked_list.html">
+   Linked List
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bit_manipulation.html">
+   Bit Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python.html">
+   Python
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/string_array.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/peter-lucia/algorithms"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/peter-lucia/algorithms/issues/new?title=Issue%20on%20page%20%2Fstring_array.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/peter-lucia/algorithms/gh-pages?urlpath=tree/book/_build/html/string_array.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-max-profit">
+   Get max profit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#asteroid-collision">
+   735. Asteroid Collision
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#valid-parentheses">
+   20. Valid Parentheses
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rotate-array">
+   Rotate array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-justification">
+   Text Justification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reverse-a-string-without-affecting-special-characters">
+   Reverse a string without affecting special characters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#print-all-possible-palindromic-partitions-of-a-string">
+   Print all possible palindromic partitions of a string
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-original-array-from-doubled-array">
+   Find original array from doubled array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-and-replace-string">
+   833. Find and Replace String
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shuffle-an-array">
+   Shuffle an Array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maximum-subarray">
+   53. Maximum Subarray
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implement-strstr-rabin-karp-needle-in-a-haystack">
+   28. Implement strStr() / Rabin-Karp Needle in a Haystack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remove-all-ones-with-row-and-column-flips">
+   2128. Remove All Ones with Row and Column Flips
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>String / Array</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-max-profit">
+   Get max profit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#asteroid-collision">
+   735. Asteroid Collision
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#valid-parentheses">
+   20. Valid Parentheses
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rotate-array">
+   Rotate array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-justification">
+   Text Justification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reverse-a-string-without-affecting-special-characters">
+   Reverse a string without affecting special characters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#print-all-possible-palindromic-partitions-of-a-string">
+   Print all possible palindromic partitions of a string
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-original-array-from-doubled-array">
+   Find original array from doubled array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-and-replace-string">
+   833. Find and Replace String
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shuffle-an-array">
+   Shuffle an Array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maximum-subarray">
+   53. Maximum Subarray
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implement-strstr-rabin-karp-needle-in-a-haystack">
+   28. Implement strStr() / Rabin-Karp Needle in a Haystack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remove-all-ones-with-row-and-column-flips">
+   2128. Remove All Ones with Row and Column Flips
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="string-array">
+<h1>String / Array<a class="headerlink" href="#string-array" title="Permalink to this headline">¶</a></h1>
+<section id="get-max-profit">
+<h2>Get max profit<a class="headerlink" href="#get-max-profit" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_max_profit</span><span class="p">(</span><span class="n">stock_prices</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">stock_prices</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Need more prices&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Iterate through all the numbers once</span>
+    <span class="c1"># store the min_price found and the difference</span>
+    <span class="c1"># between the min_price and current price</span>
+
+    <span class="n">min_price</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+    <span class="n">max_profit</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;-inf&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">current_price</span> <span class="ow">in</span> <span class="n">stock_prices</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">max_profit</span> <span class="o">&lt;</span> <span class="n">current_price</span> <span class="o">-</span> <span class="n">min_price</span><span class="p">:</span>
+            <span class="n">max_profit</span> <span class="o">=</span> <span class="n">current_price</span> <span class="o">-</span> <span class="n">min_price</span>
+        <span class="k">if</span> <span class="n">current_price</span> <span class="o">&lt;</span> <span class="n">min_price</span><span class="p">:</span>
+            <span class="n">min_price</span> <span class="o">=</span> <span class="n">current_price</span>
+
+
+    <span class="k">return</span> <span class="n">max_profit</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max profit is </span><span class="si">{</span><span class="n">get_max_profit</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Max profit is 7
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="asteroid-collision">
+<h2>735. Asteroid Collision<a class="headerlink" href="#asteroid-collision" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://leetcode.com/problems/asteroid-collision/submissions/">https://leetcode.com/problems/asteroid-collision/submissions/</a></p>
+<ul class="simple">
+<li><p>first failed approach with stacks: two stacks, asteroids and result</p></li>
+<li><p>pop asteroid from asteroids</p></li>
+<li><p>put asteroid into result</p></li>
+<li><p>check if top item of result and top item of asteroids conflict</p></li>
+<li><p>put winner into result or remove both if they cancel out</p></li>
+<li><p>continue until asteroids is empty and result is full</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">asteroids</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">asteroids</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="n">right</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>  <span class="c1"># asteroids[0]</span>
+<span class="n">left</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># result[-1]</span>
+
+<span class="k">if</span> <span class="n">right</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">left</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="n">handle</span> <span class="n">collision</span>
+<span class="n">otherwise</span><span class="p">:</span>
+   <span class="n">put</span> <span class="n">right</span> <span class="n">into</span> <span class="n">top</span> <span class="n">of</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>second approach</p>
+<ul class="simple">
+<li><p>start with i = 0, j = 1</p></li>
+<li><p>check for collision between i and j</p></li>
+<li><p>if no collision, increment both i and j</p></li>
+<li><p>if collision, if elem at j wins, pop(i) and let i = j and j += 1</p></li>
+<li><p>if collision and if elem at i wins, pop(j) and keep i and j the same</p></li>
+<li><p>if collision and cancel each other out, pop(i), pop(j), let i -= 1, j = i</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">asteroidCollision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">asteroids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+
+        <span class="c1"># can assume len(asteroids) &gt;= 2</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">asteroids</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_collision</span><span class="p">(</span><span class="n">asteroids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">asteroids</span><span class="p">[</span><span class="n">j</span><span class="p">]):</span>
+                <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">asteroids</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">asteroids</span><span class="p">[</span><span class="n">j</span><span class="p">]):</span>
+                    <span class="n">asteroids</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="nb">abs</span><span class="p">(</span><span class="n">asteroids</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&lt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">asteroids</span><span class="p">[</span><span class="n">j</span><span class="p">]):</span>
+                    <span class="n">asteroids</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+                        <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+                <span class="k">elif</span> <span class="n">asteroids</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">asteroids</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">==</span> <span class="nb">abs</span><span class="p">(</span><span class="n">asteroids</span><span class="p">[</span><span class="n">j</span><span class="p">]):</span>
+                    <span class="n">asteroids</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                    <span class="n">asteroids</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># elem at j is now at i</span>
+                    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                        <span class="n">i</span> <span class="o">-=</span> <span class="mi">2</span>
+                        <span class="n">j</span> <span class="o">-=</span> <span class="mi">2</span>
+                    <span class="k">elif</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+                        <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">asteroids</span>
+
+
+    <span class="k">def</span> <span class="nf">is_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">right</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">left</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="p">[]</span> <span class="o">==</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">asteroidCollision</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">])</span>
+<span class="k">assert</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">==</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">asteroidCollision</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="valid-parentheses">
+<h2>20. Valid Parentheses<a class="headerlink" href="#valid-parentheses" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://leetcode.com/problems/valid-parentheses/">https://leetcode.com/problems/valid-parentheses/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">isValid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="c1"># approach 1: anytime we see {}, (), or [], remove it from the expression</span>
+
+        <span class="c1"># Append each character in s to the stack</span>
+        <span class="c1"># if the stack is not empty, and the last character added to the stack</span>
+        <span class="c1"># is the closing bracket of the same time, don&#39;t append the new character</span>
+        <span class="c1"># to the stack and remove the left bracket from the stack to effectively</span>
+        <span class="c1"># remove the {}, (), or [] from the string</span>
+        <span class="c1"># repeat this process until we&#39;ve gone through all characters in s.</span>
+        <span class="c1"># if at the end the stack is not empty, return False</span>
+        <span class="c1"># otherwise, return True</span>
+
+        <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">stack</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s1">&#39;}&#39;</span> <span class="ow">and</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;{&#39;</span><span class="p">:</span>
+                    <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="s1">&#39;)&#39;</span> <span class="ow">and</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;(&#39;</span><span class="p">:</span>
+                    <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="s1">&#39;]&#39;</span> <span class="ow">and</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;[&#39;</span><span class="p">:</span>
+                    <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">stack</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">isValid</span><span class="p">(</span><span class="s2">&quot;()&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">isValid</span><span class="p">(</span><span class="s2">&quot;()[]</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">isValid</span><span class="p">(</span><span class="s2">&quot;(]&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">isValid</span><span class="p">(</span><span class="s2">&quot;([)]&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">isValid</span><span class="p">(</span><span class="s2">&quot;{[]}&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="rotate-array">
+<h2>Rotate array<a class="headerlink" href="#rotate-array" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://leetcode.com/problems/rotate-array/">https://leetcode.com/problems/rotate-array/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Time complexity: O(n)</span>
+<span class="sd">        Space complexity: O(n)</span>
+<span class="sd">        Do not return anything, modify nums in-place instead.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># approach #1</span>
+        <span class="c1"># create a new array of size n = len(nums)</span>
+        <span class="c1"># from i = 0 -&gt; n-1</span>
+        <span class="c1"># put nums[i] at (i + k) % n in the new array</span>
+        <span class="c1"># then copy the elements back into</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        <span class="n">new_arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">new_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span>
+            <span class="n">new_arr</span><span class="p">[</span><span class="n">new_pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+        <span class="c1"># copy the elements back into nums</span>
+        <span class="n">nums</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">new_arr</span><span class="p">[:]</span>
+
+<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">nums</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 5, 6, 7, 1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span><span class="p">[(</span><span class="mi">0</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span><span class="p">[(</span><span class="mi">1</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Do not return anything, modify nums in-place instead.</span>
+<span class="sd">        Time complexity: O(n)</span>
+<span class="sd">        Space complexity: O(1)</span>
+<span class="sd">        Approach: (always write out approach with examples first to verify)</span>
+<span class="sd">        nums = 1, 2, 3, 4, 5, 6, 7</span>
+<span class="sd">        k = 4</span>
+<span class="sd">        tgt_index = 0 + 4</span>
+
+<span class="sd">        tmp = 5</span>
+<span class="sd">        nums = 1, 2, 3, 4, 1, 6, 7</span>
+<span class="sd">        tgt_index = (4 + 4) % (n - 1) = 1</span>
+
+<span class="sd">        tmp = 2</span>
+<span class="sd">        nums = 1, 5, 3, 4, 1, 6, 7</span>
+<span class="sd">        tg_index = (1 + 4) % n = 5</span>
+
+<span class="sd">        tmp = 6</span>
+<span class="sd">        nums = 1, 5, 3, 4, 1, 2, 7</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+
+        <span class="n">start_idx</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">current_idx</span> <span class="o">=</span> <span class="n">start_idx</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">current_idx</span><span class="p">]</span>
+            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="n">next_idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">current_idx</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span>
+                <span class="n">nums</span><span class="p">[</span><span class="n">next_idx</span><span class="p">],</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">,</span> <span class="n">nums</span><span class="p">[</span><span class="n">next_idx</span><span class="p">]</span>
+                <span class="n">current_idx</span> <span class="o">=</span> <span class="n">next_idx</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">current_idx</span> <span class="o">==</span> <span class="n">start_idx</span><span class="p">:</span>
+                    <span class="k">break</span>
+            <span class="n">start_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">nums</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 5, 6, 7, 1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="text-justification">
+<h2>Text Justification<a class="headerlink" href="#text-justification" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://leetcode.com/problems/text-justification/">https://leetcode.com/problems/text-justification/</a></p></li>
+</ul>
+<p>Approach: Until we have added all words:</p>
+<ol class="simple">
+<li><p>Get i:i+k words that can fit on a line with maxWidth</p></li>
+<li><p>Insert the spaces between those words</p></li>
+<li><p>Add the line to the result</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+     <span class="k">def</span> <span class="nf">get_k_words</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">words</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">maxWidth</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the number of words starting at pos i in the words list that</span>
+<span class="sd">        can fit within maxWidth characters with at least one space between them</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="p">])</span>
+
+        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">maxWidth</span> <span class="ow">and</span> <span class="n">i</span><span class="o">+</span><span class="n">k</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="p">])</span>
+        <span class="n">k</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">k</span>
+
+     <span class="k">def</span> <span class="nf">insert_spaces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">words</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">maxWidth</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a line with extra spaces added between the words to fit maxWidth</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="p">])</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+
+        <span class="c1"># if the line contains only one word or we&#39;ve reached the last word,</span>
+        <span class="c1"># put spaces to the right (i.e. left justify the word)</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">i</span><span class="o">+</span><span class="n">k</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">spaces</span> <span class="o">=</span> <span class="n">maxWidth</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="n">spaces</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Example: &#39;word1    word2&#39; k = 2, with k-1=1 space between the words</span>
+            <span class="n">spaces</span> <span class="o">=</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span>
+            <span class="n">total_space_chars</span> <span class="o">=</span> <span class="n">maxWidth</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">+</span> <span class="n">spaces</span>
+
+            <span class="c1"># extra spaces between words should be distributed as evenly as possible</span>
+            <span class="n">avg_spaces_between_words</span> <span class="o">=</span> <span class="n">total_space_chars</span> <span class="o">//</span> <span class="n">spaces</span>
+
+            <span class="c1"># if the number of spaces on a line does not divide evenly between words,</span>
+            <span class="c1"># the empty slots on the left will be assigned more spaces than those</span>
+            <span class="c1"># on the right</span>
+            <span class="n">num_words_with_extra_space</span> <span class="o">=</span> <span class="n">total_space_chars</span> <span class="o">%</span> <span class="n">spaces</span>
+            <span class="k">if</span> <span class="n">num_words_with_extra_space</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">avg_spaces_between_words</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">num_words_with_extra_space</span><span class="p">])</span>
+                <span class="n">line</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">avg_spaces_between_words</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">line</span> <span class="o">+=</span> <span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">avg_spaces_between_words</span><span class="p">))</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">num_words_with_extra_space</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="n">avg_spaces_between_words</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">line</span>
+
+     <span class="k">def</span> <span class="nf">fullJustify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">words</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">maxWidth</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="c1"># approach</span>
+        <span class="c1"># Until we have added all words:</span>
+        <span class="c1"># 1. Get i:i+k words that can fit on a line with maxWidth</span>
+        <span class="c1"># 2. Insert the spaces between those words</span>
+        <span class="c1"># 3. Add the line to the result</span>
+
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_k_words</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">maxWidth</span><span class="p">)</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert_spaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">maxWidth</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="n">k</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">fullJustify</span><span class="p">([</span><span class="s2">&quot;Science&quot;</span><span class="p">,</span><span class="s2">&quot;is&quot;</span><span class="p">,</span><span class="s2">&quot;what&quot;</span><span class="p">,</span><span class="s2">&quot;we&quot;</span><span class="p">,</span><span class="s2">&quot;understand&quot;</span><span class="p">,</span><span class="s2">&quot;well&quot;</span><span class="p">,</span><span class="s2">&quot;enough&quot;</span><span class="p">,</span><span class="s2">&quot;to&quot;</span><span class="p">,</span><span class="s2">&quot;explain&quot;</span><span class="p">,</span><span class="s2">&quot;to&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;computer.&quot;</span><span class="p">,</span><span class="s2">&quot;Art&quot;</span><span class="p">,</span><span class="s2">&quot;is&quot;</span><span class="p">,</span><span class="s2">&quot;everything&quot;</span><span class="p">,</span><span class="s2">&quot;else&quot;</span><span class="p">,</span><span class="s2">&quot;we&quot;</span><span class="p">,</span><span class="s2">&quot;do&quot;</span><span class="p">],</span> <span class="n">maxWidth</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Science  is  what we&#39;,
+ &#39;understand      well&#39;,
+ &#39;enough to explain to&#39;,
+ &#39;a  computer.  Art is&#39;,
+ &#39;everything  else  we&#39;,
+ &#39;do                  &#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">fullJustify</span><span class="p">([</span><span class="s2">&quot;This&quot;</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="s2">&quot;an&quot;</span><span class="p">,</span> <span class="s2">&quot;example&quot;</span><span class="p">,</span> <span class="s2">&quot;of&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;justification.&quot;</span><span class="p">],</span> <span class="n">maxWidth</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;This    is    an&#39;, &#39;example  of text&#39;, &#39;justification.  &#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">fullJustify</span><span class="p">([</span><span class="s2">&quot;What&quot;</span><span class="p">,</span><span class="s2">&quot;must&quot;</span><span class="p">,</span><span class="s2">&quot;be&quot;</span><span class="p">,</span><span class="s2">&quot;acknowledgment&quot;</span><span class="p">,</span><span class="s2">&quot;shall&quot;</span><span class="p">,</span><span class="s2">&quot;be&quot;</span><span class="p">],</span> <span class="n">maxWidth</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;What   must   be&#39;, &#39;acknowledgment  &#39;, &#39;shall be        &#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reverse-a-string-without-affecting-special-characters">
+<h2>Reverse a string without affecting special characters<a class="headerlink" href="#reverse-a-string-without-affecting-special-characters" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.geeksforgeeks.org/reverse-a-string-without-affecting-special-characters/">https://www.geeksforgeeks.org/reverse-a-string-without-affecting-special-characters/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reverse_string</span><span class="p">(</span><span class="n">my_string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">my_string</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;=</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">s</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">reverse_string</span><span class="p">(</span><span class="s2">&quot;a!!!b.c.d,e&#39;f,ghi&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;i!!!h.g.f,e&#39;d,cba&quot;</span>
+<span class="k">assert</span> <span class="n">reverse_string</span><span class="p">(</span><span class="s2">&quot;l@@me!be*your@@hero%&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;o@@re!hr*uoye@@beml%&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="print-all-possible-palindromic-partitions-of-a-string">
+<h2>Print all possible palindromic partitions of a string<a class="headerlink" href="#print-all-possible-palindromic-partitions-of-a-string" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.geeksforgeeks.org/given-a-string-print-all-possible-palindromic-partition/">https://www.geeksforgeeks.org/given-a-string-print-all-possible-palindromic-partition/</a></p>
+<p><a class="reference external" href="https://leetcode.com/problems/palindrome-partitioning/">https://leetcode.com/problems/palindrome-partitioning/</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example</span> <span class="mi">1</span><span class="p">:</span>
+
+<span class="n">Input</span><span class="p">:</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;aab&quot;</span>
+<span class="n">Output</span><span class="p">:</span> <span class="p">[[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">],[</span><span class="s2">&quot;aa&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">]]</span>
+<span class="n">Example</span> <span class="mi">2</span><span class="p">:</span>
+
+<span class="n">Input</span><span class="p">:</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
+<span class="n">Output</span><span class="p">:</span> <span class="p">[[</span><span class="s2">&quot;a&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+        <span class="c1"># Incrementally build candidates for the solution and discard candidates (backtrack) if</span>
+        <span class="c1"># they don&#39;t satisfy the condition</span>
+        <span class="c1"># DFS on the following tree:</span>
+        <span class="c1"># s = abc</span>
+<span class="c1">#i=1    #    check [a]bc                                                     # call stack 1</span>
+        <span class="c1">#    [a] is a palindrome. check bc, path = [&#39;a&#39;]</span>
+        <span class="c1"># s = bc</span>
+        <span class="c1">#    check [b]c                                                      # call stack 2</span>
+<span class="c1">#i=1    #    [b] is a palindrome. check c, path = [&#39;a&#39;, &#39;b&#39;]</span>
+        <span class="c1"># s = c</span>
+        <span class="c1">#    check [c]</span>
+        <span class="c1">#    [c] is a palindrome. check &#39;&#39;, path = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span>
+        <span class="c1"># s = &#39;&#39;</span>
+        <span class="c1">#    append [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;] to result</span>
+        <span class="c1"># s = bc</span>
+        <span class="c1">#    check [bc]                                                      # call stack 2</span>
+<span class="c1">#i=1    #    [bc] is not a palindrome</span>
+        <span class="c1"># s = abc</span>
+<span class="c1">#i=2    #    check [ab]c</span>
+        <span class="c1">#    [ab] is not a palindrome</span>
+        <span class="c1">#    check [abc]</span>
+        <span class="c1">#    [abc] is not a palindrome</span>
+
+        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">:</span>
+                <span class="c1"># finished recursing through tree of possible substrings</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+                <span class="k">return</span>
+
+            <span class="c1"># generate substrings of all sizes in s</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="n">i</span><span class="p">])</span>
+                <span class="c1"># if we find a palindrome</span>
+                <span class="c1"># add it to the current dfs tree path</span>
+                <span class="c1"># pass through the result</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_palindrome</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="n">i</span><span class="p">]):</span>
+                    <span class="n">dfs</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">:],</span> <span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">s</span><span class="p">[:</span><span class="n">i</span><span class="p">]],</span> <span class="n">result</span><span class="p">)</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[],</span> <span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
+b
+c
+bc
+ab
+abc
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s2">&quot;aab&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
+a
+b
+ab
+aa
+b
+aab
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;a&#39;, &#39;a&#39;, &#39;b&#39;], [&#39;aa&#39;, &#39;b&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="find-original-array-from-doubled-array">
+<h2>Find original array from doubled array<a class="headerlink" href="#find-original-array-from-doubled-array" title="Permalink to this headline">¶</a></h2>
+<p>An integer array original is transformed into a doubled array changed by appending twice the value of every element in original, and then randomly shuffling the resulting array.</p>
+<p>Given an array changed, return original if changed is a doubled array. If changed is not a doubled array, return an empty array. The elements in original may be returned in any order.</p>
+<p>Input: changed = [1,3,4,2,6,8]
+Output: [1,3,4]</p>
+<p>Input: changed = [6,3,0,1]
+Output: []</p>
+<p>Input: changed = [1]
+Output: []</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">findOriginalArray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">changed</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="c1"># Key points:</span>
+        <span class="c1"># 1. if len(changed) is not even, return []</span>
+
+        <span class="c1"># approach 2</span>
+        <span class="c1"># O(nlogn) time complexity at least</span>
+        <span class="c1"># O(n) space complexity since we just have a hash table of all elements and their num occurrences</span>
+
+        <span class="c1"># Algorithm</span>
+        <span class="c1"># 1. put count of each element into a hashmap</span>
+        <span class="c1"># 2. iterate over a sorted list of the keys in the hashmap</span>
+        <span class="c1"># 3. for each key in the sorted list of keys</span>
+        <span class="c1">#    - add special handling for 0</span>
+        <span class="c1">#    - if 2*key is another key in the map and it occurs &gt; 0 times, decrement occurrences of key and 2*key</span>
+        <span class="c1">#    - add key to the result</span>
+        <span class="c1">#    - once the # of doubles reaches n / 2, return the result</span>
+
+        <span class="n">lookup</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">changed</span><span class="p">:</span>
+            <span class="n">lookup</span><span class="p">[</span><span class="n">each</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">keys</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">lookup</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">):</span>
+            <span class="n">each</span> <span class="o">=</span> <span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">each</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">num_zeros_added</span> <span class="o">=</span> <span class="n">lookup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>
+                <span class="n">result</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_zeros_added</span><span class="p">)]</span>
+                <span class="n">lookup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="n">num_zeros_added</span>
+            <span class="k">elif</span> <span class="mi">2</span><span class="o">*</span><span class="n">each</span> <span class="ow">in</span> <span class="n">lookup</span> <span class="ow">and</span> <span class="n">lookup</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">each</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">lookup</span><span class="p">[</span><span class="n">each</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">num_subtract</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">lookup</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">each</span><span class="p">],</span> <span class="n">lookup</span><span class="p">[</span><span class="n">each</span><span class="p">])</span>
+                <span class="n">lookup</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">each</span><span class="p">]</span> <span class="o">-=</span> <span class="n">num_subtract</span>
+                <span class="n">lookup</span><span class="p">[</span><span class="n">each</span><span class="p">]</span> <span class="o">-=</span> <span class="n">num_subtract</span>
+                <span class="n">result</span> <span class="o">+=</span> <span class="p">[</span><span class="n">each</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_subtract</span><span class="p">)]</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">changed</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">result</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">findOriginalArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">findOriginalArray</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="p">[]</span>
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">findOriginalArray</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Better approach to find the original array problem</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>        <span class="c1"># Key points:</span>
+        <span class="c1"># 1. if len(changed) is not even, return []</span>
+
+        <span class="c1"># approach 2</span>
+        <span class="c1"># add 2 times every element to a double ended queue</span>
+        <span class="c1"># iterate through each element of sorted</span>
+        <span class="c1"># sort the array O(nlogn)</span>
+        <span class="c1"># Use a double ended queue</span>
+        <span class="c1"># if each element is in the queue, pop the queue</span>
+
+        <span class="c1"># queue: []</span>
+        <span class="c1"># arr = [1, 2, 2, 4]  # must be sorted</span>
+        <span class="c1"># result = []</span>
+
+        <span class="c1"># 1</span>
+        <span class="c1"># queue: [2]</span>
+        <span class="c1"># result = [1]</span>
+
+        <span class="c1"># 2</span>
+        <span class="c1"># queue: []</span>
+        <span class="c1"># result: [1]</span>
+
+        <span class="c1"># 2</span>
+        <span class="c1"># queue: [4]</span>
+        <span class="c1"># result: [1, 2]</span>
+
+        <span class="c1"># 4</span>
+        <span class="c1"># queue: [0]</span>
+        <span class="c1"># return result</span>
+
+        <span class="c1"># Example</span>
+        <span class="c1"># [1,3,4,2,6,8]</span>
+        <span class="c1"># []</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="find-and-replace-string">
+<h2>833. Find and Replace String<a class="headerlink" href="#find-and-replace-string" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://leetcode.com/problems/find-and-replace-in-string/">https://leetcode.com/problems/find-and-replace-in-string/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">findReplaceString</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">indices</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">sources</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">targets</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="c1"># Time complexity: O(nk) where n is the number of sources and k is the max size of a string</span>
+        <span class="c1"># Space complexity: O(nk) to house potentially all source and replacement texts</span>
+
+        <span class="c1"># Key ideas</span>
+
+        <span class="c1"># 1. Create a lookup of mapping an index to a source that was found in s with its replacement text</span>
+        <span class="c1"># e.g. for s = &quot;abcd&quot;, indices = [0,2], sources = [&quot;ab&quot;, &quot;cd&quot;], targets = [&quot;eeee&quot;, &quot;bbbb&quot;]</span>
+        <span class="c1"># lookup = {</span>
+        <span class="c1">#   starting_idx: [source text, replacement text]</span>
+        <span class="c1">#     0: [&quot;ab&quot;, &quot;eeee&quot;]</span>
+        <span class="c1">#     2: [&quot;cd&quot;, &quot;bbbb&quot;]</span>
+        <span class="c1"># }</span>
+
+        <span class="c1"># 2. Replace the found sources with their targets</span>
+        <span class="c1">#    If the current index is not in the lookup, just add the character in s at index to the result</span>
+        <span class="c1">#    If the current index is in the lookup, replace its source and increment index by len(source)</span>
+
+        <span class="n">letters</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">each</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+            <span class="n">letters</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">each</span>
+
+        <span class="n">lookup</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">source</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sources</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">source</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">indices</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span><span class="n">indices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">source</span><span class="p">)]:</span>
+                <span class="n">lookup</span><span class="p">[</span><span class="n">indices</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="n">source</span><span class="p">,</span> <span class="n">targets</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="ow">or</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">lookup</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">lookup</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">+=</span> <span class="n">lookup</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">idx</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lookup</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">+=</span> <span class="n">s</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+                <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">findReplaceString</span><span class="p">(</span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;abcd&quot;</span><span class="p">,</span> <span class="n">indices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ab&quot;</span><span class="p">,</span> <span class="s2">&quot;cd&quot;</span><span class="p">],</span> <span class="n">targets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;eeee&quot;</span><span class="p">,</span> <span class="s2">&quot;bbbb&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;eeeebbbb&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="shuffle-an-array">
+<h2>Shuffle an Array<a class="headerlink" href="#shuffle-an-array" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://leetcode.com/problems/shuffle-an-array/">https://leetcode.com/problems/shuffle-an-array/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">original</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nums</span> <span class="o">=</span> <span class="n">nums</span>
+
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">original</span>
+
+    <span class="k">def</span> <span class="nf">shuffle</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="c1"># https://en.wikipedia.org/wiki/Fisher–Yates_shuffle</span>
+        <span class="c1"># Time complexity: O(n)</span>
+        <span class="c1"># Space complexity: O(n)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nums</span><span class="p">)):</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nums</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nums</span>
+
+
+<span class="c1"># Your Solution object will be instantiated and called as such:</span>
+<span class="c1"># obj = Solution(nums)</span>
+<span class="c1"># param_1 = obj.reset()</span>
+<span class="c1"># param_2 = obj.shuffle()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="maximum-subarray">
+<h2>53. Maximum Subarray<a class="headerlink" href="#maximum-subarray" title="Permalink to this headline">¶</a></h2>
+<p>Source: <a class="reference external" href="https://leetcode.com/problems/maximum-subarray/">https://leetcode.com/problems/maximum-subarray/</a></p>
+<p>Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
+<p>A subarray is a contiguous part of an array.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example</span> <span class="mi">1</span><span class="p">:</span>
+
+<span class="n">Input</span><span class="p">:</span> <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">Output</span><span class="p">:</span> <span class="mi">6</span>
+<span class="n">Explanation</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="n">has</span> <span class="n">the</span> <span class="n">largest</span> <span class="nb">sum</span> <span class="o">=</span> <span class="mf">6.</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">maxSubArray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+        <span class="c1"># Brute force solution O(n^2)</span>
+        <span class="c1"># Need to consider all possible contiguous subsequences</span>
+        <span class="c1"># i: 0 -&gt; n-1</span>
+        <span class="c1"># j: 0 -&gt; i-1</span>
+        <span class="c1"># max_sum = max(max_sum, nums[j:i])</span>
+
+        <span class="c1"># Greedy approach O(n)</span>
+        <span class="c1"># base case:</span>
+        <span class="c1"># empty array dp[0] = max(nums[0], 0)</span>
+
+        <span class="c1"># for i = 1 -&gt; n-1:</span>
+        <span class="c1">#    max_sum = max(dp[i-1] + nums[i], nums[i])</span>
+
+        <span class="c1"># nums = [-2, 1, 7, 2, 9]</span>
+        <span class="c1"># dp   = [0,  0, 0, 0, 0]</span>
+        <span class="c1">#        [0,  1, 8, 10, 19]</span>
+
+        <span class="c1"># nums = [-2, 1, 7, -3, 1, 1]</span>
+        <span class="c1"># dp   = [ 0, 0, 0,  0, 0, 0]</span>
+        <span class="c1">#      = [ 0, 0, 0,  0, 0, 0] max(-2, 0) = 0</span>
+        <span class="c1">#      = [ 0, 1, 0,  0, 0, 0] max(0, 1) = 1</span>
+        <span class="c1">#      = [ 0, 1, 8,  0, 0, 0] max(1+7, 7) = 8</span>
+        <span class="c1">#      = [ 0, 1, 8,  5, 0, 0] max(5, -3) = 5</span>
+        <span class="c1">#      = [ 0, 1, 8,  5, 6, 0] max(6, 1) = 6</span>
+        <span class="c1">#      = [ 0, 1, 8,  5, 6, 7]  max(7, 1) = 7</span>
+
+        <span class="c1"># Time complexity: O(n)</span>
+        <span class="c1"># Space complexity: O(n)</span>
+
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">))]</span>
+        <span class="c1"># Base case</span>
+        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">maxSubArray</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span> <span class="o">==</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="implement-strstr-rabin-karp-needle-in-a-haystack">
+<h2>28. Implement strStr() / Rabin-Karp Needle in a Haystack<a class="headerlink" href="#implement-strstr-rabin-karp-needle-in-a-haystack" title="Permalink to this headline">¶</a></h2>
+<p>Source: <a class="reference external" href="https://leetcode.com/problems/implement-strstr/">https://leetcode.com/problems/implement-strstr/</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">function</span> <span class="n">RabinKarp</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="n">n</span><span class="p">],</span> <span class="n">string</span> <span class="n">pattern</span><span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="n">m</span><span class="p">])</span>
+    <span class="n">hpattern</span> <span class="o">:=</span> <span class="nb">hash</span><span class="p">(</span><span class="n">pattern</span><span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="n">m</span><span class="p">]);</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="kn">from</span> <span class="mi">1</span> <span class="n">to</span> <span class="n">n</span><span class="o">-</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">hs</span> <span class="o">:=</span> <span class="nb">hash</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">..</span><span class="n">i</span><span class="o">+</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">hs</span> <span class="o">=</span> <span class="n">hpattern</span>
+            <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">..</span><span class="n">i</span><span class="o">+</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">pattern</span><span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="n">m</span><span class="p">]</span>
+                <span class="k">return</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="n">found</span>
+
+<span class="n">Use</span> <span class="n">a</span> <span class="n">rolling</span> <span class="nb">hash</span> <span class="n">to</span> <span class="n">construct</span> <span class="n">the</span> <span class="n">substring</span> <span class="n">of</span> <span class="n">the</span> <span class="n">haystack</span>
+<span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mf">1.</span><span class="o">.</span><span class="n">i</span><span class="o">+</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">..</span><span class="n">i</span><span class="o">+</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">m</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">strStr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">haystack</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">needle</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        function RabinKarp(string s[1..n], string pattern[1..m])</span>
+<span class="sd">            hpattern := hash(pattern[1..m]);</span>
+<span class="sd">            for i from 1 to n-m+1</span>
+<span class="sd">                hs := hash(s[i..i+m-1])</span>
+<span class="sd">                if hs = hpattern</span>
+<span class="sd">                    if s[i..i+m-1] = pattern[1..m]</span>
+<span class="sd">                        return i</span>
+<span class="sd">            return not found</span>
+
+<span class="sd">        Use a rolling hash to construct the substring of the haystack</span>
+<span class="sd">        s[i+1..i+m] = s[i..i+m-1] - s[i] + s[i+m]</span>
+<span class="sd">        Source: https://en.wikipedia.org/wiki/Rabin–Karp_algorithm</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">def</span> <span class="nf">hash</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">+=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2069</span>
+            <span class="k">return</span> <span class="n">result</span>
+
+
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">haystack</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">needle</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+
+        <span class="n">hashed_needle</span> <span class="o">=</span> <span class="nb">hash</span><span class="p">(</span><span class="n">needle</span><span class="p">)</span>
+
+        <span class="n">substr</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">haystack</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">substr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">substr</span> <span class="o">=</span> <span class="n">haystack</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">m</span><span class="p">]</span>
+                <span class="n">hashed_substr</span> <span class="o">=</span> <span class="nb">hash</span><span class="p">(</span><span class="n">substr</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">i</span><span class="o">+</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+                <span class="c1"># implements a rolling hash</span>
+                <span class="c1"># - The earliest hashed character is at i-1 since i was incremented after</span>
+                <span class="c1"># the previous loop</span>
+                <span class="c1"># the next character we want to add to the hash is at i-1+m</span>
+                <span class="n">hashed_substr</span> <span class="o">=</span> <span class="n">hashed_substr</span> <span class="o">-</span> <span class="nb">hash</span><span class="p">(</span><span class="n">haystack</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="nb">hash</span><span class="p">(</span><span class="n">haystack</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="n">m</span><span class="p">])</span>
+                <span class="c1"># hashed_substr = hash(haystack[i:i+m])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">break</span>
+
+            <span class="k">if</span> <span class="n">hashed_substr</span> <span class="o">==</span> <span class="n">hashed_needle</span><span class="p">:</span>
+                <span class="c1"># verify order is correct since hash doesn&#39;t check order</span>
+                <span class="k">if</span> <span class="n">needle</span> <span class="o">==</span> <span class="n">haystack</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">m</span><span class="p">]:</span>
+                    <span class="k">return</span> <span class="n">i</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">strStr</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">,</span> <span class="s2">&quot;123&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">strStr</span><span class="p">(</span><span class="s2">&quot;9999999999123lksdjflskdfjlkjf&quot;</span><span class="p">,</span> <span class="s2">&quot;123&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="remove-all-ones-with-row-and-column-flips">
+<h2>2128. Remove All Ones with Row and Column Flips<a class="headerlink" href="#remove-all-ones-with-row-and-column-flips" title="Permalink to this headline">¶</a></h2>
+<p>You are given an m x n binary matrix grid.</p>
+<p>In one operation, you can choose any row or column and flip each value in that row or column (i.e., changing all 0’s to 1’s, and all 1’s to 0’s).</p>
+<p>Return true if it is possible to remove all 1’s from grid using any number of operations or false otherwise.</p>
+<p>Source: <a class="reference external" href="https://leetcode.com/problems/remove-all-ones-with-row-and-column-flips/">https://leetcode.com/problems/remove-all-ones-with-row-and-column-flips/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">removeOnes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="c1"># Observations / Notes</span>
+
+        <span class="c1"># Approach # 3</span>
+        <span class="c1"># Invert the first row</span>
+        <span class="c1"># for all rows if none equal the first row or its inversion, return False</span>
+        <span class="c1"># otherwise return True</span>
+
+        <span class="c1"># Time complexity: O(nm)</span>
+        <span class="c1"># Space complexity: O(n)</span>
+
+        <span class="n">r1</span> <span class="o">=</span> <span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">r1_inv</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="ow">not</span> <span class="n">elem</span><span class="p">)</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="k">if</span> <span class="n">row</span> <span class="o">!=</span> <span class="n">r1</span> <span class="ow">and</span> <span class="n">row</span> <span class="o">!=</span> <span class="n">r1_inv</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="probability.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Probability</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="linked_list.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Linked List</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Peter Lucia<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

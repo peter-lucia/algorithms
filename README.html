@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Algorithms Review Guide &#8212; Algorithms Review Guide</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Trees" href="tree.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algorithms Review Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Algorithms Review Guide
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tree.html">
+   Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hashmap.html">
+   HashMap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sorting_and_searching.html">
+   Sorting and Searching
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dynamic_programming.html">
+   Dynamic Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="number_theory.html">
+   Number Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="string_array.html">
+   String / Array
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linked_list.html">
+   Linked List
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bit_manipulation.html">
+   Bit Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python.html">
+   Python
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/README.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/peter-lucia/algorithms"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/peter-lucia/algorithms/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graph">
+     Graph
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trees-binary-search-tree">
+     Trees / Binary Search Tree
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hashtables">
+     HashTables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting-and-searching">
+     Sorting And Searching
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dynamic-programming">
+     Dynamic Programming
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#number-theory">
+     Number Theory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#math-combinatorics-and-probability">
+     Math: Combinatorics and Probability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string-array">
+     String / Array
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linked-list">
+     Linked List
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bit-manipulation">
+     BIT Manipulation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-language">
+     Python Language
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geometry">
+   Geometry
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#np-complete">
+   NP-Complete
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Algorithms Review Guide</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graph">
+     Graph
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trees-binary-search-tree">
+     Trees / Binary Search Tree
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hashtables">
+     HashTables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting-and-searching">
+     Sorting And Searching
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dynamic-programming">
+     Dynamic Programming
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#number-theory">
+     Number Theory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#math-combinatorics-and-probability">
+     Math: Combinatorics and Probability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string-array">
+     String / Array
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linked-list">
+     Linked List
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bit-manipulation">
+     BIT Manipulation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-language">
+     Python Language
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geometry">
+   Geometry
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#np-complete">
+   NP-Complete
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="algorithms-review-guide">
+<h1>Algorithms Review Guide<a class="headerlink" href="#algorithms-review-guide" title="Permalink to this headline">¶</a></h1>
+<p>The content of this repository is also hosted at: <a class="reference external" href="https://peter-lucia.github.io/algorithms/">https://peter-lucia.github.io/algorithms/</a></p>
+<section id="table-of-contents">
+<h2>Table of Contents:<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#graph">Graph</a></p></li>
+<li><p><a class="reference external" href="#trees--binary-search-tree">Tree / Binary Search Tree</a></p></li>
+<li><p><a class="reference external" href="#hashtables">HashTables</a></p></li>
+<li><p><a class="reference external" href="#sorting-and-searching">Sorting And Searching</a></p></li>
+<li><p><a class="reference external" href="#dynamic-programming">Dynamic Programming</a></p></li>
+<li><p><a class="reference external" href="#number-theory">Number Theory</a></p></li>
+<li><p><a class="reference external" href="#math-combinatorics-and-probability">Math: Combinatorics / Probability)</a></p></li>
+<li><p><a class="reference external" href="#string--array">String / Array / Stack</a></p></li>
+<li><p><a class="reference external" href="#linked-list">Linked List</a></p></li>
+<li><p><a class="reference external" href="#bit-manipulation">BIT Manipulation</a></p></li>
+<li><p><a class="reference external" href="#python-language">Python</a></p></li>
+<li><p><a class="reference external" href="#np-complete">NP-Complete</a></p></li>
+<li><p><a class="reference external" href="#references">References</a></p></li>
+</ol>
+<section id="graph">
+<h3>Graph<a class="headerlink" href="#graph" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><a class="reference internal" href="graph.html"><span class="doc std std-doc">Breadth First Search (BFS)</span></a></p></li>
+<li><p><a class="reference internal" href="graph.html"><span class="doc std std-doc">Depth First Search (DFS)</span></a></p></li>
+<li><p><a class="reference internal" href="graph.html"><span class="doc std std-doc">Shortest Path from source to all vertices <strong>Dijkstra</strong></span></a></p></li>
+<li><p><a class="reference internal" href="graph.html"><span class="doc std std-doc">Shortest Path from every vertex to every other vertex <strong>Floyd Warshall</strong></span></a></p></li>
+<li><p><a class="reference internal" href="graph.html"><span class="doc std std-doc">To detect cycle in a Graph <strong>DFS</strong></span></a></p></li>
+<li><p><a class="reference internal" href="graph.html"><span class="doc std std-doc">To detect cycle in a Graph <strong>Union Find</strong></span></a></p></li>
+<li><p><a class="reference internal" href="graph.html"><span class="doc std std-doc">Minimum Spanning tree <strong>Prim</strong></span></a></p></li>
+<li><p><a class="reference internal" href="graph.html"><span class="doc std std-doc">Minimum Spanning tree <strong>Kruskal</strong></span></a></p></li>
+<li><p><a class="reference internal" href="graph.html"><span class="doc std std-doc">Topological Sort</span></a></p></li>
+<li><p><a class="reference internal" href="graph.html"><span class="doc std std-doc">Boggle (Find all possible words in a board of characters)</span></a></p></li>
+<li><p><a class="reference internal" href="graph.html"><span class="doc std std-doc">Bridges in a Graph</span></a></p></li>
+<li><p>There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list).
+<a class="reference internal" href="graph.html"><span class="doc std std-doc">Each representation and its pros + cons. </span></a></p></li>
+<li><p><a class="reference internal" href="graph.html"><span class="doc std std-doc">1293. Shortest Path in a Grid with Obstacles Elimination</span></a></p></li>
+</ol>
+</section>
+<section id="trees-binary-search-tree">
+<h3>Trees / Binary Search Tree<a class="headerlink" href="#trees-binary-search-tree" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">Basic tree construction, traversal and manipulation algorithms</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">Binary Trees</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">N-ary trees</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">Trie-trees</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">BFS Binary Tree</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">AVL Tree</span></a></p></li>
+<li><p>Tree traversal algorithms: <a class="reference internal" href="graph.html"><span class="doc std std-doc">BFS Adj list</span></a> and <a class="reference internal" href="graph.html"><span class="doc std std-doc">DFS Adj list</span></a></p></li>
+<li><p>The difference between <a class="reference internal" href="tree.html"><span class="doc std std-doc">inorder, postorder and preorder</span></a>.</p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">Find Minimum Depth of a Binary Tree</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">Maximum Path Sum in a Binary Tree</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">Check if a given array can represent Preorder Traversal of Binary Search Tree</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">Check whether a binary tree is a full binary tree or not</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">Bottom View Binary Tree</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">Print Nodes in Top View of Binary Tree</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">Remove nodes on root to leaf paths of length &lt; K</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">Lowest Common Ancestor in a Binary Search Tree</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">Check if a binary tree is subtree of another binary tree</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">Reverse alternate levels of a perfect binary tree</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">Find and Remove Leaves of Binary Tree</span></a></p></li>
+<li><p><a class="reference internal" href="graph.html"><span class="doc std std-doc">Find and Remove Leaves of Binary Tree (DFS)</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">Find mode in binary search tree (BFS)</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc"> 116. Populating Next Right Pointers in Each Node in a Perfect Binary Tree</span></a></p></li>
+<li><p><a class="reference internal" href="tree.html"><span class="doc std std-doc">1026. Maximum Difference Between Node and Ancestor</span></a></p></li>
+</ol>
+</section>
+<section id="hashtables">
+<h3>HashTables<a class="headerlink" href="#hashtables" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><a class="reference internal" href="hashmap.html"><span class="doc std std-doc">How to implement one using only arrays</span></a>.</p></li>
+<li><p><a class="reference internal" href="hashmap.html"><span class="doc std std-doc">432. Reconstruct original digits from english</span></a></p></li>
+<li><p><a class="reference internal" href="hashmap.html"><span class="doc std std-doc">811. Subdomain Visit count</span></a></p></li>
+<li><p><a class="reference internal" href="hashmap.html"><span class="doc std std-doc">49. Group Anagrams</span></a></p></li>
+<li><p><a class="reference internal" href="hashmap.html"><span class="doc std std-doc">249. Group Shifted Strings</span></a></p></li>
+<li><p><a class="reference internal" href="hashmap.html"><span class="doc std std-doc">347. Top k frequent elements</span></a></p></li>
+</ol>
+</section>
+<section id="sorting-and-searching">
+<h3>Sorting And Searching<a class="headerlink" href="#sorting-and-searching" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><a class="reference internal" href="sorting_and_searching.html"><span class="doc std std-doc">Binary Search</span></a></p></li>
+<li><p><a class="reference internal" href="sorting_and_searching.html"><span class="doc std std-doc">Search an element in a sorted and rotated array</span></a></p></li>
+<li><p><a class="reference internal" href="sorting_and_searching.html"><span class="doc std std-doc">Bubble Sort</span></a></p></li>
+<li><p><a class="reference internal" href="sorting_and_searching.html"><span class="doc std std-doc">Insertion Sort</span></a></p></li>
+<li><p><a class="reference internal" href="sorting_and_searching.html"><span class="doc std std-doc">Merge Sort</span></a> can be <a class="reference external" href="https://www.geeksforgeeks.org/quick-sort-vs-merge-sort/">highly useful in situations where quicksort is impractical</a></p></li>
+<li><p><a class="reference internal" href="sorting_and_searching.html"><span class="doc std std-doc">Heap Sort (Binary Heap)</span></a></p></li>
+<li><p><a class="reference internal" href="sorting_and_searching.html"><span class="doc std std-doc">Quick Sort</span></a></p></li>
+<li><p>Interpolation Search</p></li>
+<li><p>Find Kth Smallest/Largest Element In Unsorted Array</p></li>
+<li><p>Given a sorted array and a number x, find the pair in array whose sum is closest to x</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Counting_sort">Counting Sort Pseudocode</a> Worst Time: O(n+k), Worst Space: O(k), k = max(nums)</p></li>
+<li><p><a class="reference internal" href="sorting_and_searching.html"><span class="doc std std-doc">Stock Buy Sell to Maximize Profit</span></a></p></li>
+<li><p><a class="reference internal" href="string_array.html"><span class="doc std std-doc">843. Guess the word</span></a></p></li>
+</ol>
+</section>
+<section id="dynamic-programming">
+<h3>Dynamic Programming<a class="headerlink" href="#dynamic-programming" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><a class="reference internal" href="dynamic_programming.html"><span class="doc std std-doc">Longest Common Subsequence</span></a></p></li>
+<li><p><a class="reference internal" href="dynamic_programming.html"><span class="doc std std-doc">Longest Increasing Subsequence</span></a></p></li>
+<li><p><a class="reference internal" href="dynamic_programming.html"><span class="doc std std-doc">Edit Distance</span></a></p></li>
+<li><p><a class="reference internal" href="dynamic_programming.html"><span class="doc std std-doc">Minimum Partition</span></a></p></li>
+<li><p><a class="reference internal" href="dynamic_programming.html"><span class="doc std std-doc">Ways to Cover a Distance</span></a></p></li>
+<li><p>Longest Path In Matrix</p></li>
+<li><p><a class="reference internal" href="dynamic_programming.html"><span class="doc std std-doc">Subset Sum Problem</span></a></p></li>
+<li><p>Optimal Strategy for a Game</p></li>
+<li><p><a class="reference internal" href="dynamic_programming.html"><span class="doc std std-doc">0-1 Knapsack Problem</span></a></p></li>
+<li><p>Boolean Parenthesization Problem</p></li>
+<li><p><a class="reference internal" href="dynamic_programming.html"><span class="doc std std-doc">Get nth number in the Fibonacci Sequence</span></a></p></li>
+<li><p><a class="reference internal" href="dynamic_programming.html"><span class="doc std std-doc">Longest string chain</span></a></p></li>
+<li><p><a class="reference internal" href="dynamic_programming.html"><span class="doc std std-doc">792. Number of matching subsequences</span></a></p></li>
+<li><p><a class="reference internal" href="dynamic_programming.html"><span class="doc std std-doc">70. Climb Stairs</span></a></p></li>
+<li><p><a class="reference internal" href="dynamic_programming.html"><span class="doc std std-doc">416. Partition Equal Subset Sum</span></a></p></li>
+</ol>
+</section>
+<section id="number-theory">
+<h3>Number Theory<a class="headerlink" href="#number-theory" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><a class="reference internal" href="number_theory.html"><span class="doc std std-doc">Modular Exponentiation</span></a></p></li>
+<li><p>Modular multiplicative inverse</p></li>
+<li><p><a class="reference internal" href="number_theory.html"><span class="doc std std-doc">Primality Test | Set 2 (Fermat Method)</span></a></p></li>
+<li><p>Euler’s Totient Function</p></li>
+<li><p><a class="reference internal" href="number_theory.html"><span class="doc std std-doc">Sieve of Eratosthenes</span></a></p></li>
+<li><p>Convex Hull</p></li>
+<li><p>Basic and Extended Euclidean algorithms</p></li>
+<li><p>Segmented Sieve</p></li>
+<li><p>Chinese remainder theorem</p></li>
+<li><p>Lucas Theorem</p></li>
+<li><p><a class="reference internal" href="number_theory.html"><span class="doc std std-doc">Check if a number is prime or not</span></a></p></li>
+<li><p><a class="reference internal" href="number_theory.html"><span class="doc std std-doc">Number of primes less than n</span></a></p></li>
+<li><p><a class="reference internal" href="number_theory.html"><span class="doc std std-doc">1015. Smallest Integer Divisible by K</span></a></p></li>
+</ol>
+</section>
+<section id="math-combinatorics-and-probability">
+<h3>Math: Combinatorics and Probability<a class="headerlink" href="#math-combinatorics-and-probability" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><a class="reference internal" href="probability.html"><span class="doc std std-doc">Probability problems</span></a>, and other Discrete Math 101 situations.</p></li>
+<li><p>The essentials of <a class="reference internal" href="number_theory.html"><span class="doc std std-doc">combinatorics</span></a> and probability.</p></li>
+<li><p><a class="reference internal" href="number_theory.html"><span class="doc std std-doc">N-choose-K problems</span></a></p></li>
+</ol>
+</section>
+<section id="string-array">
+<h3>String / Array<a class="headerlink" href="#string-array" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><a class="reference internal" href="string_array.html"><span class="doc std std-doc">Reverse an array without affecting special characters</span></a></p></li>
+<li><p><a class="reference internal" href="string_array.html"><span class="doc std std-doc">All Possible Palindromic Partitions</span></a></p></li>
+<li><p>Count triplets with sum smaller than a given value</p></li>
+<li><p>Convert array into Zig-Zag fashion</p></li>
+<li><p>Generate all possible sorted arrays from alternate elements of two given sorted arrays</p></li>
+<li><p>Pythagorean Triplet in an array</p></li>
+<li><p>Length of the largest subarray with contiguous elements</p></li>
+<li><p>Find the smallest positive integer value that cannot be represented as sum of any subset of a given array</p></li>
+<li><p>Smallest subarray with sum greater than a given value</p></li>
+<li><p><a class="reference internal" href="string_array.html"><span class="doc std std-doc">735. Asteroid Collision</span></a></p></li>
+<li><p><a class="reference internal" href="string_array.html"><span class="doc std std-doc">20. Valid Parentheses</span></a></p></li>
+<li><p><a class="reference internal" href="string_array.html"><span class="doc std std-doc">189. Rotate Array</span></a></p></li>
+<li><p><a class="reference internal" href="string_array.html"><span class="doc std std-doc">68. Text Justification</span></a></p></li>
+<li><p><a class="reference internal" href="string_array.html"><span class="doc std std-doc">2007. Find Original Array from doubled array</span></a></p></li>
+<li><p><a class="reference internal" href="string_array.html"><span class="doc std std-doc">822. Find And Replace String</span></a></p></li>
+<li><p><a class="reference internal" href="string_array.html"><span class="doc std std-doc">384. Shuffle an Array</span></a></p></li>
+<li><p><a class="reference internal" href="string_array.html"><span class="doc std std-doc">53. Maximum subarray</span></a></p></li>
+<li><p><a class="reference internal" href="string_array.html"><span class="doc std std-doc">28. Implmeent strStr() / Rabin-Karp find needle in haystack</span></a></p></li>
+<li><p><a class="reference internal" href="string_array.html"><span class="doc std std-doc">2128. Remove All Ones With Row and Column Flips</span></a></p></li>
+</ol>
+</section>
+<section id="linked-list">
+<h3>Linked List<a class="headerlink" href="#linked-list" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><a class="reference internal" href="linked_list.html"><span class="doc std std-doc">Insertion of a node in Linked List (On the basis of some constraints)</span></a></p></li>
+<li><p><a class="reference internal" href="linked_list.html"><span class="doc std std-doc">Delete a given node in Linked List (under given constraints)</span></a></p></li>
+<li><p><a class="reference internal" href="linked_list.html"><span class="doc std std-doc">Compare two strings represented as linked lists</span></a></p></li>
+<li><p><a class="reference internal" href="linked_list.html"><span class="doc std std-doc">Add Two Numbers Represented By Linked Lists</span></a></p></li>
+<li><p><a class="reference internal" href="linked_list.html"><span class="doc std std-doc">Merge A Linked List Into Another Linked List At Alternate Positions</span></a></p></li>
+<li><p>Reverse A List In Groups Of Given Size</p></li>
+<li><p>Union And Intersection Of 2 Linked Lists</p></li>
+<li><p>Detect And Remove Loop In A Linked List</p></li>
+<li><p>Merge Sort For Linked Lists</p></li>
+<li><p><a class="reference internal" href="linked_list.html"><span class="doc std std-doc">Select A Random Node from A Singly Linked List</span></a></p></li>
+<li><p><a class="reference internal" href="linked_list.html"><span class="doc std std-doc">Reverse a linked list</span></a></p></li>
+<li><p><a class="reference internal" href="linked_list.html"><span class="doc std std-doc">2095. Delete the Middle Node of a Linked List</span></a></p></li>
+<li><p><a class="reference internal" href="linked_list.html"><span class="doc std std-doc">21. Merge Two Sorted Lists</span></a></p></li>
+</ol>
+</section>
+<section id="bit-manipulation">
+<h3>BIT Manipulation<a class="headerlink" href="#bit-manipulation" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><a class="reference internal" href="bit_manipulation.html"><span class="doc std std-doc">Maximum Subarray XOR</span></a></p></li>
+<li><p>Magic Number</p></li>
+<li><p>Sum of bit differences among all pairs</p></li>
+<li><p>Swap All Odds And Even Bits</p></li>
+<li><p>Find the element that appears once</p></li>
+<li><p><a class="reference internal" href="bit_manipulation.html"><span class="doc std std-doc">Binary representation of a given number</span></a></p></li>
+<li><p>Count total set bits in all numbers from 1 to n</p></li>
+<li><p>Rotate bits of a number</p></li>
+<li><p>Count number of bits to be flipped to convert A to B</p></li>
+<li><p>Find Next Sparse Number</p></li>
+<li><p><a class="reference internal" href="bit_manipulation.html"><span class="doc std std-doc">476. Number Complement</span></a></p></li>
+</ol>
+</section>
+<section id="python-language">
+<h3>Python Language<a class="headerlink" href="#python-language" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><a class="reference internal" href="python.html"><span class="doc std std-doc">Defaultdict</span></a></p></li>
+<li><p><a class="reference internal" href="python.html"><span class="doc std std-doc">Bisect</span></a></p></li>
+<li><p><a class="reference internal" href="python.html"><span class="doc std std-doc">Class variables vs. instance variables</span></a></p></li>
+<li><p><a class="reference internal" href="python.html"><span class="doc std std-doc">Static variables in functions</span></a></p></li>
+</ol>
+</section>
+</section>
+<section id="geometry">
+<h2>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference internal" href="geometry.html"><span class="doc std std-doc">Is Square Valid</span></a></p></li>
+</ol>
+</section>
+<section id="np-complete">
+<h2>NP-Complete<a class="headerlink" href="#np-complete" title="Permalink to this headline">¶</a></h2>
+<p>NP-Complete means a problem is both NP-Hard and a solution is verifiable in polynomial time.</p>
+<p>Structure of NP-Complete proofs</p>
+<ol class="simple">
+<li><p>Demonstrate that we can validate a solution for B in polynomial time <strong>(B is in NP)</strong></p></li>
+<li><p>Show the reduction from a known problem, <span class="math notranslate nohighlight">\(A \leq_p B\)</span> (A is no harder than B and B is at least as hard as A). <strong>(B is NP_Hard)</strong></p>
+<ol class="simple">
+<li><p>Instance of A converted to instance of B in polynomial time</p></li>
+<li><p>Solution of B converted to solution of A in polynomial time</p></li>
+<li><p>If you have a solution for B you have a solution for A</p></li>
+<li><p>If no solution for B no solution for A (or contra-positive – if you have a solution for A then you have a solution for B)</p></li>
+</ol>
+</li>
+</ol>
+<section id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.bigocheatsheet.com">Big-O Cheatsheet</a></p></li>
+<li><p><a class="reference external" href="http://mathandmultimedia.com/2012/06/02/determining-primes-through-square-root/">Determine Primes via Square Root</a></p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/29595849/explain-a-code-to-check-primality-based-on-fermats-little-theorem">Primes Stackoverflow</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Baillie%E2%80%93PSW_primality_test">Baillie-PSW Primality Test</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Fermat_pseudoprime">Wiki - Fermat Pseudoprime</a></p></li>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/primality-test-set-2-fermet-method/">Primality Test</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=p8vIcmr_Pqo">Youtube: Khan Academy Combination formula</a></p></li>
+<li><p><a class="reference external" href="https://www.analyticssteps.com/blogs/dijkstras-algorithm-shortest-path-algorithm">Dijkstra’s Algorithm</a></p></li>
+<li><p><a class="reference external" href="https://www.section.io/engineering-education/graph-data-structure-python/">Graph data structure</a></p></li>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/comparison-between-adjacency-list-and-adjacency-matrix-representation-of-graph/">Adjacency List vs. Adjacency Matrix</a></p></li>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/">Common algorithms</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/heapq.html">Python heapq</a></p></li>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/heap-sort/">Heapsort</a></p></li>
+</ul>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="tree.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Trees</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Peter Lucia<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

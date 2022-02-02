@@ -1,0 +1,1633 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Sorting and Searching &#8212; Algorithms Review Guide</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Dynamic Programming" href="dynamic_programming.html" />
+    <link rel="prev" title="HashMap" href="hashmap.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algorithms Review Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   Algorithms Review Guide
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tree.html">
+   Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hashmap.html">
+   HashMap
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Sorting and Searching
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dynamic_programming.html">
+   Dynamic Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="number_theory.html">
+   Number Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="string_array.html">
+   String / Array
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linked_list.html">
+   Linked List
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bit_manipulation.html">
+   Bit Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python.html">
+   Python
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/sorting_and_searching.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/peter-lucia/algorithms"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/peter-lucia/algorithms/issues/new?title=Issue%20on%20page%20%2Fsorting_and_searching.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/peter-lucia/algorithms/gh-pages?urlpath=tree/book/_build/html/sorting_and_searching.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binary-search">
+   Binary Search
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binary-search-application">
+   Binary Search Application
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mergesort-divide-and-conquer">
+   Mergesort (Divide and Conquer)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mergesort-application">
+     Mergesort application
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quicksort-divide-and-conquer">
+   Quicksort (Divide and Conquer)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-median-of-two-sorted-arrays-mergesort-application">
+   Find median of two sorted arrays (mergesort application)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-median-of-two-sorted-arrays-binary-search-application">
+   Find median of two sorted arrays (binary search application)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#snapshot-array">
+   1146. Snapshot Array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#search-an-element-in-a-sorted-and-rotated-array">
+   Search an element in a sorted and rotated array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bubble-sort">
+   Bubble Sort
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#insertion-sort">
+   Insertion Sort
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#insertion-sort-linked-list-example-problem">
+   Insertion Sort Linked List Example Problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#guess-the-word">
+   834. Guess the Word
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Sorting and Searching</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binary-search">
+   Binary Search
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binary-search-application">
+   Binary Search Application
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mergesort-divide-and-conquer">
+   Mergesort (Divide and Conquer)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mergesort-application">
+     Mergesort application
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quicksort-divide-and-conquer">
+   Quicksort (Divide and Conquer)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-median-of-two-sorted-arrays-mergesort-application">
+   Find median of two sorted arrays (mergesort application)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-median-of-two-sorted-arrays-binary-search-application">
+   Find median of two sorted arrays (binary search application)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#snapshot-array">
+   1146. Snapshot Array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#search-an-element-in-a-sorted-and-rotated-array">
+   Search an element in a sorted and rotated array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bubble-sort">
+   Bubble Sort
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#insertion-sort">
+   Insertion Sort
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#insertion-sort-linked-list-example-problem">
+   Insertion Sort Linked List Example Problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#guess-the-word">
+   834. Guess the Word
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="sorting-and-searching">
+<h1>Sorting and Searching<a class="headerlink" href="#sorting-and-searching" title="Permalink to this headline">¶</a></h1>
+<section id="binary-search">
+<h2>Binary Search<a class="headerlink" href="#binary-search" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Assumes the arr is sorted in increasing order</span>
+<span class="sd">    O(logn) time complexity</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">key</span> <span class="o">==</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">high</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">:</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="p">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">key</span><span class="p">:</span>
+            <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">key</span><span class="p">:</span>
+            <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">mid</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">binary_search</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">binary_search</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">binary_search</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+-1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="binary-search-application">
+<h2>Binary Search Application<a class="headerlink" href="#binary-search-application" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://leetcode.com/problems/time-based-key-value-store/">https://leetcode.com/problems/time-based-key-value-store/</a></p></li>
+<li><p>See <span class="xref myst">Python</span> for binary search application using the bisect built-in</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">bisect</span> <span class="kn">import</span> <span class="n">bisect_right</span>
+<span class="k">class</span> <span class="nc">TimeMap</span><span class="p">:</span>
+
+    <span class="c1"># approach #1</span>
+
+    <span class="c1"># use a hashmap</span>
+    <span class="c1"># key: [(timestamp, value), (timestamp, value)]</span>
+
+    <span class="c1"># approach #2</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># timestamp increases with each successive call,</span>
+        <span class="c1"># so we can just append and they will be sorted</span>
+        <span class="c1"># by timestamp in increasing order</span>
+
+        <span class="c1"># create two defaultdicts for timestamps and values</span>
+
+        <span class="c1"># we could use one lookup with a list of tuples</span>
+        <span class="c1"># where lookup[key] = [(timestamp, value), (timestamp1, value1)]</span>
+        <span class="c1"># but bisect only provides the key parameter in python 3.10+</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="c1"># If the last (and greatest) timestamp for this key is smaller</span>
+        <span class="c1"># than the timestamp requested, return the last timestamp</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">timestamp</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">high</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">:</span>
+            <span class="n">mid</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="p">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">mid</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">timestamp</span><span class="p">:</span>
+                <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">mid</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">timestamp</span><span class="p">:</span>
+                <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># found it, return the value</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">mid</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="c1"># since low is 0, no values &lt;= timestamp exist in the array for this key</span>
+        <span class="k">if</span> <span class="n">low</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+        <span class="c1"># the exact timestamp was not found, but since we completed binary search</span>
+        <span class="c1"># we know that all values &lt; low are &lt;= the desired timestamp,</span>
+        <span class="c1"># so we return the value just to the left of low</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">low</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># all values &lt;= to timestamp are to the left of low</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="xref myst">Master Theorem with explanation (pdf)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span>
+
+<span class="n">display</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;media/master_theorem.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1299</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1300</span>             <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1301</span>         <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/formatters.py</span> in <span class="ni">__call__</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">968</span> 
+<span class="g g-Whitespace">    </span><span class="mi">969</span>             <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">970</span>                 <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">971</span>             <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">972</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_repr_mimebundle_</span><span class="nt">(self, include, exclude)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1288</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1289</span>             <span class="n">mimetype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mimetype</span>
+<span class="ne">-&gt; </span><span class="mi">1290</span>             <span class="n">data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">(</span><span class="n">always_both</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1291</span>             <span class="k">if</span> <span class="n">metadata</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1292</span>                 <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="n">mimetype</span><span class="p">:</span> <span class="n">metadata</span><span class="p">}</span>
+
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1300</span>             <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1301</span>         <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1302</span>             <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1303</span>                 <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1304</span>         <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;media/master_theorem.png&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1299</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1300</span>             <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1301</span>         <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/formatters.py</span> in <span class="ni">__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>             <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>             <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">345</span>                 <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span>             <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_repr_png_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1318</span>     <span class="k">def</span> <span class="nf">_repr_png_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1319</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_FMT_PNG</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1320</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1321</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1322</span>     <span class="k">def</span> <span class="nf">_repr_jpeg_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1300</span>             <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1301</span>         <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1302</span>             <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1303</span>                 <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1304</span>         <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;media/master_theorem.png&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;IPython.core.display.Image object&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mergesort-divide-and-conquer">
+<h2>Mergesort (Divide and Conquer)<a class="headerlink" href="#mergesort-divide-and-conquer" title="Permalink to this headline">¶</a></h2>
+<p><span class="math notranslate nohighlight">\(T(n) = aT(n/b) + O(n^{d}log^k{n})\)</span></p>
+<ul class="simple">
+<li><p>a = number of subproblems in the recursion</p></li>
+<li><p>n/b = the size of each subproblem</p></li>
+<li><p><span class="math notranslate nohighlight">\(O(n^{d}log^k{n})\)</span> = complexity of the merge</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(T(n) = 2T(n/2) + O(n) \)</span></p>
+<ul class="simple">
+<li><p>therefore, <span class="math notranslate nohighlight">\(b^d = a\)</span> since b = 2, d = 1, a = 2</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(T(n) = O(nlogn)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The merge sort algorithm</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+
+        <span class="c1"># Finding the middle index of the array</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+        <span class="n">A</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">:]</span>
+
+        <span class="c1"># recursively sort each half.</span>
+        <span class="c1"># This breaks the problem down into two subproblems (a = 2) each of size (n/2), so b = 2</span>
+        <span class="n">merge_sort</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+        <span class="n">merge_sort</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+
+        <span class="c1"># i = the idx for iterating over A</span>
+        <span class="c1"># j = the idx for iterating over B</span>
+        <span class="c1"># k = the idx we are at in the merged array</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># arr is copied over to A[...] and B[...]</span>
+        <span class="c1"># so we overwrite</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">B</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">arr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">arr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># at this point either we&#39;ve added all elements of A or B to the result, arr.</span>
+        <span class="c1"># we need to add the left over elements which are guaranteed to be both</span>
+        <span class="c1"># pre-sorted in increasing order and larger than the last element of arr</span>
+
+        <span class="c1"># add remaining elements from A</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># add remaining elements from B</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">):</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+<span class="c1"># Driver Code</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Given array is&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="n">merge_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorted array is: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Given array is
+[12, 11, 13, 5, 6, 7]
+Sorted array is: 
+[5, 6, 7, 11, 12, 13]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="mergesort-application">
+<h3>Mergesort application<a class="headerlink" href="#mergesort-application" title="Permalink to this headline">¶</a></h3>
+<p>Get max profit from array of prices</p>
+<p>See other string / array solution <a class="reference internal" href="string_array.html"><span class="doc std std-doc">here</span></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_profit</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Called recursively to find the max profit possible</span>
+<span class="sd">    of a single buy and sell order</span>
+
+<span class="sd">    @param arr: List[float] list of stock prices</span>
+<span class="sd">    @return: max profit, lowest price, highest price</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">A</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">:]</span>
+
+    <span class="n">price_a</span><span class="p">,</span> <span class="n">low_a</span><span class="p">,</span> <span class="n">high_a</span> <span class="o">=</span> <span class="n">max_profit</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">price_b</span><span class="p">,</span> <span class="n">low_b</span><span class="p">,</span> <span class="n">high_b</span> <span class="o">=</span> <span class="n">max_profit</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">price_a</span><span class="p">,</span> <span class="n">price_b</span><span class="p">,</span> <span class="n">high_b</span> <span class="o">-</span> <span class="n">low_a</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">low_a</span><span class="p">,</span> <span class="n">low_b</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">high_a</span><span class="p">,</span> <span class="n">high_b</span><span class="p">)</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">profit</span><span class="p">,</span> <span class="n">lowest_price</span><span class="p">,</span> <span class="n">highest_price</span> <span class="o">=</span> <span class="n">max_profit</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prices: </span><span class="si">{</span><span class="n">arr</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;Max profit </span><span class="si">{</span><span class="n">profit</span><span class="si">}</span><span class="s2">,</span><span class="se">\n</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;Lowest price: </span><span class="si">{</span><span class="n">lowest_price</span><span class="si">}</span><span class="s2">,</span><span class="se">\n</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;Highest price: </span><span class="si">{</span><span class="n">highest_price</span><span class="si">}</span><span class="s2">. &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prices: [10, 12, 17, 3, 9]
+Max profit 7,
+Lowest price: 3,
+Highest price: 17. 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="quicksort-divide-and-conquer">
+<h2>Quicksort (Divide and Conquer)<a class="headerlink" href="#quicksort-divide-and-conquer" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quicksort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">arr: array to sort</span>
+<span class="sd">low: left index for sort, typically 0</span>
+<span class="sd">high: right index for sort, typically last index in array</span>
+<span class="sd">&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">low</span> <span class="o">&lt;</span> <span class="n">high</span><span class="p">)</span> <span class="o">//</span>
+        <span class="n">pivot</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
+        <span class="n">quicksort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">quicksort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
+
+<span class="n">partition</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;rearranges arr from low to high in place&quot;&quot;&quot;</span>
+
+</pre></div>
+</div>
+<p>Sources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/quicksort-using-random-pivoting/">https://www.geeksforgeeks.org/quicksort-using-random-pivoting/</a></p></li>
+<li><p><a class="reference external" href="https://towardsdatascience.com/quicksort-in-python-dbefa7dcf9cc">https://towardsdatascience.com/quicksort-in-python-dbefa7dcf9cc</a></p></li>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/quick-sort/">https://www.geeksforgeeks.org/quick-sort/</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="n">display</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;media/quicksort.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1299</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1300</span>             <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1301</span>         <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/formatters.py</span> in <span class="ni">__call__</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">968</span> 
+<span class="g g-Whitespace">    </span><span class="mi">969</span>             <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">970</span>                 <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">971</span>             <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">972</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_repr_mimebundle_</span><span class="nt">(self, include, exclude)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1288</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1289</span>             <span class="n">mimetype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mimetype</span>
+<span class="ne">-&gt; </span><span class="mi">1290</span>             <span class="n">data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">(</span><span class="n">always_both</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1291</span>             <span class="k">if</span> <span class="n">metadata</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1292</span>                 <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="n">mimetype</span><span class="p">:</span> <span class="n">metadata</span><span class="p">}</span>
+
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1300</span>             <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1301</span>         <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1302</span>             <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1303</span>                 <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1304</span>         <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;media/quicksort.png&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1299</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1300</span>             <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1301</span>         <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: a bytes-like object is required, not &#39;str&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/formatters.py</span> in <span class="ni">__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>             <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>             <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">345</span>                 <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span>             <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_repr_png_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1318</span>     <span class="k">def</span> <span class="nf">_repr_png_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1319</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_FMT_PNG</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1320</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_and_metadata</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1321</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1322</span>     <span class="k">def</span> <span class="nf">_repr_jpeg_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">~/.pyenv/versions/3.8.7/envs/algorithms/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">_data_and_metadata</span><span class="nt">(self, always_both)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1300</span>             <span class="n">b64_data</span> <span class="o">=</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1301</span>         <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1302</span>             <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1303</span>                 <span class="s2">&quot;No such file or directory: &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1304</span>         <span class="n">md</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;media/quicksort.png&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;IPython.core.display.Image object&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">partition_rand</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">low</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">high</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+
+    <span class="c1"># select a random pivot</span>
+    <span class="n">pivot_idx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
+
+    <span class="c1"># swap pivot and the last element to ensure</span>
+    <span class="c1"># pivot is the last element of the array</span>
+    <span class="n">arr</span><span class="p">[</span><span class="n">high</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">pivot_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">pivot_idx</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">high</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">partition</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">low</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">high</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Rearranges arr in place from low to high</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># partition around the last element</span>
+    <span class="n">pivot_idx</span> <span class="o">=</span> <span class="n">high</span>
+    <span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">pivot_idx</span><span class="p">]</span>
+
+    <span class="c1"># i will hold first index of any element that is</span>
+    <span class="c1"># greater than or equal to the pivot</span>
+    <span class="c1"># initially, potentially no elements are greater</span>
+    <span class="c1"># than the pivot, so we set i = low - 1</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">low</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="c1"># move all elements less than the pivot</span>
+    <span class="c1"># to the left of the pivot</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
+        <span class="c1"># if current elem is smaller than the pivot</span>
+        <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="c1"># we don&#39;t know what&#39;s at arr[i],</span>
+            <span class="c1"># but we know arr[j] is less than pivot</span>
+            <span class="c1"># swap elems at i and j and keep going</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="c1"># now any elements starting at i + 1 are greater than</span>
+    <span class="c1"># or equal to the pivot</span>
+    <span class="c1"># move the pivot to i + 1</span>
+    <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">pivot_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">pivot_idx</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># the pivot now resides at index i + 1</span>
+    <span class="k">return</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    In-place sorting algorithm using a pivot</span>
+<span class="sd">    to partition elements</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">low</span> <span class="o">&lt;</span> <span class="n">high</span><span class="p">:</span>
+        <span class="c1"># pivot index</span>
+        <span class="c1"># select a random pivot between low and high</span>
+        <span class="n">pi</span> <span class="o">=</span> <span class="n">partition_rand</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
+        <span class="c1"># choose arr[high] as the pivot</span>
+        <span class="c1"># pi = partition(arr, low, high)</span>
+        <span class="n">quicksort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">pi</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">quicksort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">pi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
+
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+<span class="n">quicksort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 4, 5, 6, 7, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">quicksort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-6, -3, 1, 2, 3, 5, 6, 8, 9]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="find-median-of-two-sorted-arrays-mergesort-application">
+<h2>Find median of two sorted arrays (mergesort application)<a class="headerlink" href="#find-median-of-two-sorted-arrays-mergesort-application" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">findMedianSortedArrays</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">nums2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="c1"># [1, 2, 3, 4]</span>
+        <span class="c1"># [1, 2, 3, 4, 5, 6]</span>
+        <span class="c1"># 1. Merged the sorted arrays into a single sorted array</span>
+        <span class="c1"># 2. If the # elements is even, return avg between two middle elements</span>
+        <span class="c1"># 3. If the # elements is odd, return the middle element</span>
+        <span class="c1"># Time: O(n+m) since we must iterate over both arrays</span>
+        <span class="c1"># Space: O(n+m) since we must store the merged array separately</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums2</span><span class="p">):</span>
+            <span class="n">nums1</span><span class="p">,</span> <span class="n">nums2</span> <span class="o">=</span> <span class="n">nums2</span><span class="p">,</span> <span class="n">nums1</span>
+
+        <span class="c1"># nums1 is the shortest length</span>
+
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums1</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums2</span><span class="p">)</span>
+
+        <span class="n">is_even</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="n">m</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">is_even</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">merged</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">nums1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">nums2</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">merged</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nums1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">merged</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nums2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+                <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">merged</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nums1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">:</span>
+            <span class="n">merged</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nums2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">z</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">merged</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">is_even</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">merged</span><span class="p">[(</span><span class="n">z</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">merged</span><span class="p">[</span><span class="n">z</span> <span class="o">//</span> <span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="n">merged</span><span class="p">[</span><span class="n">z</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">findMedianSortedArrays</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">findMedianSortedArrays</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="find-median-of-two-sorted-arrays-binary-search-application">
+<h2>Find median of two sorted arrays (binary search application)<a class="headerlink" href="#find-median-of-two-sorted-arrays-binary-search-application" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">findMedianSortedArrays</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">nums2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Source: https://www.youtube.com/watch?v=q6IEA26hvXc&amp;t=510s</span>
+<span class="sd">        Time complexity: O(log(n+m))</span>
+<span class="sd">        Space complexity: O(1)</span>
+
+<span class="sd">        1. Finding a pivot point where all elements to the left are smaller and all</span>
+<span class="sd">        elements to the right are greater, you can find the median</span>
+
+<span class="sd">        x x [x]|[x] x x  long_l, long_r</span>
+<span class="sd">          y [y]|[y] y    short_l, short_r</span>
+
+<span class="sd">        x x [y] [x] | [y] y [x] x x</span>
+
+<span class="sd">        2. Any pivot point in the smaller array has a corresponding point on the</span>
+<span class="sd">        large array, that divides the total # of elements in two</span>
+
+<span class="sd">        x x x x x x</span>
+<span class="sd">          y y y y</span>
+
+<span class="sd">        3. After picking a pivot point, it&#39;s possible to determine whether we need to</span>
+<span class="sd">        go left or right</span>
+
+<span class="sd">        1 2 3|4 5 6</span>
+<span class="sd">          2 3|4 5</span>
+
+<span class="sd">        Code Outline</span>
+<span class="sd">        1. Binary search on small array</span>
+<span class="sd">        2. Get indices of long_l, long_r, short_l, short_r</span>
+<span class="sd">        3. Get direction we need to do binary search in (left (-1) or right (1) or 0 means we&#39;ve found the right pivot)</span>
+<span class="sd">        4. At the end, calculate the median</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums2</span><span class="p">):</span>
+            <span class="n">nums1</span><span class="p">,</span> <span class="n">nums2</span> <span class="o">=</span> <span class="n">nums2</span><span class="p">,</span> <span class="n">nums1</span>
+
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums1</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums2</span><span class="p">)</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">m</span>
+
+        <span class="n">half</span> <span class="o">=</span>  <span class="n">total</span> <span class="o">//</span> <span class="mi">2</span>
+
+        <span class="c1"># binary search over best pivot in nums1</span>
+        <span class="c1"># pivot in nums2 is determined from pivot in nums1</span>
+        <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">high</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">mid_nums1</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="p">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+            <span class="n">mid_nums2</span> <span class="o">=</span> <span class="n">half</span> <span class="o">-</span> <span class="n">mid_nums1</span> <span class="o">-</span> <span class="mi">2</span>
+
+            <span class="n">short_l</span> <span class="o">=</span> <span class="n">nums1</span><span class="p">[</span><span class="n">mid_nums1</span><span class="p">]</span> <span class="k">if</span> <span class="n">mid_nums1</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;-inf&quot;</span><span class="p">)</span>
+            <span class="n">short_r</span> <span class="o">=</span> <span class="n">nums1</span><span class="p">[</span><span class="n">mid_nums1</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">mid_nums1</span><span class="o">+</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+            <span class="n">long_l</span> <span class="o">=</span> <span class="n">nums2</span><span class="p">[</span><span class="n">mid_nums2</span><span class="p">]</span> <span class="k">if</span> <span class="n">mid_nums2</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;-inf&quot;</span><span class="p">)</span>
+            <span class="n">long_r</span> <span class="o">=</span> <span class="n">nums2</span><span class="p">[</span><span class="n">mid_nums2</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">mid_nums2</span><span class="o">+</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">m</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+
+            <span class="c1"># if partition is correct, determine result</span>
+            <span class="k">if</span> <span class="n">short_l</span> <span class="o">&lt;=</span> <span class="n">long_r</span> <span class="ow">and</span> <span class="n">long_l</span> <span class="o">&lt;=</span> <span class="n">short_r</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">total</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="c1"># determine two middle elements and then calculate their average</span>
+                    <span class="k">return</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">short_l</span><span class="p">,</span> <span class="n">long_l</span><span class="p">)</span> <span class="o">+</span> <span class="nb">min</span><span class="p">(</span><span class="n">short_r</span><span class="p">,</span> <span class="n">long_r</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>
+                <span class="c1"># odd: it&#39;s the smaller element of the right hand partitions</span>
+                <span class="c1"># 1|2 3</span>
+                <span class="c1"># 1|2</span>
+                <span class="c1"># 1 1 2 2 3</span>
+                <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">short_r</span><span class="p">,</span> <span class="n">long_r</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">short_l</span> <span class="o">&gt;</span> <span class="n">long_r</span><span class="p">:</span>
+                <span class="c1"># x x [x]|[x] x x  long_l, long_r</span>
+                <span class="c1">#   y [y]|[y] y    short_l, short_r</span>
+                <span class="n">high</span> <span class="o">=</span> <span class="n">mid_nums1</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">long_l</span> <span class="o">&gt;</span> <span class="n">short_r</span><span class="p">:</span>
+                <span class="c1"># x x [x]|[x] x x  long_l, long_r</span>
+                <span class="c1">#   y [y]|[y] y    short_l, short_r</span>
+                <span class="n">low</span> <span class="o">=</span> <span class="n">mid_nums1</span> <span class="o">+</span> <span class="mi">1</span>
+
+
+<span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">findMedianSortedArrays</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">findMedianSortedArrays</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="snapshot-array">
+<h2>1146. Snapshot Array<a class="headerlink" href="#snapshot-array" title="Permalink to this headline">¶</a></h2>
+<p>Implement a SnapshotArray that supports the following interface:</p>
+<p>SnapshotArray(int length) initializes an array-like data structure with the given length.  Initially, each element equals 0.
+void set(index, val) sets the element at the given index to be equal to val.
+int snap() takes a snapshot of the array and returns the snap_id: the total number of times we called snap() minus 1.
+int get(index, snap_id) returns the value at the given index, at the time we took the snapshot with the given snap_id</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example</span> <span class="mi">1</span><span class="p">:</span>
+
+<span class="n">Input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;SnapshotArray&quot;</span><span class="p">,</span><span class="s2">&quot;set&quot;</span><span class="p">,</span><span class="s2">&quot;snap&quot;</span><span class="p">,</span><span class="s2">&quot;set&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">]</span>
+<span class="p">[[</span><span class="mi">3</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">],[],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="n">null</span><span class="p">,</span><span class="n">null</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">null</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">Explanation</span><span class="p">:</span>
+<span class="n">SnapshotArray</span> <span class="n">snapshotArr</span> <span class="o">=</span> <span class="n">new</span> <span class="n">SnapshotArray</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="o">//</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">length</span> <span class="n">to</span> <span class="n">be</span> <span class="mi">3</span>
+<span class="n">snapshotArr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>  <span class="o">//</span> <span class="n">Set</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">snapshotArr</span><span class="o">.</span><span class="n">snap</span><span class="p">();</span>  <span class="o">//</span> <span class="n">Take</span> <span class="n">a</span> <span class="n">snapshot</span><span class="p">,</span> <span class="k">return</span> <span class="n">snap_id</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">snapshotArr</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">);</span>
+<span class="n">snapshotArr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>  <span class="o">//</span> <span class="n">Get</span> <span class="n">the</span> <span class="n">value</span> <span class="n">of</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">with</span> <span class="n">snap_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="k">return</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">import</span> <span class="nn">bisect</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="k">class</span> <span class="nc">SnapshotArray</span><span class="p">:</span>
+    <span class="c1"># Keep track of history of each element in a dictionary mapping</span>
+    <span class="c1"># indexes to a list of snap_ids and values:</span>
+    <span class="c1"># {</span>
+    <span class="c1">#   0: [[0, 0], [0, 3]],</span>
+    <span class="c1">#   1: [[0, 0], [0, 2]],</span>
+    <span class="c1">#   2: [[0, 0]],</span>
+    <span class="c1">#}</span>
+
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshots</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">snapshots</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snap_id</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshots</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">snap_id</span><span class="p">,</span> <span class="n">val</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">snap</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">snap_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snap_id</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">ans</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">snap_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="c1"># O(logn) - binary search</span>
+        <span class="c1"># Get the idx of the last occurrence of the requested snap_id</span>
+        <span class="c1"># by getting the first index where all elements are less than snap_id + 1</span>
+        <span class="c1"># and then subracting one from that index</span>
+        <span class="n">idx_last_snap_id</span> <span class="o">=</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">snapshots</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="p">[</span><span class="n">snap_id</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">snapshots</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="n">idx_last_snap_id</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Your SnapshotArray object will be instantiated and called as such:</span>
+<span class="c1"># obj = SnapshotArray(length)</span>
+<span class="c1"># obj.set(index,val)</span>
+<span class="c1"># param_2 = obj.snap()</span>
+<span class="c1"># param_3 = obj.get(index,snap_id)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">SnapshotArray</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">snapshots</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>defaultdict(&lt;class &#39;list&#39;&gt;,
+            {0: [[0, 0], [0, 1], [0, 2]],
+             1: [[0, 0], [0, 2]],
+             2: [[0, 0]]})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>
+<span class="c1">#                   ^ we need the last index of the snapshot in the SnapshotArray class above</span>
+<span class="n">idx_greater_than_x</span> <span class="o">=</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
+<span class="n">idx_greater_than_x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx_last_val_of_x</span> <span class="o">=</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">idx_last_val_of_x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="search-an-element-in-a-sorted-and-rotated-array">
+<h2>Search an element in a sorted and rotated array<a class="headerlink" href="#search-an-element-in-a-sorted-and-rotated-array" title="Permalink to this headline">¶</a></h2>
+<p>Source: <a class="reference external" href="https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/">https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span><span class="p">:</span> <span class="n">arr</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span> <span class="n">key</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">Output</span><span class="p">:</span> <span class="n">Found</span> <span class="n">at</span> <span class="n">index</span> <span class="mi">8</span>
+</pre></div>
+</div>
+<p>Approach</p>
+<ol class="simple">
+<li><p>Find the pivot point with binary search. It’s the only index where the next element is smaller</p></li>
+<li><p>Divide the array into two sub-arrays</p></li>
+<li><p>Perform binary search</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">find_pivot</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Finds index where dropoff occurs</span>
+<span class="sd">        e.g. 3,4,5,1,2 would return 2 since that is the index of the pivot, 5</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">high</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+        <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">:</span>
+            <span class="n">mid</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="p">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+                <span class="c1"># found pivot at mid</span>
+                <span class="k">return</span> <span class="n">mid</span>
+            <span class="k">elif</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
+                <span class="c1"># found pivot at mid - 1</span>
+                <span class="k">return</span> <span class="n">mid</span><span class="o">-</span><span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">arr</span><span class="p">[</span><span class="n">low</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>
+                <span class="c1"># element furthest left &gt;= element at mid, set high one less than mid</span>
+                <span class="c1"># drop-down is left so search left</span>
+                <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># element further right &lt; element at mid, set low to one above mid</span>
+                <span class="c1"># drop down is right so search right</span>
+                <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="n">pivot</span> <span class="o">=</span> <span class="n">Solution</span><span class="o">.</span><span class="n">find_pivot</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">pivot</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">key</span> <span class="ow">or</span> <span class="n">arr</span><span class="p">[</span><span class="n">pivot</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">key</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+
+        <span class="k">if</span> <span class="n">pivot</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">high</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">key</span><span class="p">:</span>
+            <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">high</span> <span class="o">=</span> <span class="n">pivot</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">low</span> <span class="o">=</span> <span class="n">pivot</span><span class="o">+</span><span class="mi">1</span>
+            <span class="n">high</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">low</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">low</span>
+
+        <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">:</span>
+            <span class="n">mid</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="p">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">key</span><span class="p">:</span>
+                <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">key</span><span class="p">:</span>
+                <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">mid</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">find_pivot</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">find_pivot</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">find_pivot</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">find_pivot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]))</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Index of </span><span class="si">{</span><span class="mi">1</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Index of </span><span class="si">{</span><span class="mi">1</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Index of </span><span class="si">{</span><span class="mi">1</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Index of </span><span class="si">{</span><span class="mi">1</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Index of </span><span class="si">{</span><span class="mi">0</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+3
+0
+-1
+Index of 1 in [3, 4, 5, 1, 2] is 3
+Index of 1 in [2, 3, 4, 5, 1] is 4
+Index of 1 in [5, 1, 2, 3, 4] is 1
+Index of 1 in [0, 1, 2, 3, 4] is 1
+Index of 0 in [4, 5, 6, 7, 0, 1, 2] is 4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bubble-sort">
+<h2>Bubble Sort<a class="headerlink" href="#bubble-sort" title="Permalink to this headline">¶</a></h2>
+<p>Repeatedly swap elements until they are all in place
+Time Complexity (Worst): O(n^2), Worst case occurs when array is reverse sorted.
+Best time Complexity: O(n) when the array is already sorted
+Space Complexity: O(1)</p>
+<p>Source: <a class="reference external" href="https://www.geeksforgeeks.org/bubble-sort/">https://www.geeksforgeeks.org/bubble-sort/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">swapped</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+
+            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                <span class="n">swapped</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">swapped</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="k">return</span> <span class="n">arr</span>
+
+<span class="n">bubble_sort</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6, 7, 8]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="insertion-sort">
+<h2>Insertion Sort<a class="headerlink" href="#insertion-sort" title="Permalink to this headline">¶</a></h2>
+<p>Algorithm:</p>
+<ol class="simple">
+<li><p>Iterate over the array</p></li>
+<li><p>Compare the current element to its predecessor</p></li>
+<li><p>While the current element is less than it’s predecessor, swap left</p></li>
+</ol>
+<p>Time complexity: O(n^2)
+Space complexity: O(1)</p>
+<p>Source: <a class="reference external" href="https://www.geeksforgeeks.org/insertion-sort/">https://www.geeksforgeeks.org/insertion-sort/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+        <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span>
+
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">arr</span>
+
+<span class="n">insertion_sort</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="insertion-sort-linked-list-example-problem">
+<h2>Insertion Sort Linked List Example Problem<a class="headerlink" href="#insertion-sort-linked-list-example-problem" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://leetcode.com/problems/insertion-sort-list/">https://leetcode.com/problems/insertion-sort-list/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="c1"># Definition for singly-linked list.</span>
+<span class="k">class</span> <span class="nc">ListNode</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">insertionSortList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]:</span>
+
+        <span class="c1"># Time Complexity: O(n^2)</span>
+        <span class="c1"># Space Complexity: O(1)</span>
+        <span class="c1"># Insertion sort</span>
+        <span class="c1"># for each node, while it&#39;s greater than the previous node swap it (right) with the previous node</span>
+        <span class="c1"># head  5, 1, 3, 2</span>
+        <span class="c1"># result</span>
+
+        <span class="c1"># head 1, 3, 2       head  3, 2     head  2            head</span>
+        <span class="c1"># result 5           result 1, 5    result 1, 3, 5     result 1, 2, 3, 5</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">()</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span>
+
+        <span class="k">while</span> <span class="n">curr</span><span class="p">:</span>
+
+            <span class="n">prev</span> <span class="o">=</span> <span class="n">result</span>
+
+            <span class="c1"># iterate over the resultant linked list and</span>
+            <span class="c1"># find the first position to insert the node there</span>
+            <span class="c1"># where the current node is greater</span>
+            <span class="k">while</span> <span class="n">prev</span><span class="o">.</span><span class="n">next</span> <span class="ow">and</span> <span class="n">prev</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">curr</span><span class="o">.</span><span class="n">val</span><span class="p">:</span>
+                <span class="n">prev</span> <span class="o">=</span> <span class="n">prev</span><span class="o">.</span><span class="n">next</span>
+
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="n">next</span>
+
+            <span class="c1"># insert the current node into the resultant linked list between prev and prev.next</span>
+            <span class="c1"># point prev -&gt; curr -&gt; prev.next</span>
+            <span class="n">curr</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span><span class="o">.</span><span class="n">next</span>
+            <span class="n">prev</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">curr</span>
+
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">tmp</span>
+
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">next</span>
+
+<span class="n">head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">head</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">head</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">head</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">head</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">head</span><span class="p">))</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">insertionSortList</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+<span class="k">while</span> <span class="n">result</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4489869200
+4489871072
+1
+2
+3
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="guess-the-word">
+<h2>834. Guess the Word<a class="headerlink" href="#guess-the-word" title="Permalink to this headline">¶</a></h2>
+<p>Source: <a class="reference external" href="https://leetcode.com/problems/guess-the-word/">https://leetcode.com/problems/guess-the-word/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;&quot;&quot;</span>
+<span class="c1"># This is Master&#39;s API interface.</span>
+<span class="c1"># You should not implement it, or speculate about its implementation</span>
+<span class="c1"># &quot;&quot;&quot;</span>
+<span class="c1"># class Master:</span>
+<span class="c1">#     def guess(self, word: str) -&gt; int:</span>
+
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">findSecretWord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wordlist</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">master</span><span class="p">:</span> <span class="s1">&#39;Master&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="c1"># Observations</span>
+
+        <span class="c1"># If we get back a score of 0, eliminate all words that share &gt; 0 letter positions in common with the last guessed word</span>
+        <span class="c1"># If we get back a score of 6, have our answer</span>
+        <span class="c1"># If we get back a score of 1-5, the correct word will have the same number of letter positions in common with the</span>
+        <span class="c1"># last guessed word as what was returned as the score.</span>
+
+        <span class="c1"># Approach</span>
+
+        <span class="c1"># 1. Make a function that filters the wordslist by the words that have</span>
+        <span class="c1"># at least x number of exact value and position matches as the input word</span>
+
+        <span class="c1"># 2. Guess a random word from the wordlist</span>
+
+        <span class="k">def</span> <span class="nf">get_matches</span><span class="p">(</span><span class="n">word1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">word2</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+            <span class="c1"># len(word1) == len(word2) since all words are of length 6</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word1</span><span class="p">)</span>
+
+            <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">word1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">word2</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                    <span class="n">result</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">result</span>
+
+        <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+            <span class="n">guess</span> <span class="o">=</span> <span class="n">wordlist</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">wordlist</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">master</span><span class="o">.</span><span class="n">guess</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">score</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">guess</span>
+
+            <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">wordlist</span><span class="p">):</span>
+                <span class="n">matches</span> <span class="o">=</span> <span class="n">get_matches</span><span class="p">(</span><span class="n">guess</span><span class="p">,</span> <span class="n">wordlist</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">score</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">matches</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">wordlist</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">6</span> <span class="ow">and</span> <span class="n">matches</span> <span class="o">!=</span> <span class="n">score</span><span class="p">:</span>
+                    <span class="n">wordlist</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="hashmap.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">HashMap</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="dynamic_programming.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Dynamic Programming</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Peter Lucia<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
