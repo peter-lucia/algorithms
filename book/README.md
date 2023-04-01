@@ -2,6 +2,7 @@
 
 The content of this repository is also hosted at: [https://peter-lucia.github.io/algorithms/](https://peter-lucia.github.io/algorithms/)
 
+
 #### Table of Contents:
 
 1. [Graph](#graph)
@@ -200,6 +201,7 @@ Structure of NP-Complete proofs
    3. If you have a solution for B you have a solution for A
    4. If no solution for B no solution for A (or contra-positive – if you have a solution for A then you have a solution for B)
 
+
 ##### References
 
 * [Big-O Cheatsheet](https://www.bigocheatsheet.com)
@@ -215,3 +217,6 @@ Structure of NP-Complete proofs
 * [Common algorithms](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
 * [Python heapq](https://docs.python.org/3/library/heapq.html)
 * [Heapsort](https://www.geeksforgeeks.org/heap-sort/)
+
+
+Python Version: 3.8.7
