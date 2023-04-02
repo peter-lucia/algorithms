@@ -11,6 +11,8 @@ sorting_testcases = [
     ([12, 11, 13, 5, 6, 7], [5,6,7,11,12,13]),
     ([5,4,3,6,7,9], [3,4,5,6,7,9]),
     ([], []),
+    ([100], [100]),
+    ([0], [0]),
     ([1,0,-1], [-1,0,1]),
     (large_list_shuffled, large_list),
 ]
@@ -32,6 +34,5 @@ def test_quicksort_recursive(nums, expected):
 
 @pytest.mark.parametrize("nums,expected", sorting_testcases[:-1])
 def test_quicksort_iterative(nums, expected):
-    nums_sorted = nums.copy()
-    nums_sorted = quicksort_iterative(nums_sorted)
+    nums_sorted = quicksort_iterative(nums)
     assert nums_sorted == expected, "Incorrect result"

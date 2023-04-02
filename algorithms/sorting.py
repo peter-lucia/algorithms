@@ -29,8 +29,10 @@ def merge_sort_recursive(arr: List[int], in_place: bool = True) -> List[int]:
     # k = the idx we are at in the merged array
     i = j = k = 0
 
-    # arr is copied over to A[...] and B[...]
-    # so we overwrite
+    # For A, A[i] <= A[j], for all 0<i<j<len(A)
+    # For B, B[i] <= B[j], for all 0<i<j<len(B)
+    # arr[i] for all 0<i<len(arr) is copied over to either A[...] and B[...]
+    # so we overwrite arr
     while i < len(A) and j < len(B):
         if A[i] < B[j]:
             arr[k] = A[i]
@@ -41,7 +43,7 @@ def merge_sort_recursive(arr: List[int], in_place: bool = True) -> List[int]:
         k += 1
 
     # at this point either we've added all elements of A or B to the result, arr.
-    # we need to add the left over elements which are guaranteed to be both
+    # we need to add the left-over elements which are guaranteed to be both
     # pre-sorted in increasing order and larger than the last element of arr
 
     # add remaining elements from A

@@ -3,7 +3,7 @@ from typing import Type
 
 class TreeNode:
 
-    def __init__(self, val: int, left: "TreeNode", right: "TreeNode"):
+    def __init__(self, val: int, left: "TreeNode" = None, right: "TreeNode" = None):
         self.val = val
         self.left = left
         self.right = right
@@ -28,7 +28,7 @@ class Stack:
             # The pop() call defaults to popping the last element of the list
             return self.arr.pop()
         else:
-            raise Exception("The stack is empty")
+            raise ValueError("The stack is empty")
 
     def peek(self):
         """
