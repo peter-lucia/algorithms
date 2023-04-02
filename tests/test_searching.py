@@ -5,7 +5,7 @@ from algorithms.searching import *
 
 large_list = [i for i in range(-1000000, 1000000)]
 large_list_shuffled = large_list.copy()
-shuffle(large_list)
+shuffle(large_list_shuffled)
 large_list[1000000] = 9000000
 searching_testcases = [
     ([4, 6, 10], 10, 2),

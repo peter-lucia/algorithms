@@ -1,63 +1,69 @@
 from typing import List
 import random
 
-from data_structures import Stack
 
-
-def merge_sort_recursive(arr):
+def merge_sort_recursive(arr: List[int], in_place: bool = True) -> List[int]:
     """
     The recursive merge sort algorithm
+    Modifies the array in place
     """
-    if len(arr) > 1:
+    if not in_place:
+        arr = arr.copy()
 
-        # Finding the middle index of the array
-        n = len(arr)
+    if len(arr) <= 1:
+        return arr
 
-        A = arr[:n//2]
-        B = arr[n//2:]
+    # Finding the middle index of the array
+    n = len(arr)
 
-        # recursively sort each half.
-        # This breaks the problem down into two subproblems (a = 2) each of size (n/2), so b = 2
-        merge_sort_recursive(A)
-        merge_sort_recursive(B)
+    A = arr[:n//2]
+    B = arr[n//2:]
 
-        # i = the idx for iterating over A
-        # j = the idx for iterating over B
-        # k = the idx we are at in the merged array
-        i = j = k = 0
+    # recursively sort each half.
+    # This breaks the problem down into two subproblems (a = 2) each of size (n/2), so b = 2
+    merge_sort_recursive(A)
+    merge_sort_recursive(B)
 
-        # arr is copied over to A[...] and B[...]
-        # so we overwrite
-        while i < len(A) and j < len(B):
-            if A[i] < B[j]:
-                arr[k] = A[i]
-                i += 1
-            else:
-                arr[k] = B[j]
-                j += 1
-            k += 1
+    # i = the idx for iterating over A
+    # j = the idx for iterating over B
+    # k = the idx we are at in the merged array
+    i = j = k = 0
 
-        # at this point either we've added all elements of A or B to the result, arr.
-        # we need to add the left over elements which are guaranteed to be both
-        # pre-sorted in increasing order and larger than the last element of arr
-
-        # add remaining elements from A
-        while i < len(A):
+    # arr is copied over to A[...] and B[...]
+    # so we overwrite
+    while i < len(A) and j < len(B):
+        if A[i] < B[j]:
             arr[k] = A[i]
             i += 1
-            k += 1
-
-        # add remaining elements from B
-        while j < len(B):
+        else:
             arr[k] = B[j]
             j += 1
-            k += 1
+        k += 1
+
+    # at this point either we've added all elements of A or B to the result, arr.
+    # we need to add the left over elements which are guaranteed to be both
+    # pre-sorted in increasing order and larger than the last element of arr
+
+    # add remaining elements from A
+    while i < len(A):
+        arr[k] = A[i]
+        i += 1
+        k += 1
+
+    # add remaining elements from B
+    while j < len(B):
+        arr[k] = B[j]
+        j += 1
+        k += 1
+
+    if not in_place:
+        return arr
 
 ########################################################################################################################
 #################################################### Quicksort #########################################################
 ########################################################################################################################
 
-def quicksort_recursive(arr, low, high):
+def quicksort_recursive(arr: List[int], low, high) -> List[int]:
     """
     In-place sorting algorithm using a pivot
     to partition elements
@@ -126,63 +132,65 @@ def _quicksort_recursive_partition(arr: List[int], low: int, high: int):
     return i + 1
 
 
-def quicksort_iterative(arr):
+def quicksort_iterative(arr: List[int]) -> List[int]:
     """
     Iterative quick sort
     :param arr: arr to be sorted
     :return:
     """
-    if arr is None or len(arr) <= 1:
-        return
+    if arr is None:
+        raise ValueError("Invalid array")
+    if len(arr) <= 1:
+        return arr
 
-    lo = 0
-    hi = len(arr)-1
+    low = 0
+    high = len(arr)-1
 
-    stack = Stack()
-    stack.push(lo)
-    stack.push(hi)
+    stack = []
+    stack.append(low)
+    stack.append(high)
 
-
-    while not stack.is_empty():
-
-        hi = stack.pop()
-        lo = stack.pop()
+    while stack:
+        high = stack.pop()
+        low = stack.pop()
 
         # as long as we have at least two elements to sort
-        if lo < hi:
+        if low < high:
 
             # create the partitions
-            p = _quicksort_iterative_partition(arr, lo, hi)
+            p = _quicksort_iterative_partition(arr, low, high)
 
             # push the left partition indexes
-            stack.push(lo)
-            stack.push(p-1)
+            stack.append(low)
+            stack.append(p-1)
 
             # push the right partition indexes
-            stack.push(p+1)
-            stack.push(hi)
+            stack.append(p+1)
+            stack.append(high)
+
+    return arr
 
 
-def _quicksort_iterative_partition(a, lo, hi):
+def _quicksort_iterative_partition(arr, low, high):
     """
     Last element pivot partition: rearrange elements in the array by putting all the elements < than pivot to the left
     and elements > than pivot to the right.
-    :param a: array to partition
-    :param lo: lower bound of the array to partition
-    :param hi: higher bound of the array to partition
+    :param arr: array to partition
+    :param low: lower bound of the array to partition
+    :param high: higher bound of the array to partition
     :return: the final pivot position in the array
     """
-    pivot = a[hi]
-    i = lo
-    j = lo
+    pivot = arr[high]
+    i = low
+    j = low
 
-    while j <= hi:
-        if (a[j] < pivot):
-            a[i], a[j] = a[j], a[i]
+    while j <= high:
+        if (arr[j] < pivot):
+            arr[i], arr[j] = arr[j], arr[i]
             i += 1
         j += 1
 
-    a[i], a[hi] = a[hi], a[i]
+    arr[i], arr[high] = arr[high], arr[i]
 
     return i
 

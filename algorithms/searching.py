@@ -1,4 +1,6 @@
-from typing import List
+from typing import List, Optional, Tuple
+
+from data_structures import TreeNode
 
 
 def binary_search(nums: List[int], target):
@@ -19,3 +21,69 @@ def binary_search(nums: List[int], target):
         else:
             return mid
     return -1
+
+
+########################################################################################################################
+#################################### Depth First Search ################################################################
+########################################################################################################################
+
+def dfs_recursive_trees(root: TreeNode, target: int) -> Optional[TreeNode]:
+
+    if root.val == target:
+        return root
+
+    if root.left:
+        result = dfs_recursive_trees(root.left, target)
+        if result is not None:
+            return result
+
+    if root.right:
+        result = dfs_recursive_trees(root.right, target)
+        if result is not None:
+            return result
+
+    return None
+
+
+def dfs_iterative_tree(root: TreeNode, target: int) -> Optional[Tuple[TreeNode, str]]:
+
+    stack = [(root, None)]
+
+    while stack:
+        node, path = stack.pop()
+
+        if node.val == target:
+            return node, path
+
+        for node in [node.left, node.right]:
+            if path is None:
+                stack.append((node.left, f"{node.val}"))
+            else:
+                stack.append((node.left, path + "->" + f"{node.val}"))
+
+
+def dfs_recursive_graph(graph: dict, target: int) -> Optional[Tuple[TreeNode, str]]:
+    pass
+
+
+def dfs_iterative_graph(graph: dict, target: int) -> Optional[Tuple[TreeNode, str]]:
+    pass
+
+
+def dfs_recursive_graph(graph: dict, target: int) -> Optional[Tuple[TreeNode, str]]:
+    pass
+
+
+def dfs_iterative_graph(graph: dict, target: int) -> Optional[Tuple[TreeNode, str]]:
+    pass
+
+########################################################################################################################
+#################################### Breadth First Search ##############################################################
+########################################################################################################################
+
+def bfs_recursive_trees(root: TreeNode, target: int) -> Optional[Tuple[TreeNode, str]]:
+    pass
+
+
+def bfs_iterative_trees(root: TreeNode, target: int) -> Optional[Tuple[TreeNode, str]]:
+    pass

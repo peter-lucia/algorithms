@@ -1,5 +1,15 @@
+from typing import Type
 
-class Stack():
+
+class TreeNode:
+
+    def __init__(self, val: int, left: "TreeNode", right: "TreeNode"):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Stack:
     """
     Simple stack implementation
     where the top of the stack is the end of the list
