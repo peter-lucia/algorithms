@@ -13,6 +13,7 @@ def binary_search(nums: List[int], target):
     low = 0
     high = len(nums)
     while low <= high:
+        # prevent integer overflow that can happen with (low + high) // 2
         mid = low + ((high - low) // 2)
         if nums[mid] < target:
             low = mid + 1
