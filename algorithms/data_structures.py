@@ -1,12 +1,26 @@
-from typing import Type
+from typing import List, Type
 
 
 class TreeNode:
 
-    def __init__(self, val: int, left: "TreeNode" = None, right: "TreeNode" = None):
+    def __init__(self, 
+                 val: int, 
+                 left: "TreeNode" = None, 
+                 right: "TreeNode" = None,
+                 path: List[int] = []):
+        """
+        A binary tree node
+
+        Args:
+            val (int): Value for this node
+            left (TreeNode, optional): Left TreeNode, if exists. Defaults to None.
+            right (TreeNode, optional): Right TreeNode. Defaults to None.
+            path (List[int], optional): Path from root to this node. Defaults to [].
+        """
         self.val = val
         self.left = left
-        self.right = right
+        self.right = right # Right node
+        self.path = path # Path from root up to, not including this node
 
 
 class Stack:

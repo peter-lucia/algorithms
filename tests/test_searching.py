@@ -53,9 +53,9 @@ def test_binary_search(nums, target, expected):
 
 
 @pytest.mark.parametrize("root,target,expected,preorder_visited", [
-    (root_binary_tree, 14, "20->8->3->14", [20,8,5,3,10,14]),
-    (root_binary_tree_2, 8, "20->22->4->8",[20,2,22,4,8] ),
-    (root_binary_tree_2, 2, "20->2", [20,2]),
+    (root_binary_tree, 14, [20,8,3,14], [20,8,5,3,10,14]),
+    (root_binary_tree_2, 8, [20,22,4,8],[20,2,22,4,8] ),
+    (root_binary_tree_2, 2, [20,2], [20,2]),
 ])
 def test_dfs_tree(root: TreeNode, target, expected, preorder_visited):
     """Assumes preorder visited order"""
@@ -68,9 +68,9 @@ def test_dfs_tree(root: TreeNode, target, expected, preorder_visited):
 
 
 @pytest.mark.parametrize("root,target,expected,preorder_visited", [
-    (root_binary_tree, 14, "20->8->3->14", [20,8,22,5,3,4,25,10,14]),
-    (root_binary_tree_2, 8, "20->22->4->8",[20,2,22,4,8] ),
-    (root_binary_tree_2, 2, "20->2", [20,2]),
+    (root_binary_tree, 14, [20,8,3,14], [20,8,22,5,3,4,25,10,14]),
+    (root_binary_tree_2, 8, [20,22,4,8],[20,2,22,4,8] ),
+    (root_binary_tree_2, 2, [20,2], [20,2]),
 ])
 def test_bfs_tree(root: TreeNode, target, expected,preorder_visited):
     actual_visited = []
