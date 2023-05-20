@@ -52,13 +52,30 @@ def test_binary_search(nums, target, expected):
     assert result == expected, "Incorrect result"
 
 
-@pytest.mark.parametrize("root,target,expected", [
-    (root_binary_tree, 14, "20->8->3->14"),
-    (root_binary_tree_2, 8, "20->22->4->8"),
-    (root_binary_tree_2, 2, "20->2"),
+@pytest.mark.parametrize("root,target,expected,preorder_visited", [
+    (root_binary_tree, 14, "20->8->3->14", [20,8,5,3,10,14]),
+    (root_binary_tree_2, 8, "20->22->4->8",[20,2,22,4,8] ),
+    (root_binary_tree_2, 2, "20->2", [20,2]),
 ])
-def test_dfs_iterative_tree(root: TreeNode, target, expected):
-    actual = dfs_iterative_tree(root, target)
+def test_dfs_tree(root: TreeNode, target, expected, preorder_visited):
+    """Assumes preorder visited order"""
+    actual_visited = []
+    actual = dfs_iterative_tree(root, target, actual_visited)
     assert expected == actual, "Incorrect result"
+    assert preorder_visited == actual_visited
     actual = dfs_recursive_tree(root, target)
     assert expected == actual, "Incorrect result"
+
+
+@pytest.mark.parametrize("root,target,expected,preorder_visited", [
+    (root_binary_tree, 14, "20->8->3->14", [20,8,22,5,3,4,25,10,14]),
+    (root_binary_tree_2, 8, "20->22->4->8",[20,2,22,4,8] ),
+    (root_binary_tree_2, 2, "20->2", [20,2]),
+])
+def test_bfs_tree(root: TreeNode, target, expected,preorder_visited):
+    actual_visited = []
+    actual = bfs_iterative_tree(root, target, actual_visited)
+    assert expected == actual, "Incorrect result"
+    assert preorder_visited == actual_visited, "Incorrect visited order"
+    # actual = bfs_recursive_tree(root, target)
+    # assert expected == actual, "Incorrect result"
