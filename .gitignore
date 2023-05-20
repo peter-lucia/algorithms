@@ -1,2 +1,4 @@
 .ipynb_checkpoints/
 book/_build/
+.idea/
+__pycache__
