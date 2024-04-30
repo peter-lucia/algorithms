@@ -1,5 +1,4 @@
 from typing import List, Optional, Tuple
-from collections import deque
 
 from .data_structures import TreeNode
 
@@ -29,9 +28,9 @@ def binary_search(nums: List[int], target):
 ########################################################################################################################
 
 
-def dfs_tree_iterative(root: TreeNode,
-                       target: int,
-                       preorder_visited: List[int] = []) -> Optional[List[int]]:
+def dfs_tree_iterative_preorder(root: TreeNode,
+                       target: int | None = None,
+                       visited: list[int] = []) -> list[int]:
 
     if root.val is None:
         return []
@@ -41,22 +40,48 @@ def dfs_tree_iterative(root: TreeNode,
     while stack:
         node = stack.pop()  # DFS: pop last elem (Stack)
 
-        preorder_visited.append(node.val)
+        visited.append(node.val)
 
         # searching for target
-        if node.val == target:
+        if target is not None and node.val == target:
             return [*node.path, node.val]
 
         if node.right:
             node.right.path = [*node.path, node.val]
             stack.append(node.right)
 
+        # appending the left side last ensures it's visited first
+        # when it's popped off the top of the stack
         if node.left:
             node.left.path = [*node.path, node.val]
             stack.append(node.left)
 
+    if target is not None:
+        raise ValueError("No path to target found")
+    return visited
 
-    raise ValueError("No path to target found")
+
+def dfs_tree_iterative_inorder(root: TreeNode,
+                       target: int | None = None,
+                       visited: list[int] = []) -> list[int]:
+
+    if root.val is None:
+        return []
+
+    stack = []
+    node = root
+
+    while node or stack:
+        while node:
+            stack.append(node)
+            node = node.left
+
+        node = stack.pop()
+
+        visited.append(node.val)
+        node = node.right
+
+    return visited
 
 
 def bfs_tree_iterative(root: TreeNode, target: int, preorder_visited: List[int]) -> List[int]:

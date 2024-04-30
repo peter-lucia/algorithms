@@ -52,17 +52,29 @@ def test_binary_search(nums, target, expected):
     assert result == expected, "Incorrect result"
 
 
-@pytest.mark.parametrize("root,target,expected,preorder_visited", [
-    (root_binary_tree, 14, [20,8,3,14], [20,8,5,3,10,14]),
-    (root_binary_tree_2, 8, [20,22,4,8],[20,2,22,4,8] ),
-    (root_binary_tree_2, 2, [20,2], [20,2]),
+@pytest.mark.parametrize("root,target,target_path_expected,preorder_visited,inorder_visited,postorder_visited", [
+    (root_binary_tree, 14, [20,8,3,14], [20,8,5,3,10,14], [5,8,10,3,14,20,4,22,25], [5,10,14,3,8,4,25,22,20]),
+    (root_binary_tree_2, 8, [20,22,4,8],[20,2,22,4,8], [2,20,8,4,22], [2,8,4,22,20]),
+    (root_binary_tree_2, 2, [20,2], [20,2], [2,20,8,4,22], [2,8,4,22,20]),
 ])
-def test_dfs_tree_iterative(root: TreeNode, target, expected, preorder_visited):
+def test_dfs_tree_iterative(root: TreeNode, target, target_path_expected, preorder_visited, inorder_visited, postorder_visited):
     """Assumes preorder visited order"""
-    actual_preorder_visited = []
-    actual = dfs_tree_iterative(root, target, actual_preorder_visited)
-    assert expected == actual, "Incorrect result"
-    assert preorder_visited == actual_preorder_visited
+    visited = []
+    target_path_actual = dfs_tree_iterative_preorder(root, target, visited)
+    assert target_path_expected == target_path_actual, "Incorrect result"
+    assert preorder_visited == visited
+
+
+@pytest.mark.parametrize("root,target,target_path_expected,preorder_visited,inorder_visited_expected,postorder_visited", [
+    (root_binary_tree, 14, [20,8,3,14], [20,8,5,3,10,14], [5,8,10,3,14,20,4,22,25], [5,10,14,3,8,4,25,22,20]),
+    (root_binary_tree_2, 8, [20,22,4,8],[20,2,22,4,8], [2,20,8,4,22], [2,8,4,22,20]),
+    (root_binary_tree_2, 2, [20,2], [20,2], [2,20,8,4,22], [2,8,4,22,20]),
+])
+def test_dfs_tree_iterative(root: TreeNode, target, target_path_expected, preorder_visited, inorder_visited_expected, postorder_visited):
+    """Assumes preorder visited order"""
+    visited = []
+    dfs_tree_iterative_inorder(root, target, visited)
+    assert visited == inorder_visited_expected
 
 
 @pytest.mark.parametrize("root,target,expected,preorder_visited", [
