@@ -1,4 +1,5 @@
 from typing import List, Optional, Tuple
+from collections import deque
 
 from .data_structures import TreeNode
 
@@ -23,8 +24,12 @@ def binary_search(nums: List[int], target):
             return mid
     return -1
 
+########################################################################################################################
+#################################### Iterative #########################################################################
+########################################################################################################################
 
-def dfs_iterative_tree(root: TreeNode,
+
+def dfs_tree_iterative(root: TreeNode,
                        target: int,
                        preorder_visited: List[int] = []) -> Optional[List[int]]:
 
@@ -34,7 +39,7 @@ def dfs_iterative_tree(root: TreeNode,
     stack = [root]
 
     while stack:
-        node = stack.pop() # DFS: pop last elem
+        node = stack.pop()  # DFS: pop last elem (Stack)
 
         preorder_visited.append(node.val)
 
@@ -42,14 +47,19 @@ def dfs_iterative_tree(root: TreeNode,
         if node.val == target:
             return [*node.path, node.val]
 
-        for next_node in [node.right, node.left]: # DFS: right to left, left popped off stack first
-            if next_node is not None:
-                next_node.path = [*node.path, node.val]
-                stack.append(next_node)
+        if node.right:
+            node.right.path = [*node.path, node.val]
+            stack.append(node.right)
+
+        if node.left:
+            node.left.path = [*node.path, node.val]
+            stack.append(node.left)
+
 
     raise ValueError("No path to target found")
 
-def bfs_iterative_tree(root: TreeNode, target: int, preorder_visited: List[int]) -> List[int]:
+
+def bfs_tree_iterative(root: TreeNode, target: int, preorder_visited: List[int]) -> List[int]:
 
     if root.val is None:
         return []
@@ -57,7 +67,7 @@ def bfs_iterative_tree(root: TreeNode, target: int, preorder_visited: List[int])
     stack = [root]
 
     while stack:
-        node = stack.pop(0)  # BFS: pop first elem 
+        node = stack.pop(0)  # BFS: pop first elem (Queue)
 
         preorder_visited.append(node.val)
 
@@ -72,38 +82,25 @@ def bfs_iterative_tree(root: TreeNode, target: int, preorder_visited: List[int])
 
     raise ValueError("No path to target found")
 
-def dfs_iterative_graph(graph: dict, target: int) -> Optional[Tuple[TreeNode, str]]:
+
+def dfs_graph_iterative(graph: dict, target: int) -> Optional[Tuple[TreeNode, str]]:
     pass
 
 
-def bfs_iterative_graph(graph: dict, target: int) -> Optional[Tuple[TreeNode, str]]:
-    pass
-
-
-
-def bfs_recursive_tree(root: TreeNode, target: int) -> Optional[Tuple[TreeNode, str]]:
-    pass
-
-
-def dfs_recursive_graph(graph: dict, target: int) -> Optional[Tuple[TreeNode, str]]:
+def bfs_graph_iterative(graph: dict, target: int) -> Optional[Tuple[TreeNode, str]]:
     pass
 
 
 
-def bfs_recursive_graph(graph: dict, target: int) -> Optional[Tuple[TreeNode, str]]:
-    pass
-
-
-
+########################################################################################################################
 #################################### Recursive #########################################################################
+########################################################################################################################
 
 
-def dfs_recursive_tree(
-    root: TreeNode, 
-    target: int
-    ) -> Optional[List[int]]:
+def dfs_recursive_tree(root: TreeNode, target: int) -> Optional[List[int]]:
 
     if root.val == target:
+        # joins root.val into the root.path list
         return [*root.path, root.val]
 
     if root.left:
@@ -121,5 +118,13 @@ def dfs_recursive_tree(
     return None
 
 
-def bfs_recursive_trees(root: TreeNode, target: int) -> Optional[Tuple[TreeNode, str]]:
+def bfs_tree_recursive(root: TreeNode, target: int) -> Optional[Tuple[TreeNode, str]]:
+    pass
+
+
+def dfs_recursive_graph(graph: dict, target: int) -> Optional[Tuple[TreeNode, str]]:
+    pass
+
+
+def bfs_recursive_graph(graph: dict, target: int) -> Optional[Tuple[TreeNode, str]]:
     pass
