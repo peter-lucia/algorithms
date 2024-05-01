@@ -1,6 +1,23 @@
 from typing import List, Type
 
 
+# Time complexity: O(V + E)
+#                     A - C
+#                    / \ /
+#                   B   F
+#                 / \  /
+#                D   E
+# this is a directed graph
+example_adjacency_list_directed_graph = {
+  'A': ['B', 'F', 'C'],
+  'B': ['D', 'E'],
+  'C': ['F'],
+  'D': [],
+  'E': ['F'],
+  'F': []
+}
+
+
 class TreeNode:
 
     def __init__(self, 
@@ -25,6 +42,7 @@ class TreeNode:
 
 class Stack:
     """
+    Useful for DFS
     Simple stack implementation
     where the top of the stack is the end of the list
     """
@@ -62,3 +80,59 @@ class Stack:
         """
 
         return len(self.arr)
+
+
+class Trie:
+    """
+    Particularly efficient for tasks that involve searching for words or prefixes
+    Useful for
+      * autocomplete
+      * spell-checking
+      * IP routing tables
+    where fast prefix based searches are important
+
+    The space complexity for a tree is O(n*k), where n is the number of words
+    in the trie and k is the average length of the words.
+    """
+    def __init__(self):
+        self.child = {}
+
+    def insert(self, word: str) -> None:
+        """
+        Time Complexity: O(k), where k is the length of the word to be inserted.
+        Iterate over each character in the word.
+        Ensure each character in the word is the sub key of a new dict
+        The last character of the word maps to a dict with 'end' as at least one of the keys.
+        """
+        current = self.child
+        for c in word:
+            if c not in current:
+                current[c] = {}
+            current = current[c]
+        current['end'] = 1
+
+    def search(self, word: str) -> bool:
+        """
+        Time Complexity: O(k), where k is the length of the word
+        Check that each character is in the trie and that the last character maps to a dict with 'end' as a key.
+        """
+        current = self.child
+        for c in word:
+            if c not in current:
+                return False
+            current = current[c]
+        return 'end' in current
+
+    def starts_with(self, prefix: str) -> bool:
+        """
+        Time Complexity: O(k) where k is the length of the prefix.
+        Just needs to traverse the trie following the characters in the prefix
+        Iterates over each character in the prefix.
+        Does not check if the last character maps to a dict with 'end' as the key.
+        """
+        current = self.child
+        for c in prefix:
+            if c not in current:
+                return False
+            current = current[c]
+        return True
