@@ -31,6 +31,11 @@ def binary_search(nums: List[int], target):
 def dfs_tree_iterative_preorder(root: TreeNode,
                        target: int | None = None,
                        visited: list[int] = []) -> list[int]:
+    """
+    DFS algorithm to traverse a binary tree using preorder traversal, where
+    it visits a node before visiting that node's left subtree, then right subtree.
+    No guarantees about finding the shortest path
+    """
 
     if root.val is None:
         return []
@@ -64,6 +69,11 @@ def dfs_tree_iterative_preorder(root: TreeNode,
 def dfs_tree_iterative_inorder(root: TreeNode,
                        target: int | None = None,
                        visited: list[int] = []) -> list[int]:
+    """
+    DFS algorithm to traverse a binary tree using inorder traversal, where
+    it visits the left subtree before visiting a node, and then visits the right subtree.
+    No guarantees about finding the shortest path
+    """
 
     if root.val is None:
         return []
@@ -82,6 +92,16 @@ def dfs_tree_iterative_inorder(root: TreeNode,
         node = node.right
 
     return visited
+
+def dfs_tree_iterative_postorder(root: TreeNode,
+                                 target: int | None = None,
+                                 visited: list[int] = []):
+    """
+    DFS algorithm to traverse a binary tree using postorder traversal, where
+    it visits the left subtree, then right subtree, before the node.
+    No guarantees about finding the shortest path
+    """
+    pass
 
 
 def bfs_tree_iterative(root: TreeNode, target: int, preorder_visited: List[int]) -> List[int]:
@@ -112,8 +132,26 @@ def dfs_graph_iterative(graph: dict, target: int) -> Optional[Tuple[TreeNode, st
     pass
 
 
-def bfs_graph_iterative(graph: dict, target: int) -> Optional[Tuple[TreeNode, str]]:
-    pass
+def bfs_graph_iterative(graph: dict, starting_node, target: int | None = None, visited: list[str] = []):
+    """
+    BFS uses a queue and visits all nodes on each level before going to the next level
+    Because of this, BFS will find the shortest path to a target node
+    """
+    queue = []
+
+    visited.append(starting_node)
+    queue.append(starting_node)
+
+    print("Visiting vertices: ")
+    while queue:
+        # print("Queue: ", queue)
+        s = queue.pop(0)
+        print(s, end=" ")
+        for neighbour in graph[s]:
+            if neighbour not in visited:
+                visited.append(neighbour)
+                queue.append(neighbour)
+
 
 
 
@@ -122,25 +160,46 @@ def bfs_graph_iterative(graph: dict, target: int) -> Optional[Tuple[TreeNode, st
 ########################################################################################################################
 
 
-def dfs_recursive_tree(root: TreeNode, target: int) -> Optional[List[int]]:
+def dfs_recursive_preorder_tree(root: TreeNode, visited: list[int] = []) -> None:
 
-    if root.val == target:
-        # joins root.val into the root.path list
-        return [*root.path, root.val]
+    if root is None:
+        return
+
+    visited.append(root.val)
 
     if root.left:
-        root.left.path = [*root.path, root.val]
-        result = dfs_recursive_tree(root.left, target)
-        if result is not None:
-            return result
+        dfs_recursive_preorder_tree(root.left, visited)
 
     if root.right:
-        root.right.path = [*root.path, root.val]
-        result = dfs_recursive_tree(root.right, target)
-        if result is not None:
-            return result
+        dfs_recursive_preorder_tree(root.right, visited)
 
-    return None
+
+def dfs_recursive_inorder_tree(root: TreeNode, visited: list[int] = []) -> None:
+
+    if root is None:
+        return
+
+    if root.left:
+        dfs_recursive_inorder_tree(root.left, visited)
+
+    visited.append(root.val)
+
+    if root.right:
+        dfs_recursive_inorder_tree(root.right, visited)
+
+
+def dfs_recursive_postorder_tree(root: TreeNode, visited: list[int] = []) -> None:
+
+    if root is None:
+        return
+
+    if root.left:
+        dfs_recursive_postorder_tree(root.left, visited)
+
+    if root.right:
+        dfs_recursive_postorder_tree(root.right, visited)
+
+    visited.append(root.val)
 
 
 def bfs_tree_recursive(root: TreeNode, target: int) -> Optional[Tuple[TreeNode, str]]:
